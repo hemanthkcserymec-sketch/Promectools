@@ -5893,3 +5893,608 @@ section, [id] {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   OUR WORKS — INSTAGRAM REELS SHOWCASE SECTION
+   ========================================================================== */
+.promec-reels-section {
+  position: relative;
+  background: #09090b !important;
+  padding: 44px 0 24px !important;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: none !important;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.promec-reels__container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.promec-reels__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px !important;
+  padding: 0 24px;
+}
+
+.promec-reels__title {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(30px, 3.8vw, 46px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.15 !important;
+  color: #ffffff !important;
+  margin: 0 0 10px !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.promec-reels__subtitle {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(14px, 1.1vw, 16px) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  margin: 0 auto !important;
+  max-width: 580px !important;
+}
+
+/* Carousel Outer Wrap */
+.promec-reels__carousel-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 4px 0 12px !important;
+}
+
+/* Navigation Arrow Buttons */
+.promec-reels__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(24, 24, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 25;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+
+.promec-reels__nav-btn:hover {
+  background: rgba(45, 45, 45, 0.95);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 255, 255, 0.1);
+}
+
+.promec-reels__nav-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.promec-reels__nav-btn--prev {
+  left: 28px;
+}
+
+.promec-reels__nav-btn--next {
+  right: 28px;
+}
+
+/* Edge Fade Gradient Masks */
+.promec-reels__track-mask {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  cursor: grab;
+  padding: 8px 0;
+}
+
+.promec-reels__track-mask::-webkit-scrollbar {
+  display: none;
+}
+
+.promec-reels__track-mask.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* The Continuous Marquee Track */
+.promec-reels__track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation: promecReelsScroll 45s linear infinite;
+  padding: 0 10px;
+}
+
+.promec-reels__track-mask:hover .promec-reels__track,
+.promec-reels__track.is-paused {
+  animation-play-state: running !important;
+}
+
+@keyframes promecReelsScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-50% - 10px), 0, 0);
+  }
+}
+
+/* Reel Card */
+.promec-reel-card {
+  flex: 0 0 240px;
+  width: 240px;
+  height: 426px; /* 9:16 exact ratio */
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.promec-reel-card:hover {
+  transform: translateY(-8px) scale(1.025);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 255, 255, 0.08);
+  z-index: 15;
+}
+
+.promec-reel-card__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.promec-reel-card__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  border-radius: 20px;
+  background: #111;
+  transform: scale(1.01);
+  transition: transform 0.4s ease;
+}
+
+.promec-reel-card:hover .promec-reel-card__video {
+  transform: scale(1.05);
+}
+
+/* Instagram Floating Badge */
+.promec-reel-card__ig-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 8;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.promec-reel-card__ig-badge svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+  transition: stroke 0.25s ease;
+}
+
+.promec-reel-card__ig-badge:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 6px 18px rgba(220, 39, 67, 0.5);
+}
+
+/* Card Hover Play Icon Overlay - Hidden so video plays cleanly */
+.promec-reel-card__overlay,
+.promec-reel-card__play-icon,
+#promec-modal-play-btn,
+.bunny-lightbox-player__center-btn,
+.bunny-lightbox-player__toggle-playpause,
+.mini-showreel__play-icon {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Lightbox Modal */
+.promec-reel-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+}
+
+.promec-reel-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.promec-reel-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  cursor: pointer;
+}
+
+.promec-reel-modal__dialog {
+  position: relative;
+  z-index: 2;
+  width: 90vw;
+  max-width: 380px;
+  height: 85vh;
+  max-height: 680px;
+  background: #0f0f0f;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promec-reel-modal.is-open .promec-reel-modal__dialog {
+  transform: scale(1);
+}
+
+.promec-reel-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s ease;
+}
+
+.promec-reel-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.08);
+}
+
+.promec-reel-modal__video-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promec-reel-modal__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal Bottom Controls */
+.promec-reel-modal__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 18px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.promec-reel-modal__btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.promec-reel-modal__btn:hover {
+  transform: scale(1.15);
+}
+
+.promec-reel-modal__progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.promec-reel-modal__progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.promec-reel-modal__ig-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.promec-reel-modal__ig-btn:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .promec-reels-section {
+    padding: 30px 0 16px !important;
+  }
+  .promec-customer-videos-section {
+    padding: 16px 0 30px !important;
+  }
+  .promec-reels__header {
+    margin-bottom: 16px !important;
+  }
+  .promec-reel-card {
+    flex: 0 0 190px;
+    width: 190px;
+    height: 338px;
+    border-radius: 16px;
+  }
+  .promec-reel-card__inner,
+  .promec-reel-card__video,
+  .promec-reel-card__overlay {
+    border-radius: 16px;
+  }
+  .promec-reels__nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .promec-reels__nav-btn--prev {
+    left: 10px;
+  }
+  .promec-reels__nav-btn--next {
+    right: 10px;
+  }
+}
+
+/* Customer Video Card Custom Badges & Captions */
+.promec-customer-videos-section {
+  background: #09090b !important;
+  border-top: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 20px 0 44px !important;
+}
+
+.promec-reel-card__badge {
+  display: none !important;
+}
+
+/* ========================================================================= */
+/* PROMEC LUXURY PRELOADER                                                    */
+/* ========================================================================= */
+body.promec-preloader-active {
+  overflow: hidden !important;
+}
+
+.promec-preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #141416 0%, #000000 65%);
+  z-index: 99999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+  user-select: none;
+}
+
+.promec-preloader.promec-preloader--loaded {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: scale(1.02);
+}
+
+.promec-preloader__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.promec-preloader__logo {
+  width: 195px;
+  height: auto;
+  display: block;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.12));
+}
+
+.promec-preloader__bar-wrap {
+  width: 155px;
+  height: 1.5px;
+  position: relative;
+}
+
+.promec-preloader__bar-track {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.promec-preloader__bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.4);
+  transition: width 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.promec-reel-card__bottom-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 14px 14px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 60%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: 7;
+  pointer-events: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.promec-reel-card__card-title {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 3px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.promec-reel-card__card-desc {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Modal Title Pill */
+.promec-reel-modal__header-info {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.promec-reel-modal__title-tag {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .promec-reel-card__bottom-info {
+    padding: 24px 10px 10px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+  .promec-reel-card__card-title {
+    font-size: 12px;
+  }
+  .promec-reel-card__card-desc {
+    font-size: 10px;
+  }
+}
+
+

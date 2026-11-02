@@ -7,7 +7,7 @@ const copyDir = (src, dest) => {
   fs.cpSync(src, dest, {
     recursive: true,
     force: true,
-    filter: (source) => !source.includes('pressure_washer_frames') && !source.includes('originals_backup')
+    filter: (source) => !source.includes('pressure_washer_frames') && !source.includes('originals_backup') && !source.includes('Customer videos')
   });
   console.log(`[copy-static] Copied folder ${src} -> ${dest}`);
 };

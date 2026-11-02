@@ -1192,8 +1192,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openLightbox() {
     if (!lightbox || !lightboxVideo) return;
-    if (!lightboxVideo.src || !lightboxVideo.src.includes("asmr_promec_laptop")) {
-      lightboxVideo.src = RELEASE_VIDEO_SRC;
+    if (!lightboxVideo.currentSrc && !lightboxVideo.src) {
       lightboxVideo.load();
     }
     lightbox.classList.add("is-open");
@@ -1263,10 +1262,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!lightboxVideo) return;
       if (lightboxVideo.paused) {
         lightboxVideo.play();
-        updatePlayPauseIcons(false);
-      } else {
-        lightboxVideo.pause();
-        updatePlayPauseIcons(true);
       }
     });
   });
@@ -1276,10 +1271,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       if (lightboxVideo.paused) {
         lightboxVideo.play();
-        updatePlayPauseIcons(false);
-      } else {
-        lightboxVideo.pause();
-        updatePlayPauseIcons(true);
       }
     });
   }
@@ -2120,24 +2111,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector('.promec-rotation-viewport__video');
     if (!video) return;
 
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("loop", "");
+
+    const playVideo = () => {
+      if (video.paused) {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
+      }
+    };
+
+    playVideo();
+
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              const playPromise = video.play();
-              if (playPromise !== undefined) {
-                playPromise.catch(() => {});
-              }
-            } else {
-              video.pause();
+              playVideo();
             }
           });
         },
-        { threshold: 0.15 }
+        { rootMargin: "300px 0px", threshold: 0.01 }
       );
       observer.observe(video);
     }
+
+    video.addEventListener("pause", () => {
+      playVideo();
+    });
   }
 
   initRotationVideo();
@@ -2271,7 +2280,392 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // -------------------------------------------------------------
+  // PROMEC SHOWCASE: REELS & CUSTOMER VIDEOS (INSTANT LAZY LOADING & MODAL)
+  // -------------------------------------------------------------
+  function initPromecVideoShowcases() {
+    const modal = document.getElementById("promec-reel-modal");
+    const modalVideo = document.getElementById("promec-modal-video");
+    const modalPlayBtn = document.getElementById("promec-modal-play-btn");
+    const modalMuteBtn = document.getElementById("promec-modal-mute-btn");
+    const modalProgress = document.getElementById("promec-modal-progress");
+    const modalProgressFill = document.getElementById("promec-modal-progress-fill");
+    const modalIgLink = document.getElementById("promec-modal-ig-link");
+    const modalTitle = document.getElementById("promec-modal-title");
+    const closeBtns = modal ? modal.querySelectorAll("[data-close-modal]") : [];
+
+    // Shared modal open/close functions
+    function openModal(fullVideoSrc, igUrl, posterSrc, titleText) {
+      if (!modal || !modalVideo) return;
+      modalVideo.src = fullVideoSrc || "";
+      if (posterSrc) modalVideo.poster = posterSrc;
+      
+      if (titleText && modalTitle) {
+        modalTitle.textContent = titleText;
+        modalTitle.style.display = "inline-block";
+      } else if (modalTitle) {
+        modalTitle.textContent = igUrl ? "Our Works Reel" : "Customer Review";
+      }
+
+      if (modalIgLink) {
+        if (igUrl) {
+          modalIgLink.href = igUrl;
+          modalIgLink.style.display = "inline-flex";
+        } else {
+          modalIgLink.style.display = "none";
+        }
+      }
+      
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+
+      modalVideo.muted = false;
+      modalVideo.currentTime = 0;
+      modalVideo.loop = true;
+      modalVideo.play().then(() => {
+        updateMuteIcons(false);
+      }).catch(() => {
+        modalVideo.muted = true;
+        modalVideo.play().catch(() => {});
+        updateMuteIcons(true);
+      });
+    }
+
+    function closeModal() {
+      if (!modal || !modalVideo) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      modalVideo.pause();
+      modalVideo.removeAttribute("src");
+      modalVideo.load();
+      document.body.style.overflow = "";
+    }
+
+    function updatePlayIcons(isPlaying) {
+      if (!modalPlayBtn) return;
+      const pauseIcon = modalPlayBtn.querySelector(".icon-pause");
+      const playIcon = modalPlayBtn.querySelector(".icon-play");
+      if (pauseIcon) pauseIcon.style.display = isPlaying ? "block" : "none";
+      if (playIcon) playIcon.style.display = isPlaying ? "none" : "block";
+    }
+
+    function updateMuteIcons(isMuted) {
+      if (!modalMuteBtn) return;
+      const volIcon = modalMuteBtn.querySelector(".icon-volume");
+      const muteIcon = modalMuteBtn.querySelector(".icon-muted");
+      if (volIcon) volIcon.style.display = isMuted ? "none" : "block";
+      if (muteIcon) muteIcon.style.display = isMuted ? "block" : "none";
+    }
+
+    closeBtns.forEach((btn) => btn.addEventListener("click", closeModal));
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
+
+    if (modalVideo) {
+      modalVideo.addEventListener("click", () => {
+        if (modalVideo.paused) {
+          modalVideo.play().catch(() => {});
+        }
+      });
+    }
+
+    if (modalMuteBtn && modalVideo) {
+      modalMuteBtn.addEventListener("click", () => {
+        modalVideo.muted = !modalVideo.muted;
+        updateMuteIcons(modalVideo.muted);
+      });
+    }
+
+    if (modalVideo && modalProgressFill) {
+      modalVideo.addEventListener("timeupdate", () => {
+        if (modalVideo.duration) {
+          const pct = (modalVideo.currentTime / modalVideo.duration) * 100;
+          modalProgressFill.style.width = `${pct}%`;
+        }
+      });
+    }
+
+    if (modalProgress && modalVideo) {
+      modalProgress.addEventListener("click", (e) => {
+        const rect = modalProgress.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        if (modalVideo.duration) {
+          modalVideo.currentTime = pos * modalVideo.duration;
+        }
+      });
+    }
+
+    // Helper to safely start playing a video element
+    function ensureVideoPlays(vid) {
+      if (!vid) return;
+      vid.muted = true;
+      vid.defaultMuted = true;
+      vid.playsInline = true;
+      vid.loop = true;
+      vid.setAttribute("muted", "");
+      vid.setAttribute("playsinline", "");
+      vid.setAttribute("loop", "");
+      if (vid.paused) {
+        const p = vid.play();
+        if (p && typeof p.catch === "function") {
+          p.catch(() => {});
+        }
+      }
+    }
+
+    // Helper to configure a carousel section with active in-viewport video management
+    function setupCarousel(sectionEl, maskSelector, trackSelector, prevBtnSelector, nextBtnSelector) {
+      if (!sectionEl) return;
+      const mask = sectionEl.querySelector(maskSelector);
+      const track = sectionEl.querySelector(trackSelector);
+      const prevBtn = sectionEl.querySelector(prevBtnSelector);
+      const nextBtn = sectionEl.querySelector(nextBtnSelector);
+      const cards = sectionEl.querySelectorAll(".promec-reel-card");
+
+      // Function to check which cards are currently visible and play only those!
+      function updateVisibleVideos() {
+        if (!mask) return;
+        const maskRect = mask.getBoundingClientRect();
+        // If section is completely off-screen vertically, pause all videos in this section to save decoders
+        if (maskRect.bottom < -100 || maskRect.top > window.innerHeight + 100) {
+          cards.forEach((card) => {
+            const vid = card.querySelector(".promec-reel-card__video");
+            if (vid && !vid.paused) vid.pause();
+          });
+          return;
+        }
+
+        cards.forEach((card) => {
+          const rect = card.getBoundingClientRect();
+          const vid = card.querySelector(".promec-reel-card__video");
+          if (!vid) return;
+
+          // Card is within horizontal viewport of the carousel mask (with 80px buffer)
+          const isHorizVisible = rect.right > maskRect.left - 80 && rect.left < maskRect.right + 80;
+          if (isHorizVisible) {
+            if (vid.paused) ensureVideoPlays(vid);
+          } else {
+            if (!vid.paused) vid.pause();
+          }
+        });
+      }
+
+      // Configure cards and hover/touch interaction
+      cards.forEach((card) => {
+        const vid = card.querySelector(".promec-reel-card__video");
+        if (vid) {
+          vid.muted = true;
+          vid.defaultMuted = true;
+          vid.playsInline = true;
+          vid.loop = true;
+        }
+        card.addEventListener("mouseenter", () => {
+          if (vid && vid.paused) ensureVideoPlays(vid);
+        });
+        card.addEventListener("touchstart", () => {
+          if (vid && vid.paused) ensureVideoPlays(vid);
+        }, { passive: true });
+      });
+
+      // Update playing videos on carousel scroll
+      if (mask) {
+        mask.addEventListener("scroll", updateVisibleVideos, { passive: true });
+      }
+
+      // Update playing videos on window vertical scroll / resize
+      window.addEventListener("scroll", updateVisibleVideos, { passive: true });
+      window.addEventListener("resize", updateVisibleVideos, { passive: true });
+
+      // Observe section vertically to wake/sleep videos
+      if ("IntersectionObserver" in window) {
+        const secObs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              updateVisibleVideos();
+            } else {
+              cards.forEach((card) => {
+                const vid = card.querySelector(".promec-reel-card__video");
+                if (vid && !vid.paused) vid.pause();
+              });
+            }
+          });
+        }, { rootMargin: "150px 0px", threshold: 0.05 });
+        secObs.observe(sectionEl);
+      }
+
+      // Touch / Mouse Drag interaction for the track
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let dragDistance = 0;
+
+      if (mask) {
+        mask.addEventListener("mousedown", (e) => {
+          isDown = true;
+          dragDistance = 0;
+          mask.classList.add("is-dragging");
+          startX = e.pageX - mask.offsetLeft;
+          scrollLeft = mask.scrollLeft;
+        });
+
+        window.addEventListener("mouseup", () => {
+          if (!isDown) return;
+          isDown = false;
+          mask.classList.remove("is-dragging");
+          updateVisibleVideos();
+        });
+
+        mask.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - mask.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          dragDistance += Math.abs(walk);
+          mask.scrollLeft = scrollLeft - walk;
+        });
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            mask.scrollBy({ left: -260, behavior: "smooth" });
+            setTimeout(updateVisibleVideos, 350);
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            mask.scrollBy({ left: 260, behavior: "smooth" });
+            setTimeout(updateVisibleVideos, 350);
+          });
+        }
+      }
+
+      // Card click opens modal
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest(".promec-reel-card__ig-badge")) {
+            return;
+          }
+          if (dragDistance > 10) {
+            return;
+          }
+          const fullVideo = card.getAttribute("data-full-video");
+          const igUrl = card.getAttribute("data-instagram-url");
+          const title = card.getAttribute("data-title") || "";
+          const vidElem = card.querySelector("video");
+          const poster = vidElem ? vidElem.getAttribute("poster") : "";
+          openModal(fullVideo, igUrl, poster, title);
+        });
+      });
+
+      // Initial check
+      setTimeout(updateVisibleVideos, 400);
+    }
+
+    // Initialize both sections
+    setupCarousel(
+      document.getElementById("our-works"),
+      "[data-reels-mask]",
+      "[data-reels-track]",
+      "[data-reels-prev]",
+      "[data-reels-next]"
+    );
+
+    setupCarousel(
+      document.getElementById("customer-videos"),
+      "[data-cust-mask]",
+      "[data-cust-track]",
+      "[data-cust-prev]",
+      "[data-cust-next]"
+    );
+
+    // Global user activation fallback to guarantee all visible videos play on any browser
+    const wakeAllVideos = () => {
+      document.querySelectorAll(".promec-reel-card__video, .promec-rotation-viewport__video").forEach((v) => {
+        const rect = v.getBoundingClientRect();
+        if (rect.bottom > -100 && rect.top < window.innerHeight + 100) {
+          v.muted = true;
+          v.defaultMuted = true;
+          v.playsInline = true;
+          v.loop = true;
+          if (v.paused) v.play().catch(() => {});
+        }
+      });
+    };
+    ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown'].forEach((evt) => {
+      window.addEventListener(evt, wakeAllVideos, { passive: true });
+    });
+  }
+
+  // -------------------------------------------------------------
+  // LUXURY PROMEC PRELOADER CONTROLLER
+  // -------------------------------------------------------------
+  function initPromecPreloader() {
+    const preloader = document.getElementById("promec-preloader");
+    const fill = document.getElementById("promec-preloader-fill");
+    if (!preloader || !fill) return;
+
+    let progress = 0;
+    const startTime = performance.now();
+    const duration = 1600; // 1.6s smooth cinematic presentation
+    let dismissed = false;
+
+    // Prime the first 5 preview videos of the upcoming section
+    const initialVideos = Array.from(document.querySelectorAll("#our-works .promec-reel-card__video")).slice(0, 5);
+    initialVideos.forEach((v) => {
+      v.muted = true;
+      v.defaultMuted = true;
+      v.playsInline = true;
+      v.loop = true;
+      v.play().catch(() => {});
+    });
+
+    function dismissPreloader() {
+      if (dismissed) return;
+      dismissed = true;
+      fill.style.width = "100%";
+
+      setTimeout(() => {
+        preloader.classList.add("promec-preloader--loaded");
+        document.body.classList.remove("promec-preloader-active");
+
+        // Wake visible videos
+        window.dispatchEvent(new Event("scroll"));
+
+        // Cleanup preloader after transition
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 700);
+      }, 150);
+    }
+
+    const interval = setInterval(() => {
+      const elapsed = performance.now() - startTime;
+      const ratio = Math.min(elapsed / duration, 1);
+
+      // Smooth ease-out progress curve: 0 -> 100%
+      progress = Math.min(100, Math.round((1 - Math.pow(1 - ratio, 2.5)) * 100));
+      fill.style.width = progress + "%";
+
+      if (ratio >= 1) {
+        clearInterval(interval);
+        dismissPreloader();
+      }
+    }, 25);
+
+    // Guaranteed fallback
+    setTimeout(() => {
+      clearInterval(interval);
+      dismissPreloader();
+    }, 2000);
+  }
+
   initRotationFeatureTabs();
+  initPromecVideoShowcases();
+  initPromecPreloader();
 
   // Refresh ScrollTrigger after all pins and layouts are configured
   ScrollTrigger.refresh();
