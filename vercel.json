@@ -31,6 +31,22 @@
     {
       "source": "/aquaforceforgigworkers/:path*",
       "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers/:path*"
+    },
+    {
+      "source": "/inquiryform",
+      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform"
+    },
+    {
+      "source": "/inquiryform/:path*",
+      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform/:path*"
+    },
+    {
+      "source": "/homecare",
+      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform?category=Home+Care"
+    },
+    {
+      "source": "/corporatecare",
+      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care"
     }
   ]
 }
