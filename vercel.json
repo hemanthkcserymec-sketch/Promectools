@@ -2,5 +2,35 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/aquaforceforautocare",
+      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare"
+    },
+    {
+      "source": "/aquaforceforautocare/:path*",
+      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/:path*"
+    },
+    {
+      "source": "/aquaforceforservicepartner",
+      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers"
+    },
+    {
+      "source": "/aquaforceforservicepartner/:path*",
+      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers/:path*"
+    },
+    {
+      "source": "/servicepartner",
+      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers"
+    },
+    {
+      "source": "/aquaforceforgigworkers",
+      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers"
+    },
+    {
+      "source": "/aquaforceforgigworkers/:path*",
+      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers/:path*"
+    }
+  ]
 }
