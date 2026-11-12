@@ -190,7 +190,7 @@ backface-visibility: hidden;
         
         <!-- Left: Promec Brand Logo (matching footer promec-logo.svg) -->
         <a aria-label="Promec AquaForce" href="#overview" class="nav__brand-link promec-nav-logo-link" data-nav-target="home">
-          <img src="promec-logo.svg" alt="Promec Logo" class="promec-nav-logo-svg" />
+          <span class="promec-nav-logo-text"><span class="promec-logo-pro">PRO</span><span class="promec-logo-mec">MEC</span></span>
         </a>
 
         <!-- Center: Nav Items (Autocare, Service Partner, Home Care, Corporate & Facility Care) -->
@@ -515,12 +515,12 @@ backface-visibility: hidden;
       muted
       playsinline
       preload="auto"
-      src="assets/pressure_washer_rotation.mp4"
-      poster="assets/pressure_washer_webp/frame-00000.webp"
+      src="assets/pressure_washer_rotation-D--FSftX.mp4"
+      poster="assets/washer_poster.webp"
       aria-label="AquaForce 1400 PSI 360 degree rotation"
     >
-      <source src="assets/pressure_washer_rotation.mp4" type="video/mp4">
-      <source src="assets/pressure_washer_rotation.webm" type="video/webm">
+      <source src="assets/pressure_washer_rotation-D--FSftX.mp4" type="video/mp4">
+
     </video>
     <!-- Right Side Feature Showcase Overlay (Exact Style of Reference Image 1) -->
     <div class="promec-rotation-overlay">
@@ -630,49 +630,96 @@ backface-visibility: hidden;
       </p>
     </div>
 
-    <!-- Bento Grid -->
+    <!-- Bento Grid (10 Product Highlights in Ultra-Accurate Compact Layout) -->
     <div class="why-aquaforce-grid">
       
-      <!-- Card 1: POWERFUL (Wide Full Row) -->
-      <div class="why-aquaforce-card why-aquaforce-card--wide">
-        <img src="assets/final-cta-section.webp" alt="Powerful Cleaning" class="why-aquaforce-card__img" loading="lazy" />
+      <!-- Card 1: Wide Hero (Spans 2 columns) -->
+      <div class="why-aquaforce-card why-aquaforce-card--span-2">
+        <img src="assets/highlights/hl_01_two_buckets.jpg" alt="Complete Cleaning in Just 2 Buckets" class="why-aquaforce-card__img" loading="eager" />
         <div class="why-aquaforce-card__scrim"></div>
         <div class="why-aquaforce-card__content">
-          <h3 class="why-aquaforce-card__title">POWERFUL</h3>
-          <p class="why-aquaforce-card__desc">High-performance cleaning designed for demanding applications.</p>
+          <h3 class="why-aquaforce-card__title">Complete Cleaning in Just 2 Buckets</h3>
         </div>
       </div>
 
-      <!-- Middle Row Split: PORTABLE & VERSATILE -->
-      <div class="why-aquaforce-row-split">
-        <!-- Card 2: PORTABLE -->
-        <div class="why-aquaforce-card why-aquaforce-card--half">
-          <img src="assets/Hero_desk.webp" alt="Portable Cleaning Power" class="why-aquaforce-card__img" loading="lazy" />
-          <div class="why-aquaforce-card__scrim"></div>
-          <div class="why-aquaforce-card__content">
-            <h3 class="why-aquaforce-card__title">PORTABLE</h3>
-            <p class="why-aquaforce-card__desc">Take your cleaning power wherever you need it.</p>
-          </div>
-        </div>
-
-        <!-- Card 3: VERSATILE -->
-        <div class="why-aquaforce-card why-aquaforce-card--half">
-          <img src="assets/3.webp" alt="Versatile Ecosystem" class="why-aquaforce-card__img" loading="lazy" />
-          <div class="why-aquaforce-card__scrim"></div>
-          <div class="why-aquaforce-card__content">
-            <h3 class="why-aquaforce-card__title">VERSATILE</h3>
-            <p class="why-aquaforce-card__desc">One ecosystem for multiple cleaning needs.</p>
-          </div>
+      <!-- Card 2 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_02_battery_3hours.jpg" alt="3 Hours of Non-Stop Washing" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">3 Hours of Non-Stop Washing</h3>
         </div>
       </div>
 
-      <!-- Card 4: EFFICIENT (Wide Full Row) -->
-      <div class="why-aquaforce-card why-aquaforce-card--wide">
-        <img src="assets/4.webp" alt="Efficient Operation" class="why-aquaforce-card__img" loading="lazy" />
+      <!-- Card 3 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_03_1400psi_pressure.jpg" alt="Powerful 1400 PSI Pressure" class="why-aquaforce-card__img" loading="eager" />
         <div class="why-aquaforce-card__scrim"></div>
         <div class="why-aquaforce-card__content">
-          <h3 class="why-aquaforce-card__title">EFFICIENT</h3>
-          <p class="why-aquaforce-card__desc">Designed to make cleaning easier and more convenient.</p>
+          <h3 class="why-aquaforce-card__title">Powerful 1400 PSI Pressure</h3>
+        </div>
+      </div>
+
+      <!-- Card 4 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_04_fast_charging.jpg" alt="90-Minute Fast Charging" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">90-Minute Fast Charging</h3>
+        </div>
+      </div>
+
+      <!-- Card 5 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_05_suction_tech.jpg" alt="Powerful Suction Technology" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">Powerful Suction Technology</h3>
+        </div>
+      </div>
+
+      <!-- Card 6 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_06_hard_water_filter.jpg" alt="Advanced Hard-Water Filter Technology" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">Advanced Hard-Water Filter Technology</h3>
+        </div>
+      </div>
+
+      <!-- Card 7 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_07_cordless_portable.jpg" alt="100% Cordless &amp; Portable" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">100% Cordless &amp; Portable</h3>
+        </div>
+      </div>
+
+      <!-- Card 8 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_08_tank_and_bucket.jpg" alt="18L Water Tank + 15L Bucket" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">18L Water Tank + 15L Bucket</h3>
+        </div>
+      </div>
+
+      <!-- Card 9 (1 col) -->
+      <div class="why-aquaforce-card">
+        <img src="assets/highlights/hl_09_save_water.jpg" alt="Save Water &amp; Reduce Water Bills" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">Save Water &amp; Reduce Water Bills</h3>
+        </div>
+      </div>
+
+      <!-- Card 10: Wide Finale (Spans 2 columns) -->
+      <div class="why-aquaforce-card why-aquaforce-card--span-2">
+        <img src="assets/highlights/hl_10_multiple_jobs.jpg" alt="One Machine, Multiple Cleaning Jobs" class="why-aquaforce-card__img" loading="eager" />
+        <div class="why-aquaforce-card__scrim"></div>
+        <div class="why-aquaforce-card__content">
+          <h3 class="why-aquaforce-card__title">One Machine, Multiple Cleaning Jobs</h3>
         </div>
       </div>
 

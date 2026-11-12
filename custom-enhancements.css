@@ -4244,7 +4244,7 @@ section, [id] {
   justify-content: space-between !important;
 }
 
-/* Nav Brand Logo (matching footer promec-logo.svg) */
+/* Nav Brand Logo as Semantic Text (Exact Microgramma Bold Extended Brand Font - Badge Style) */
 .promec-nav-logo-link {
   display: flex !important;
   align-items: center !important;
@@ -4252,15 +4252,42 @@ section, [id] {
   flex-shrink: 0 !important;
   z-index: 2 !important;
 }
-.promec-nav-logo-svg {
-  height: 13.5px !important;
-  width: auto !important;
-  max-width: 140px !important;
-  display: block !important;
+
+.promec-nav-logo-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: "Microgramma Bold Extended", "Microgramma", "Microgramma W01 Bold Extended", sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  user-select: none !important;
   transition: opacity 0.2s ease, transform 0.2s ease !important;
 }
-.promec-nav-logo-link:hover .promec-nav-logo-svg {
+
+.promec-nav-logo-link:hover .promec-nav-logo-text {
   opacity: 0.88 !important;
+  transform: translateY(-0.5px) !important;
+}
+
+.promec-logo-pro {
+  background: #ffffff !important;
+  color: #11100e !important;
+  padding: 2.5px 5.5px 2px 6.5px !important;
+  border-radius: 2px !important;
+  margin-right: 3.5px !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  letter-spacing: 0.14em !important;
+}
+
+.promec-logo-mec {
+  color: #ffffff !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  letter-spacing: 0.16em !important;
 }
 
 /* Nav Links Menu: Horizontally Centered in Pill */
@@ -5660,29 +5687,29 @@ section, [id] {
   width: 100% !important;
   background-color: #ffffff !important;
   color: #111827 !important;
-  padding: 104px 0 114px !important;
+  padding: 42px 0 54px !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
 }
 
 .why-aquaforce-container {
-  max-width: 1240px !important;
+  max-width: 1280px !important;
   margin: 0 auto !important;
-  padding: 0 32px !important;
+  padding: 0 28px !important;
   box-sizing: border-box !important;
 }
 
 .why-aquaforce-header {
   text-align: center !important;
-  margin-bottom: 56px !important;
+  margin-bottom: 24px !important;
 }
 
 .why-aquaforce-title {
   font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(32px, 3.8vw, 44px) !important;
+  font-size: clamp(26px, 2.8vw, 34px) !important;
   line-height: 1.15 !important;
   letter-spacing: -0.02em !important;
-  margin: 0 0 14px 0 !important;
+  margin: 0 0 6px 0 !important;
   color: #0b0f19 !important;
 }
 
@@ -5698,44 +5725,38 @@ section, [id] {
 
 .why-aquaforce-subtitle {
   font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(15px, 1.2vw, 17px) !important;
+  font-size: clamp(13px, 0.95vw, 15px) !important;
   color: #64748b !important;
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
   margin: 0 !important;
   font-weight: 400 !important;
 }
 
 .why-aquaforce-grid {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 24px !important;
-  width: 100% !important;
-}
-
-.why-aquaforce-row-split {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 24px !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px !important;
   width: 100% !important;
 }
 
 .why-aquaforce-card {
   position: relative !important;
-  border-radius: 20px !important;
+  height: 182px !important;
+  border-radius: 14px !important;
   overflow: hidden !important;
   background-color: #090a0f !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
   cursor: pointer !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
 }
 
-.why-aquaforce-card--wide {
-  width: 100% !important;
-  height: clamp(340px, 28vw, 400px) !important;
+.why-aquaforce-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
 }
 
-.why-aquaforce-card--half {
-  width: 100% !important;
-  height: clamp(320px, 26vw, 370px) !important;
+.why-aquaforce-card--span-2 {
+  grid-column: span 2 !important;
 }
 
 .why-aquaforce-card__img {
@@ -5749,7 +5770,7 @@ section, [id] {
 }
 
 .why-aquaforce-card:hover .why-aquaforce-card__img {
-  transform: scale(1.035) !important;
+  transform: scale(1.045) !important;
 }
 
 .why-aquaforce-card__scrim {
@@ -5759,16 +5780,16 @@ section, [id] {
   height: 100% !important;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.50) 28%,
-    rgba(0, 0, 0, 0.18) 55%,
-    rgba(0, 0, 0, 0) 80%
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.58) 42%,
+    rgba(0, 0, 0, 0.15) 72%,
+    rgba(0, 0, 0, 0) 90%
   ),
   linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.70) 0%,
-    rgba(0, 0, 0, 0.32) 35%,
-    rgba(0, 0, 0, 0) 65%
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.30) 50%,
+    rgba(0, 0, 0, 0) 80%
   ) !important;
   pointer-events: none !important;
   z-index: 1 !important;
@@ -5776,68 +5797,66 @@ section, [id] {
 
 .why-aquaforce-card__content {
   position: absolute !important;
-  bottom: 34px !important;
-  left: 38px !important;
-  max-width: 440px !important;
+  bottom: 16px !important;
+  left: 18px !important;
+  right: 18px !important;
   z-index: 2 !important;
   pointer-events: none !important;
 }
 
 .why-aquaforce-card__title {
   font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(22px, 2.2vw, 26px) !important;
+  font-size: clamp(13px, 1.05vw, 15px) !important;
   font-weight: 800 !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.035em !important;
   text-transform: uppercase !important;
   color: #ffffff !important;
-  margin: 0 0 8px 0 !important;
-  line-height: 1.1 !important;
-}
-
-.why-aquaforce-card__desc {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(14px, 1.1vw, 15.5px) !important;
-  font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.90) !important;
-  line-height: 1.45 !important;
   margin: 0 !important;
+  line-height: 1.25 !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* Mobile & Tablet Responsiveness */
-@media (max-width: 991px) {
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 1024px) {
   .why-aquaforce-section {
-    padding: 64px 0 72px !important;
-  }
-  .why-aquaforce-container {
-    padding: 0 20px !important;
-  }
-  .why-aquaforce-header {
-    margin-bottom: 36px !important;
-  }
-  .why-aquaforce-row-split {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    padding: 44px 0 54px !important;
   }
   .why-aquaforce-grid {
-    gap: 16px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
-  .why-aquaforce-card--wide,
-  .why-aquaforce-card--half {
-    height: 290px !important;
-    border-radius: 16px !important;
+  .why-aquaforce-card--span-2 {
+    grid-column: span 2 !important;
+  }
+  .why-aquaforce-card {
+    height: 175px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-aquaforce-section {
+    padding: 38px 0 46px !important;
+  }
+  .why-aquaforce-container {
+    padding: 0 16px !important;
+  }
+  .why-aquaforce-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .why-aquaforce-card--span-2 {
+    grid-column: span 1 !important;
+  }
+  .why-aquaforce-card {
+    height: 155px !important;
   }
   .why-aquaforce-card__content {
-    bottom: 24px !important;
-    left: 24px !important;
-    right: 24px !important;
-    max-width: none !important;
+    bottom: 14px !important;
+    left: 14px !important;
+    right: 14px !important;
   }
   .why-aquaforce-card__title {
-    font-size: 20px !important;
-    margin-bottom: 6px !important;
-  }
-  .why-aquaforce-card__desc {
-    font-size: 13.5px !important;
+    font-size: 14px !important;
   }
 }
 
