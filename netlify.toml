@@ -19,3 +19,63 @@
   to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/inquiryform"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/inquiryform/*"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/homecare"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Home+Care"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/corporatecare"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/account"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/account/*"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/profile"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=profile"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/orders"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/track"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/order/*"
+  to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?orderId=:splat"
+  status = 200
+  force = true

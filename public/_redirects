@@ -1,3 +1,13 @@
 /aquaforceforautocare    https://aquaforceforautocare.netlify.app/aquaforceforautocare  200!
 /aquaforceforautocare/*  https://aquaforceforautocare.netlify.app/aquaforceforautocare/:splat  200!
-/api/*                   https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:splat  200!
+/api/*                   https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:splat      200!
+/inquiryform             https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform  200!
+/inquiryform/*           https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform/:splat  200!
+/homecare                https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Home+Care  200!
+/corporatecare           https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care  200!
+/account                 https://aquaforceforautocare.netlify.app/aquaforceforautocare/account  200!
+/account/*               https://aquaforceforautocare.netlify.app/aquaforceforautocare/account/:splat  200!
+/profile                 https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=profile  200!
+/orders                  https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders  200!
+/track                   https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders  200!
+/order/*                 https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?orderId=:splat  200!

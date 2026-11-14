@@ -6,11 +6,15 @@
   "rewrites": [
     {
       "source": "/aquaforceforautocare",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare"
     },
     {
       "source": "/aquaforceforautocare/:path*",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/:path*"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:path*"
     },
     {
       "source": "/aquaforceforservicepartner",
@@ -34,43 +38,43 @@
     },
     {
       "source": "/inquiryform",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform"
     },
     {
       "source": "/inquiryform/:path*",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform/:path*"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform/:path*"
     },
     {
       "source": "/homecare",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform?category=Home+Care"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Home+Care"
     },
     {
       "source": "/corporatecare",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care"
     },
     {
       "source": "/account",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/account"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account"
     },
     {
       "source": "/account/:path*",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/account/:path*"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account/:path*"
     },
     {
       "source": "/profile",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/account?tab=profile"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=profile"
     },
     {
       "source": "/orders",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/account?tab=orders"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders"
     },
     {
       "source": "/track",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/account?tab=orders"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders"
     },
     {
       "source": "/order/:path*",
-      "destination": "https://promec-autocare.vercel.app/aquaforceforautocare/account?orderId=:path*"
+      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?orderId=:path*"
     }
   ]
 }
