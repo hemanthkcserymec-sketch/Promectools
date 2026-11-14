@@ -35,6 +35,8 @@ function copyStaticAssets(): Plugin {
       copyFile('slater-custom.css', 'dist/slater-custom.css');
       copyFile('custom-enhancements.css', 'dist/custom-enhancements.css');
       copyFile('webflow-core.css', 'dist/webflow-core.css');
+      copyFile('_redirects', 'dist/_redirects');
+      copyFile('public/_redirects', 'dist/_redirects');
     }
   };
 }

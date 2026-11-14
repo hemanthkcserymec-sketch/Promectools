@@ -1,0 +1,3 @@
+/aquaforceforautocare    https://aquaforceforautocare.netlify.app/aquaforceforautocare  200!
+/aquaforceforautocare/*  https://aquaforceforautocare.netlify.app/aquaforceforautocare/:splat  200!
+/api/*                   https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:splat  200!

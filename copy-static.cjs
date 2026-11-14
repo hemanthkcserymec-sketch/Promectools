@@ -29,4 +29,6 @@ copyFile('favicon.ico', 'dist/favicon.ico');
 copyFile('slater-custom.css', 'dist/slater-custom.css');
 copyFile('custom-enhancements.css', 'dist/custom-enhancements.css');
 copyFile('webflow-core.css', 'dist/webflow-core.css');
+copyFile('_redirects', 'dist/_redirects');
+copyFile('public/_redirects', 'dist/_redirects');
 console.log('[copy-static] Static files copied successfully.');
