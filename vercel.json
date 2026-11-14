@@ -18,23 +18,27 @@
     },
     {
       "source": "/aquaforceforservicepartner",
-      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers"
+      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
     },
     {
       "source": "/aquaforceforservicepartner/:path*",
-      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers/:path*"
+      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:path*"
     },
     {
       "source": "/servicepartner",
-      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers"
+      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+    },
+    {
+      "source": "/servicepartner/:path*",
+      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:path*"
     },
     {
       "source": "/aquaforceforgigworkers",
-      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers"
+      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
     },
     {
       "source": "/aquaforceforgigworkers/:path*",
-      "destination": "https://promec-gig-workers.vercel.app/aquaforceforgigworkers/:path*"
+      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:path*"
     },
     {
       "source": "/inquiryform",

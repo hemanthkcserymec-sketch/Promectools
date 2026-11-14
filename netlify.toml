@@ -15,6 +15,42 @@
   force = true
 
 [[redirects]]
+  from = "/aquaforceforgigworkers"
+  to = "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/aquaforceforgigworkers/*"
+  to = "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/aquaforceforservicepartner"
+  to = "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/aquaforceforservicepartner/*"
+  to = "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/servicepartner"
+  to = "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/servicepartner/*"
+  to = "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/*"
   to = "https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:splat"
   status = 200

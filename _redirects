@@ -1,5 +1,11 @@
 /aquaforceforautocare    https://aquaforceforautocare.netlify.app/aquaforceforautocare  200!
 /aquaforceforautocare/*  https://aquaforceforautocare.netlify.app/aquaforceforautocare/:splat  200!
+/aquaforceforgigworkers    https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers  200!
+/aquaforceforgigworkers/*  https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:splat  200!
+/aquaforceforservicepartner https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers  200!
+/aquaforceforservicepartner/* https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:splat  200!
+/servicepartner            https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers  200!
+/servicepartner/*          https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:splat  200!
 /api/*                   https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:splat      200!
 /inquiryform             https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform  200!
 /inquiryform/*           https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform/:splat  200!
