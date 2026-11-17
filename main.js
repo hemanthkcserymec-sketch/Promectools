@@ -258,12 +258,32 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
+      } else if (target === "features") {
+        setActiveNavLink("features");
+        const el = document.getElementById("washer-rotation") || document.getElementById("why-aquaforce");
+        if (el) {
+          if (typeof lenis !== "undefined" && lenis) {
+            lenis.scrollTo(el, { offset: -60, duration: 1.0 });
+          } else {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      } else if (target === "how-it-works") {
+        setActiveNavLink("how-it-works");
+        const el = document.getElementById("engineering") || document.getElementById("portfolio-scatter");
+        if (el) {
+          if (typeof lenis !== "undefined" && lenis) {
+            lenis.scrollTo(el, { offset: -60, duration: 1.0 });
+          } else {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }
       } else if (target === "solutions" || target === "category") {
         setActiveNavLink("solutions");
         const el = document.getElementById("applications") || document.getElementById("engineering");
         if (el) {
           if (typeof lenis !== "undefined" && lenis) {
-            lenis.scrollTo(el, { offset: 0, duration: 1.0 });
+            lenis.scrollTo(el, { offset: -60, duration: 1.0 });
           } else {
             el.scrollIntoView({ behavior: "smooth" });
           }
@@ -314,6 +334,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Categories Dropdown click toggle (for mobile / accessibility)
+  const catDropdown = document.getElementById("promec-categories-dropdown");
+  if (catDropdown) {
+    const toggleBtn = catDropdown.querySelector(".promec-nav-dropdown-toggle");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = catDropdown.classList.toggle("is-open");
+        toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+    document.addEventListener("click", (e) => {
+      if (!catDropdown.contains(e.target)) {
+        catDropdown.classList.remove("is-open");
+        const tb = catDropdown.querySelector(".promec-nav-dropdown-toggle");
+        if (tb) tb.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // Features ScrollTrigger
+  const washerRotationSec = document.getElementById("washer-rotation") || document.getElementById("why-aquaforce");
+  if (washerRotationSec && typeof ScrollTrigger !== "undefined") {
+    ScrollTrigger.create({
+      trigger: washerRotationSec,
+      start: "top 60%",
+      end: "bottom 40%",
+      onEnter: () => setActiveNavLink("features"),
+      onLeaveBack: () => setActiveNavLink("home")
+    });
+  }
 
   // Section active navigation links are dynamically synchronized in updateNavScrollState() below
 
@@ -423,25 +476,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateNavScrollState() {
     if (!navBar) return;
-    let isScrolled = false;
-    if (nextSectionEl) {
-      const rect = nextSectionEl.getBoundingClientRect();
-      isScrolled = rect.top <= 120;
-    } else {
-      const currentY = window.scrollY || window.pageYOffset || (typeof lenis !== "undefined" && lenis ? lenis.scroll : 0) || document.documentElement.scrollTop || 0;
-      isScrolled = currentY >= 800;
-    }
+    const currentY = window.scrollY || window.pageYOffset || (typeof lenis !== "undefined" && lenis ? lenis.scroll : 0) || document.documentElement.scrollTop || 0;
+    const isScrolled = currentY > 40;
     navBar.classList.toggle("is-scrolled", isScrolled);
     if (navNavigation) navNavigation.classList.toggle("is-scrolled", isScrolled);
 
-    if (isScrolled) {
-      const footerEl = document.querySelector(".aqua-footer") || document.getElementById("footer");
-      if (footerEl && footerEl.getBoundingClientRect().top <= 350) {
-        setActiveNavLink("contact");
-      } else {
-        setActiveNavLink("solutions");
-      }
-    } else {
+    if (currentY < 180) {
       setActiveNavLink("home");
     }
   }
@@ -2320,6 +2360,11 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
 
+      // Pause all background carousel videos to dedicate GPU decoding to the modal video
+      document.querySelectorAll(".promec-reel-card__video").forEach((v) => {
+        if (!v.paused) v.pause();
+      });
+
       modalVideo.muted = false;
       modalVideo.currentTime = 0;
       modalVideo.loop = true;
@@ -2425,14 +2470,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const track = sectionEl.querySelector(trackSelector);
       const prevBtn = sectionEl.querySelector(prevBtnSelector);
       const nextBtn = sectionEl.querySelector(nextBtnSelector);
-      const cards = sectionEl.querySelectorAll(".promec-reel-card");
+      const cards = Array.from(sectionEl.querySelectorAll(".promec-reel-card"));
+      let isSectionIntersecting = false;
+      let rafId = null;
 
-      // Function to check which cards are currently visible and play only those!
+      // Function to check which cards are currently visible and play only those (max 3 videos)!
       function updateVisibleVideos() {
-        if (!mask) return;
-        const maskRect = mask.getBoundingClientRect();
-        // If section is completely off-screen vertically, pause all videos in this section to save decoders
-        if (maskRect.bottom < -100 || maskRect.top > window.innerHeight + 100) {
+        if (!mask || !isSectionIntersecting) {
+          // Section is off-screen: pause all videos to free hardware decoders
           cards.forEach((card) => {
             const vid = card.querySelector(".promec-reel-card__video");
             if (vid && !vid.paused) vid.pause();
@@ -2440,19 +2485,30 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        cards.forEach((card) => {
-          const rect = card.getBoundingClientRect();
-          const vid = card.querySelector(".promec-reel-card__video");
-          if (!vid) return;
+        const maskRect = mask.getBoundingClientRect();
+        let playingCount = 0;
+        const maxPlaying = 3; // Hard limit on active decoders per carousel
 
-          // Card is within horizontal viewport of the carousel mask (with 80px buffer)
-          const isHorizVisible = rect.right > maskRect.left - 80 && rect.left < maskRect.right + 80;
-          if (isHorizVisible) {
+        cards.forEach((card) => {
+          const vid = card.querySelector(".promec-reel-card__video");
+          if (!vid || !vid.hasAttribute("src")) return;
+
+          const rect = card.getBoundingClientRect();
+          // Card is within horizontal viewport of the carousel mask
+          const isHorizVisible = rect.right > maskRect.left && rect.left < maskRect.right;
+          
+          if (isHorizVisible && playingCount < maxPlaying) {
+            playingCount++;
             if (vid.paused) ensureVideoPlays(vid);
           } else {
             if (!vid.paused) vid.pause();
           }
         });
+      }
+
+      function scheduleUpdate() {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateVisibleVideos);
       }
 
       // Configure cards and hover/touch interaction
@@ -2465,80 +2521,102 @@ document.addEventListener("DOMContentLoaded", () => {
           vid.loop = true;
         }
         card.addEventListener("mouseenter", () => {
-          if (vid && vid.paused) ensureVideoPlays(vid);
+          if (vid && vid.hasAttribute("src") && vid.paused) ensureVideoPlays(vid);
         });
-        card.addEventListener("touchstart", () => {
-          if (vid && vid.paused) ensureVideoPlays(vid);
-        }, { passive: true });
       });
 
-      // Update playing videos on carousel scroll
+      // Update playing videos when mask scrolls horizontally
       if (mask) {
-        mask.addEventListener("scroll", updateVisibleVideos, { passive: true });
+        mask.addEventListener("scroll", scheduleUpdate, { passive: true });
+
+        // Wheel event: allow normal vertical page scroll, or handle horizontal trackpad scroll
+        mask.addEventListener("wheel", (e) => {
+          // If predominantly vertical scroll, DO NOT intercept! Let page scroll smoothly!
+          if (Math.abs(e.deltaY) >= Math.abs(e.deltaX)) {
+            return;
+          }
+          // If predominantly horizontal, scroll the carousel horizontally
+          e.preventDefault();
+          mask.scrollLeft += e.deltaX;
+          scheduleUpdate();
+        }, { passive: false });
       }
 
-      // Update playing videos on window vertical scroll / resize
-      window.addEventListener("scroll", updateVisibleVideos, { passive: true });
-      window.addEventListener("resize", updateVisibleVideos, { passive: true });
-
-      // Observe section vertically to wake/sleep videos
+      // Observe section vertically: only run checks when the section enters or leaves viewport
       if ("IntersectionObserver" in window) {
         const secObs = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
+            isSectionIntersecting = entry.isIntersecting;
             if (entry.isIntersecting) {
-              updateVisibleVideos();
+              scheduleUpdate();
             } else {
+              // Offscreen: immediately pause all videos
               cards.forEach((card) => {
                 const vid = card.querySelector(".promec-reel-card__video");
                 if (vid && !vid.paused) vid.pause();
               });
             }
           });
-        }, { rootMargin: "150px 0px", threshold: 0.05 });
+        }, { rootMargin: "100px 0px", threshold: 0.01 });
         secObs.observe(sectionEl);
       }
 
       // Touch / Mouse Drag interaction for the track
       let isDown = false;
       let startX = 0;
+      let startY = 0;
       let scrollLeft = 0;
-      let dragDistance = 0;
+      let isDraggingHoriz = false;
 
       if (mask) {
         mask.addEventListener("mousedown", (e) => {
           isDown = true;
-          dragDistance = 0;
-          mask.classList.add("is-dragging");
-          startX = e.pageX - mask.offsetLeft;
+          isDraggingHoriz = false;
+          startX = e.pageX;
+          startY = e.pageY;
           scrollLeft = mask.scrollLeft;
+          if (track) track.classList.add("is-paused");
         });
 
         window.addEventListener("mouseup", () => {
           if (!isDown) return;
           isDown = false;
+          isDraggingHoriz = false;
           mask.classList.remove("is-dragging");
-          updateVisibleVideos();
+          scheduleUpdate();
         });
 
         mask.addEventListener("mousemove", (e) => {
           if (!isDown) return;
+          const dx = e.pageX - startX;
+          const dy = e.pageY - startY;
+
+          // If user hasn't dragged horizontally more than 6px, don't lock
+          if (!isDraggingHoriz) {
+            if (Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) {
+              isDraggingHoriz = true;
+              mask.classList.add("is-dragging");
+            } else {
+              return;
+            }
+          }
+
           e.preventDefault();
-          const x = e.pageX - mask.offsetLeft;
-          const walk = (x - startX) * 1.5;
-          dragDistance += Math.abs(walk);
-          mask.scrollLeft = scrollLeft - walk;
+          mask.scrollLeft = scrollLeft - dx * 1.3;
         });
 
         if (prevBtn) {
           prevBtn.addEventListener("click", () => {
+            if (track) track.classList.add("is-paused");
             mask.scrollBy({ left: -260, behavior: "smooth" });
-            setTimeout(updateVisibleVideos, 350);
+            setTimeout(scheduleUpdate, 350);
           });
         }
         if (nextBtn) {
           nextBtn.addEventListener("click", () => {
+            if (track) track.classList.add("is-paused");
             mask.scrollBy({ left: 260, behavior: "smooth" });
-            setTimeout(updateVisibleVideos, 350);
+            setTimeout(scheduleUpdate, 350);
           });
         }
       }
@@ -2549,7 +2627,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (e.target.closest(".promec-reel-card__ig-badge")) {
             return;
           }
-          if (dragDistance > 10) {
+          if (isDraggingHoriz) {
             return;
           }
           const fullVideo = card.getAttribute("data-full-video");
@@ -2560,9 +2638,6 @@ document.addEventListener("DOMContentLoaded", () => {
           openModal(fullVideo, igUrl, poster, title);
         });
       });
-
-      // Initial check
-      setTimeout(updateVisibleVideos, 400);
     }
 
     // Initialize both sections
@@ -2581,23 +2656,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "[data-cust-prev]",
       "[data-cust-next]"
     );
-
-    // Global user activation fallback to guarantee all visible videos play on any browser
-    const wakeAllVideos = () => {
-      document.querySelectorAll(".promec-reel-card__video, .promec-rotation-viewport__video").forEach((v) => {
-        const rect = v.getBoundingClientRect();
-        if (rect.bottom > -100 && rect.top < window.innerHeight + 100) {
-          v.muted = true;
-          v.defaultMuted = true;
-          v.playsInline = true;
-          v.loop = true;
-          if (v.paused) v.play().catch(() => {});
-        }
-      });
-    };
-    ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown'].forEach((evt) => {
-      window.addEventListener(evt, wakeAllVideos, { passive: true });
-    });
   }
 
   // -------------------------------------------------------------
@@ -2612,16 +2670,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const startTime = performance.now();
     const duration = 1600; // 1.6s smooth cinematic presentation
     let dismissed = false;
-
-    // Prime the first 5 preview videos of the upcoming section
-    const initialVideos = Array.from(document.querySelectorAll("#our-works .promec-reel-card__video")).slice(0, 5);
-    initialVideos.forEach((v) => {
-      v.muted = true;
-      v.defaultMuted = true;
-      v.playsInline = true;
-      v.loop = true;
-      v.play().catch(() => {});
-    });
 
     function dismissPreloader() {
       if (dismissed) return;

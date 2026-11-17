@@ -453,7 +453,7 @@ section.theme-dark {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-75%, -50%) !important;
   width: 32px !important;
   height: 32px !important;
   color: #ffffff !important;
@@ -596,26 +596,7 @@ div.nav.theme-light {
 }
 
 /* Scrolled State: Floating Dark Glass Pill Bar (Matching promectools.in reference) */
-.navigation.is-scrolled .nav__bar,
-.nav__bar.is-scrolled {
-  margin: 18px auto 0 !important;
-  padding: 0 24px !important;
-  height: 52px !important;
-  min-height: 52px !important;
-  width: calc(100% - 32px) !important;
-  max-width: 826px !important;
-  background: rgba(13, 15, 18, 0.95) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 6px 18px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  overflow: visible !important;
-}
+/* Replaced by PROMEC exact navbar below */
 
 #category-dropdown-root {
   display: inline-block !important;
@@ -774,7 +755,7 @@ div.nav.theme-light {
     display: flex !important;
   }
   .nav__content {
-    background-color: #0d0e12 !important;
+    background-color: #0c0e12 !important;
     color: #ffffff !important;
     z-index: 5000 !important;
     pointer-events: none !important;
@@ -782,6 +763,9 @@ div.nav.theme-light {
     visibility: hidden !important;
     transform: translateX(-100%) !important;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s !important;
+    padding: 32px 24px !important;
+    overflow-y: auto !important;
+    max-height: 100vh !important;
   }
   .nav__content.is-active,
   [data-menu-open="true"] .nav__content {
@@ -792,9 +776,30 @@ div.nav.theme-light {
   }
   .nav__content .nav-link__p {
     color: #ffffff !important;
-    font-family: var(--_fonts---fonts--heading, ""Neue Montreal", "PP Neue Montreal", Arial, sans-serif") !important;
-    font-size: 26px !important;
+    font-family: "Neue Montreal", "PP Neue Montreal", Arial, sans-serif !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
+    line-height: 1.4 !important;
+  }
+  .nav__content .hamburger-category-section .nav-link__p {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #cbd5e1 !important;
+  }
+  .nav__ul.is-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .nav__li {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
   }
   .nav__close {
     color: #ffffff !important;
@@ -2473,7 +2478,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
   padding: 16px 36px !important;
-  border-radius: 999px !important;
+  border-radius: 6px !important;
   text-decoration: none !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -2794,7 +2799,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   padding: 14px 30px;
   background: #0f172a;
   color: #ffffff !important;
-  border-radius: 8px;
+  border-radius: 6px !important;
   font-family: var(--_fonts---fonts--heading, ""Neue Montreal", "PP Neue Montreal", Arial, sans-serif");
   font-size: 13px;
   font-weight: 700;
@@ -3602,94 +3607,84 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   width: 100%;
 }
 
-.aqua-footer__grid {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr 1fr;
-  gap: 56px;
-  align-items: start;
-}
-
-.aqua-footer__col--brand {
+/* Centered Brand Logo */
+.aqua-footer__brand-center {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-right: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.aqua-footer__logo-wrap {
-  margin-bottom: 20px;
-}
-
-.aqua-footer__logo {
-  height: 22px;
+.aqua-footer__logo-center {
+  height: 24px;
   width: auto;
   display: block;
+  transition: opacity 0.2s ease;
 }
 
-.aqua-footer__tagline {
-  font-size: 14px;
-  line-height: 1.65;
-  color: #8a96a6;
-  margin: 0 0 28px 0;
-  max-width: 340px;
-  font-weight: 400;
+.aqua-footer__logo-center:hover {
+  opacity: 0.85;
 }
 
-.aqua-footer__socials {
+/* Horizontal Centered Nav Row */
+.aqua-footer__nav-row {
   display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.aqua-footer__social-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: transparent;
-  color: #8a96a6;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
-  text-decoration: none;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
 }
 
-.aqua-footer__social-btn:hover {
-  border-color: #ffffff;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
-}
-
-.aqua-footer__heading {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin: 0 0 24px 0;
-}
-
-.aqua-footer__links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.aqua-footer__links a {
+.aqua-footer__nav-link {
   font-size: 14px;
-  color: #8a96a6;
+  color: #c4cdd5;
   text-decoration: none;
   transition: color 0.2s ease;
   font-weight: 400;
+  white-space: nowrap;
 }
 
-.aqua-footer__links a:hover {
+.aqua-footer__nav-link:hover {
+  color: #ffffff;
+}
+
+.aqua-footer__nav-link--accent {
+  color: #29adf3 !important;
+  font-weight: 500;
+}
+
+.aqua-footer__nav-link--accent:hover {
+  color: #60c5fa !important;
+}
+
+/* Contact Row: Left Email, Right Phone */
+.aqua-footer__contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.aqua-footer__contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #8a96a6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.aqua-footer__contact-item svg {
+  color: #8a96a6;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.aqua-footer__contact-item:hover,
+.aqua-footer__contact-item:hover svg {
   color: #ffffff;
 }
 
@@ -3714,8 +3709,8 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   pointer-events: none;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 56px;
-  margin-bottom: -32px;
+  margin-top: 32px;
+  margin-bottom: -12px;
   position: relative;
   z-index: 1;
 }
@@ -3731,10 +3726,18 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 @media (max-width: 768px) {
   .aqua-footer__watermark {
     font-size: clamp(38px, 14vw, 88px);
-    margin-top: 36px;
-    margin-bottom: -16px;
+    margin-top: 20px;
+    margin-bottom: 4px;
     letter-spacing: 0.03em;
   }
+}
+
+/* Horizontal Divider Line */
+.aqua-footer__divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 14px 0 16px;
 }
 
 /* Sub-Footer Bottom Bar */
@@ -3742,24 +3745,57 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
-  margin-top: 0;
-  border-top: none !important;
-  font-size: 14px;
+  width: 100%;
+  font-size: 13px;
   color: #64748b;
   position: relative;
   z-index: 2;
+  gap: 20px;
 }
 
+.aqua-footer__copyright {
+  font-size: 12.5px;
+  color: #718096;
+  white-space: nowrap;
+}
+
+/* Center Social Icons */
+.aqua-footer__socials-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.aqua-footer__social-icon {
+  color: #8a96a6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+.aqua-footer__social-icon:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Legal Links */
 .aqua-footer__legal {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  white-space: nowrap;
 }
 
 .aqua-footer__legal a {
-  color: #8a96a6;
+  color: #718096;
   text-decoration: none;
+  font-size: 12.5px;
   transition: color 0.2s ease;
 }
 
@@ -3767,20 +3803,33 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   color: #ffffff;
 }
 
-.aqua-footer__divider {
-  color: #334155;
+.aqua-footer__legal-sep {
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 11px;
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
-  .aqua-footer__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+  .aqua-footer__subbar {
+    flex-wrap: wrap;
+    gap: 16px;
   }
-  .aqua-footer__col--brand {
-    grid-column: span 2;
-    padding-right: 0;
-    margin-bottom: 12px;
+}
+
+@media (max-width: 860px) {
+  .aqua-footer__subbar {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+    padding-top: 8px;
+  }
+  .aqua-footer__copyright {
+    white-space: normal;
+  }
+  .aqua-footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -3788,19 +3837,15 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   .aqua-footer {
     padding: 40px 16px 24px !important;
   }
-  .aqua-footer__grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .aqua-footer__nav-row {
+    gap: 14px 20px;
+    margin-bottom: 24px;
   }
-  .aqua-footer__col--brand {
-    grid-column: span 1;
-  }
-  .aqua-footer__subbar {
+  .aqua-footer__contact-row {
     flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    padding-top: 24px;
-    margin-top: 36px;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -4188,7 +4233,7 @@ section, [id] {
 
 
 /* ========================================================================= */
-/* NEW HERO SECTION & CLEAN NAVBAR (MATCHING REFERENCE DESIGN)               */
+/* PROMEC EXACT TOP NAVBAR (MATCHING REFERENCE IMAGE)                         */
 /* ========================================================================= */
 
 .navigation {
@@ -4202,166 +4247,317 @@ section, [id] {
   z-index: 1000 !important;
   pointer-events: none !important;
   background: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Scrolled State: Full-bleed frosted dark glass banner */
+.navigation.is-scrolled {
+  background: rgba(10, 12, 16, 0.94) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.nav.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .nav__bar {
   pointer-events: auto !important;
   display: flex !important;
-  justify-content: space-between !important;
   align-items: center !important;
+  justify-content: space-between !important;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
-  padding: 18px 48px !important;
+  padding: 16px 48px !important;
+  box-sizing: border-box !important;
   border-radius: 0 !important;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.28) 60%, rgba(0, 0, 0, 0) 100%) !important;
+  background: linear-gradient(180deg, rgba(6, 7, 9, 0.8) 0%, rgba(6, 7, 9, 0.4) 60%, rgba(6, 7, 9, 0) 100%) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border: none !important;
-  border-bottom: none !important;
   box-shadow: none !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Scrolled State: Floating Dark Glass Pill Bar (Matching promectools.in reference) */
 .navigation.is-scrolled .nav__bar,
 .nav__bar.is-scrolled {
-  margin: 18px auto 0 !important;
-  padding: 0 24px !important;
-  height: 52px !important;
-  min-height: 52px !important;
-  width: calc(100% - 32px) !important;
-  max-width: 826px !important;
-  border-radius: 16px !important;
-  background: rgba(13, 15, 18, 0.95) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 6px 18px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
+  margin: 0 !important;
+  padding: 12px 48px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Nav Brand Logo as Semantic Text (Exact Microgramma Bold Extended Brand Font - Badge Style) */
+/* Brand Logo (Left) */
 .promec-nav-logo-link {
   display: flex !important;
   align-items: center !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
   z-index: 2 !important;
+  padding: 2px 0 !important;
 }
 
-.promec-nav-logo-text {
-  display: inline-flex !important;
-  align-items: center !important;
-  font-family: "Microgramma Bold Extended", "Microgramma", "Microgramma W01 Bold Extended", sans-serif !important;
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  line-height: 1 !important;
-  text-decoration: none !important;
-  user-select: none !important;
+.promec-nav-logo-img {
+  height: 18px !important;
+  width: auto !important;
+  max-width: 195px !important;
+  display: block !important;
   transition: opacity 0.2s ease, transform 0.2s ease !important;
 }
 
-.promec-nav-logo-link:hover .promec-nav-logo-text {
+.promec-nav-logo-link:hover .promec-nav-logo-img {
   opacity: 0.88 !important;
   transform: translateY(-0.5px) !important;
 }
 
-.promec-logo-pro {
-  background: #ffffff !important;
-  color: #11100e !important;
-  padding: 2.5px 5.5px 2px 6.5px !important;
-  border-radius: 2px !important;
-  margin-right: 3.5px !important;
-  display: inline-block !important;
-  line-height: 1 !important;
-  letter-spacing: 0.14em !important;
-}
-
-.promec-logo-mec {
-  color: #ffffff !important;
-  display: inline-block !important;
-  line-height: 1 !important;
-  letter-spacing: 0.16em !important;
-}
-
-/* Nav Links Menu: Horizontally Centered in Pill */
+/* Center Menu Links */
 .promec-nav-menu {
   display: flex !important;
   align-items: center !important;
-  gap: 28px !important;
+  gap: 34px !important;
   position: absolute !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   z-index: 2 !important;
 }
+
 .promec-nav-link {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 13.5px !important;
+  font-size: 14.5px !important;
   font-weight: 500 !important;
   color: #ffffff !important;
   text-decoration: none !important;
   letter-spacing: -0.01em !important;
-  transition: color 0.2s ease, opacity 0.2s ease !important;
-  position: relative !important;
-  padding: 4px 0 !important;
+  padding: 6px 0 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
   white-space: nowrap !important;
   line-height: 1 !important;
-}
-.promec-nav-link:hover {
-  color: #ffffff !important;
-  opacity: 0.8 !important;
-}
-.promec-nav-link::after {
-  display: none !important;
-}
-.navigation.is-scrolled .promec-nav-link {
-  color: #ffffff !important;
-}
-.navigation.is-scrolled .promec-nav-link:hover {
-  color: #ffffff !important;
-  opacity: 0.8 !important;
-}
-.navigation.is-scrolled .promec-nav-link::after {
-  display: none !important;
+  transition: opacity 0.2s ease, color 0.2s ease !important;
 }
 
-/* Right Action Icons */
+.promec-nav-link:hover {
+  opacity: 0.82 !important;
+  color: #ffffff !important;
+}
+
+.promec-nav-link.is-active {
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
+
+/* Categories Dropdown */
+.promec-nav-dropdown {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.promec-nav-dropdown-toggle {
+  cursor: pointer !important;
+}
+
+.promec-nav-dropdown-chevron {
+  transition: transform 0.25s ease !important;
+  opacity: 0.85 !important;
+}
+
+.promec-nav-dropdown:hover .promec-nav-dropdown-chevron,
+.promec-nav-dropdown.is-open .promec-nav-dropdown-chevron {
+  transform: rotate(180deg) !important;
+}
+
+.promec-nav-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 14px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(8px) !important;
+  min-width: 290px !important;
+  background: rgba(14, 16, 22, 0.96) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+  padding: 8px !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  z-index: 100 !important;
+}
+
+/* Invisible bridge so cursor doesn't drop hover when moving down */
+.promec-nav-dropdown-menu::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -16px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 16px !important;
+}
+
+.promec-nav-dropdown:hover .promec-nav-dropdown-menu,
+.promec-nav-dropdown.is-open .promec-nav-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.promec-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 10px 14px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background-color 0.18s ease, transform 0.18s ease !important;
+}
+
+.promec-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: translateX(2px) !important;
+}
+
+.promec-dropdown-item__text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.promec-dropdown-item__title {
+  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  line-height: 1.2 !important;
+}
+
+.promec-dropdown-item__desc {
+  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 400 !important;
+  color: #94a3b8 !important;
+  line-height: 1.25 !important;
+}
+
+/* Right Side: Actions (ENQUIRE NOW Button + Mobile Toggle) */
 .promec-nav-actions {
   display: flex !important;
   align-items: center !important;
-  gap: 18px !important;
+  gap: 14px !important;
+  z-index: 2 !important;
 }
+
+.promec-nav-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: #ffffff !important;
+  color: #0c0d10 !important;
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  padding: 9px 18px !important;
+  border-radius: 6px !important; /* EXACT match to CTA button corner radius */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.promec-nav-cta-btn:hover {
+  background: #f8fafc !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.22), 0 3px 8px rgba(0, 0, 0, 0.3) !important;
+  color: #000000 !important;
+}
+
+.promec-nav-cta-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+}
+
+.promec-nav-cta-arrow {
+  display: inline-block !important;
+  transition: transform 0.2s ease !important;
+}
+
+.promec-nav-cta-btn:hover .promec-nav-cta-arrow {
+  transform: translateX(3px) !important;
+}
+
+/* Mobile Responsive Adjustments */
 @media (min-width: 992px) {
-  .promec-nav-actions {
+  .nav__toggle {
     display: none !important;
   }
 }
-.promec-nav-icon-btn {
-  background: none !important;
-  border: none !important;
-  padding: 6px !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease !important;
-  border-radius: 50% !important;
-  text-decoration: none !important;
+
+@media (max-width: 991px) {
+  .hide-mobile,
+  .promec-nav-menu {
+    display: none !important;
+  }
+  .nav__toggle {
+    display: flex !important;
+  }
+  .nav__bar {
+    padding: 12px 20px !important;
+  }
+  .navigation.is-scrolled .nav__bar,
+  .nav__bar.is-scrolled {
+    padding: 10px 20px !important;
+    height: 54px !important;
+    min-height: 54px !important;
+  }
+  .promec-nav-logo-img {
+    height: 16px !important;
+  }
+  .promec-nav-cta-btn {
+    padding: 7px 14px !important;
+    font-size: 11px !important;
+  }
 }
-.promec-nav-icon-btn:hover {
-  opacity: 1 !important;
-  color: #ffffff !important;
-  transform: translateY(-1px) !important;
-}
-.navigation.is-scrolled .promec-nav-icon-btn {
-  color: #ffffff !important;
+
+@media (max-width: 480px) {
+  .promec-nav-cta-btn span {
+    font-size: 10.5px !important;
+  }
+  .promec-nav-cta-btn {
+    padding: 6px 12px !important;
+  }
 }
 
 /* Hero Section with Hero_desk.webp */
@@ -4520,7 +4716,7 @@ section, [id] {
   background: #000000 !important;
   color: #ffffff !important;
   padding: 13px 26px !important;
-  border-radius: 9999px !important;
+  border-radius: 6px !important;
   font-size: 14.5px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
@@ -4544,7 +4740,7 @@ section, [id] {
   color: #11100e !important;
   border: 1.5px solid #11100e !important;
   padding: 12px 24px !important;
-  border-radius: 9999px !important;
+  border-radius: 6px !important;
   font-size: 14.5px !important;
   font-weight: 600 !important;
   cursor: pointer !important;
@@ -4880,7 +5076,7 @@ section, [id] {
   background: #000000 !important;
   color: #ffffff !important;
   padding: 11px 22px !important;
-  border-radius: 9999px !important;
+  border-radius: 6px !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
@@ -5319,13 +5515,13 @@ section, [id] {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  width: 130% !important;
-  height: 120% !important;
-  min-width: 130% !important;
-  min-height: 120% !important;
+  width: 102% !important;
+  height: 100.5% !important;
+  min-width: 102% !important;
+  min-height: 100.5% !important;
   max-width: none !important;
   object-fit: cover !important;
-  transform: translate(-74%, -50%) !important;
+  transform: translate(-75%, -50%) !important;
   display: block !important;
   background-color: #060709 !important;
 }
@@ -5520,7 +5716,7 @@ section, [id] {
   letter-spacing: 0.04em !important;
   text-decoration: none !important;
   text-transform: uppercase !important;
-  border-radius: 999px !important;
+  border-radius: 6px !important;
   transition: all 0.25s ease !important;
   cursor: pointer !important;
 }
@@ -5695,181 +5891,164 @@ section, [id] {
 /* ==========================================================================
    03C. WHY AQUAFORCE? — VALUE PROPOSITION & CAPABILITIES GRID SECTION
    ========================================================================== */
+/* =========================================================================
+   03C. WHY AQUAFORCE? — EXACT REFERENCE BENTO GRID REPLICA
+   ========================================================================= */
 .why-aquaforce-section {
   position: relative !important;
   width: 100% !important;
   background-color: #ffffff !important;
   color: #111827 !important;
-  padding: 42px 0 54px !important;
+  padding: 68px 0 68px !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
 }
 
 .why-aquaforce-container {
-  max-width: 1280px !important;
+  max-width: 1180px !important;
   margin: 0 auto !important;
-  padding: 0 28px !important;
+  padding: 0 24px !important;
   box-sizing: border-box !important;
 }
 
 .why-aquaforce-header {
   text-align: center !important;
-  margin-bottom: 24px !important;
+  margin-bottom: 34px !important;
 }
 
 .why-aquaforce-title {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(26px, 2.8vw, 34px) !important;
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(30px, 3.2vw, 42px) !important;
   line-height: 1.15 !important;
-  letter-spacing: -0.02em !important;
-  margin: 0 0 6px 0 !important;
-  color: #0b0f19 !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 0 10px 0 !important;
+  text-transform: uppercase !important;
 }
 
 .why-aquaforce-title__light {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   color: #1e293b !important;
 }
 
 .why-aquaforce-title__bold {
   font-weight: 800 !important;
   color: #0f172a !important;
+  letter-spacing: -0.03em !important;
 }
 
 .why-aquaforce-subtitle {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(13px, 0.95vw, 15px) !important;
-  color: #64748b !important;
-  line-height: 1.4 !important;
-  margin: 0 !important;
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(14px, 1.1vw, 16px) !important;
   font-weight: 400 !important;
+  color: #64748b !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
 }
 
-.why-aquaforce-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
+.why-aquaforce-bento {
+  display: flex !important;
+  flex-direction: column !important;
   gap: 14px !important;
   width: 100% !important;
 }
 
-.why-aquaforce-card {
+/* Top Row: 180fr (Left Col) : 488fr (Center Hero) : 258fr (Right Col) */
+.why-aquaforce-bento__row-top {
+  display: grid !important;
+  grid-template-columns: 180fr 488fr 258fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+.why-aquaforce-bento__col-left {
+  display: grid !important;
+  grid-template-rows: 324fr 122fr !important;
+  gap: 13px !important;
+  height: 100% !important;
+}
+
+.why-aquaforce-bento__col-right {
+  display: grid !important;
+  grid-template-rows: 218fr 228fr !important;
+  gap: 13px !important;
+  height: 100% !important;
+}
+
+/* Bottom Row: 372fr (3 Hours) : 326fr (Key Features) : 228fr (Portable) */
+.why-aquaforce-bento__row-bottom {
+  display: grid !important;
+  grid-template-columns: 372fr 326fr 228fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+}
+
+/* Bento Card Style */
+.why-aquaforce-bento__card {
   position: relative !important;
-  height: 182px !important;
-  border-radius: 14px !important;
+  border-radius: 18px !important;
   overflow: hidden !important;
-  background-color: #090a0f !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
-  cursor: pointer !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+  display: flex !important;
 }
 
-.why-aquaforce-card:hover {
+.why-aquaforce-bento__card:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08) !important;
 }
 
-.why-aquaforce-card--span-2 {
-  grid-column: span 2 !important;
+.why-aquaforce-bento__card--center {
+  aspect-ratio: 488 / 459 !important;
 }
 
-.why-aquaforce-card__img {
-  position: absolute !important;
-  inset: 0 !important;
+.why-aquaforce-bento__card--4 {
+  aspect-ratio: 372 / 209 !important;
+}
+
+.why-aquaforce-bento__card--5 {
+  aspect-ratio: 326 / 209 !important;
+}
+
+.why-aquaforce-bento__card--6 {
+  aspect-ratio: 228 / 209 !important;
+}
+
+.why-aquaforce-bento__img {
   width: 100% !important;
   height: 100% !important;
+  display: block !important;
   object-fit: cover !important;
-  object-position: center center !important;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.why-aquaforce-card:hover .why-aquaforce-card__img {
-  transform: scale(1.045) !important;
-}
-
-.why-aquaforce-card__scrim {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.92) 0%,
-    rgba(0, 0, 0, 0.58) 42%,
-    rgba(0, 0, 0, 0.15) 72%,
-    rgba(0, 0, 0, 0) 90%
-  ),
-  linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.30) 50%,
-    rgba(0, 0, 0, 0) 80%
-  ) !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-}
-
-.why-aquaforce-card__content {
-  position: absolute !important;
-  bottom: 16px !important;
-  left: 18px !important;
-  right: 18px !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-}
-
-.why-aquaforce-card__title {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: clamp(13px, 1.05vw, 15px) !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.035em !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
-  margin: 0 !important;
-  line-height: 1.25 !important;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
-}
-
-/* Tablet & Mobile Responsiveness */
-@media (max-width: 1024px) {
-  .why-aquaforce-section {
-    padding: 44px 0 54px !important;
-  }
-  .why-aquaforce-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-  .why-aquaforce-card--span-2 {
-    grid-column: span 2 !important;
-  }
-  .why-aquaforce-card {
-    height: 175px !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .why-aquaforce-section {
-    padding: 38px 0 46px !important;
-  }
-  .why-aquaforce-container {
-    padding: 0 16px !important;
-  }
-  .why-aquaforce-grid {
+/* Responsive Breakpoints */
+@media (max-width: 860px) {
+  .why-aquaforce-bento__row-top,
+  .why-aquaforce-bento__row-bottom {
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 14px !important;
   }
-  .why-aquaforce-card--span-2 {
-    grid-column: span 1 !important;
+  .why-aquaforce-bento__col-left,
+  .why-aquaforce-bento__col-right {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 14px !important;
   }
-  .why-aquaforce-card {
-    height: 155px !important;
+  .why-aquaforce-bento__card--center,
+  .why-aquaforce-bento__card--4,
+  .why-aquaforce-bento__card--5,
+  .why-aquaforce-bento__card--6 {
+    aspect-ratio: auto !important;
   }
-  .why-aquaforce-card__content {
-    bottom: 14px !important;
-    left: 14px !important;
-    right: 14px !important;
-  }
-  .why-aquaforce-card__title {
-    font-size: 14px !important;
+}
+
+@media (max-width: 580px) {
+  .why-aquaforce-bento__col-left,
+  .why-aquaforce-bento__col-right {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -6036,6 +6215,10 @@ section, [id] {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
   cursor: grab;
   padding: 8px 0;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .promec-reels__track-mask::-webkit-scrollbar {
@@ -6059,11 +6242,15 @@ section, [id] {
   -webkit-backface-visibility: hidden;
   animation: promecReelsScroll 45s linear infinite;
   padding: 0 10px;
+  touch-action: pan-y;
 }
 
+/* Pause marquee on hover or interaction so cards are easy to view, drag, and click */
 .promec-reels__track-mask:hover .promec-reels__track,
-.promec-reels__track.is-paused {
-  animation-play-state: running !important;
+.promec-reels__track-mask:focus-within .promec-reels__track,
+.promec-reels__track.is-paused,
+.promec-reels__track-mask.is-dragging .promec-reels__track {
+  animation-play-state: paused !important;
 }
 
 @keyframes promecReelsScroll {
@@ -6095,6 +6282,8 @@ section, [id] {
               border-color 0.35s ease;
   user-select: none;
   cursor: pointer;
+  touch-action: pan-y;
+  contain: layout paint;
 }
 
 .promec-reel-card:hover {
@@ -6122,6 +6311,8 @@ section, [id] {
   background: #111;
   transform: scale(1.01);
   transition: transform 0.4s ease;
+  touch-action: pan-y;
+  will-change: transform;
 }
 
 .promec-reel-card:hover .promec-reel-card__video {
@@ -6476,7 +6667,7 @@ body.promec-preloader-active {
   font-size: 13.5px;
   font-weight: 600;
   color: #ffffff;
-  margin: 0 0 3px;
+  margin: 0;
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
@@ -6485,7 +6676,7 @@ body.promec-preloader-active {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.7);
-  margin: 0;
+  margin: 3px 0 0;
   line-height: 1.35;
 }
 

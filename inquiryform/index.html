@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquaforce® 1400 | Cordless. Powerful. Portable. - Inquiry Form</title>
+  <meta name="description" content="Cordless, high-pressure portable washer system. Fill out this quick questionnaire to receive tiered commercial pricing and priority stock allocation.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts matching reference -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,300..900;1,300..900&family=Open+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Inquiry Page Tailwind CSS -->
+  <link rel="stylesheet" href="/assets/inquiry_form_styles.css">
+
+  <style>
+    body {
+      background-color: #060709;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .font-open-sans {
+      font-family: 'Open Sans', sans-serif;
+    }
+    .unit-btn.is-selected {
+      background-color: #005DA6 !important;
+      color: #ffffff !important;
+      border-color: #005DA6 !important;
+      box-shadow: 0 2px 8px rgba(0, 93, 166, 0.35) !important;
+    }
+    .option-btn.is-selected {
+      background-color: #eff6ff !important;
+      color: #005DA6 !important;
+      border-color: #005DA6 !important;
+      font-weight: 700 !important;
+    }
+    .option-btn.is-selected .check-icon {
+      display: inline-block !important;
+    }
+  </style>
+</head>
+<body class="antialiased font-sans">
+
+  <!-- Header -->
+  <header class="border-b border-white/10 bg-black/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <a class="flex items-center gap-3 group transition-transform active:scale-95" href="/" aria-label="PROMEC Home">
+        <div class="relative w-[135px] h-[28px] sm:w-[170px] sm:h-[34px] flex items-center">
+          <img alt="PROMEC" class="object-contain object-left h-full w-auto" src="/promec-logo.svg" />
+        </div>
+      </a>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a class="inline-flex items-center gap-1.5 text-xs font-semibold text-white/70 hover:text-white px-3 py-1.5 rounded-full hover:bg-white/5 transition-all font-open-sans" href="/">
+          <svg class="lucide lucide-house" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+            <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+    <div class="max-w-[660px] mx-auto">
+      
+      <!-- Top Title -->
+      <div class="text-center mb-6 sm:mb-8">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-montserrat text-white tracking-tight leading-tight">
+          AquaForce® 1400 Inquiry Form
+        </h1>
+        <p class="mt-2 text-xs sm:text-sm text-slate-400 max-w-md mx-auto font-open-sans leading-relaxed">
+          Cordless, high-pressure portable washer system. Fill out this quick questionnaire to receive tiered commercial pricing and priority stock allocation.
+        </p>
+      </div>
+
+      <!-- White Questionnaire Card -->
+      <div id="form-card" class="bg-white rounded-[24px] sm:rounded-[28px] p-5 sm:p-8 md:p-9 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] text-slate-900 border border-slate-100 transition-all">
+        <form id="inquiry-form" class="space-y-4 sm:space-y-5">
+          
+          <!-- Card Header -->
+          <div class="pb-2 border-b border-slate-100 flex items-center justify-between gap-2">
+            <h2 class="text-base sm:text-xl font-bold font-montserrat text-slate-900 tracking-tight shrink min-w-0 truncate">
+              Inquiry Questionnaire
+            </h2>
+            <span class="text-[10px] sm:text-[11px] font-bold font-montserrat px-2 sm:px-2.5 py-0.5 rounded-full bg-blue-50 text-[#005DA6] border border-blue-200 whitespace-nowrap shrink-0 leading-normal">
+              B2B &amp; Fleet Orders
+            </span>
+          </div>
+
+          <!-- Name & Phone Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+            <div>
+              <label for="fullName" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+                Name <span class="text-red-500">*</span>
+              </label>
+              <input 
+                id="fullName" 
+                class="w-full bg-white border border-slate-200 focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] rounded-[8px] px-3.5 py-2.5 sm:px-4 sm:py-3 text-[15px] sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all font-open-sans shadow-2xs" 
+                name="fullName" 
+                placeholder="Rahul Sharma" 
+                required 
+                type="text" 
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+                Phone No <span class="text-red-500">*</span>
+              </label>
+              <div class="relative flex items-center">
+                <span class="absolute left-3.5 text-xs sm:text-sm font-semibold text-slate-400 font-open-sans select-none">+91</span>
+                <input 
+                  id="phone" 
+                  class="w-full bg-white border border-slate-200 focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] rounded-[8px] pl-12 pr-3.5 py-2.5 sm:pl-13 sm:pr-4 sm:py-3 text-[15px] sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all font-open-sans shadow-2xs" 
+                  inputmode="numeric" 
+                  maxlength="10" 
+                  name="phone" 
+                  placeholder="9876543210" 
+                  required 
+                  type="tel" 
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Name & Email Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+            <div>
+              <label for="companyName" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+                Company Name <span class="text-slate-400 font-normal text-xs">(optional)</span>
+              </label>
+              <input 
+                id="companyName" 
+                class="w-full bg-white border border-slate-200 focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] rounded-[8px] px-3.5 py-2.5 sm:px-4 sm:py-3 text-[15px] sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all font-open-sans shadow-2xs" 
+                name="companyName" 
+                placeholder="Speed Car Wash" 
+                type="text" 
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+                Email Address <span class="text-slate-400 font-normal text-xs">(optional)</span>
+              </label>
+              <input 
+                id="email" 
+                class="w-full bg-white border border-slate-200 focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] rounded-[8px] px-3.5 py-2.5 sm:px-4 sm:py-3 text-[15px] sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all font-open-sans shadow-2xs" 
+                name="email" 
+                placeholder="rahul@example.com" 
+                type="email" 
+              />
+            </div>
+          </div>
+
+          <!-- Units Needed Field -->
+          <div>
+            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+              How many units do you need? <span class="text-red-500">*</span>
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="units-group">
+              <button type="button" data-val="5 - 10" class="unit-btn is-selected py-2.5 px-3 rounded-[8px] border text-xs sm:text-sm font-bold font-montserrat transition-all cursor-pointer">
+                5 - 10
+              </button>
+              <button type="button" data-val="11 - 50" class="unit-btn py-2.5 px-3 rounded-[8px] border text-xs sm:text-sm font-bold font-montserrat transition-all cursor-pointer bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                11 - 50
+              </button>
+              <button type="button" data-val="51 - 100" class="unit-btn py-2.5 px-3 rounded-[8px] border text-xs sm:text-sm font-bold font-montserrat transition-all cursor-pointer bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                51 - 100
+              </button>
+              <button type="button" data-val="100+" class="unit-btn py-2.5 px-3 rounded-[8px] border text-xs sm:text-sm font-bold font-montserrat transition-all cursor-pointer bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                100+
+              </button>
+            </div>
+            <input type="hidden" name="units" id="units-input" value="5 - 10">
+          </div>
+
+          <!-- Purchase Timeframe Field -->
+          <div>
+            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+              When are you looking to purchase? <span class="text-slate-400 font-normal text-xs">(optional)</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="timeframe-group">
+              <button type="button" data-val="Immediately" class="option-btn py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>Immediately</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="Within 1–2 months" class="option-btn py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>Within 1–2 months</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="Within 2–3 months" class="option-btn py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>Within 2–3 months</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="Just exploring options" class="option-btn py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>Just exploring options</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+            </div>
+            <input type="hidden" name="timeframe" id="timeframe-input" value="">
+          </div>
+
+          <!-- Which Best Describes You Field -->
+          <div>
+            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1.5 font-open-sans">
+              Which best describes you? <span class="text-slate-400 font-normal text-xs">(optional)</span>
+            </label>
+            <div class="space-y-1.5" id="role-group">
+              <button type="button" data-val="I run a car/bike washing business" class="option-btn w-full py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>I run a car/bike washing business</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="I provide doorstep cleaning services" class="option-btn w-full py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>I provide doorstep cleaning services</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="I want to start a doorstep cleaning business" class="option-btn w-full py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>I want to start a doorstep cleaning business</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="I provide cleaning services to companies" class="option-btn w-full py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>I provide cleaning services to companies</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+              <button type="button" data-val="Other" class="option-btn w-full py-2 px-3 rounded-[8px] border text-left text-xs font-semibold font-open-sans transition-all cursor-pointer flex items-center justify-between bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+                <span>Other</span>
+                <svg class="check-icon hidden text-[#005DA6]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
+            </div>
+            <input type="hidden" name="role" id="role-input" value="">
+          </div>
+
+          <!-- WhatsApp Consent -->
+          <div class="pt-1">
+            <label class="flex items-start gap-2.5 cursor-pointer select-none">
+              <input checked id="whatsapp-consent" class="mt-0.5 w-4 h-4 rounded text-[#0066cc] border-slate-300 focus:ring-[#0066cc] cursor-pointer" type="checkbox" />
+              <span class="text-[11px] sm:text-xs text-slate-500 font-open-sans leading-relaxed">
+                I agree to be contacted via WhatsApp/Phone by the AMEC sales team regarding enterprise pricing and order details.
+              </span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button id="submit-btn" class="w-full mt-2 bg-[#005DA6] hover:bg-[#004e8c] active:bg-[#004277] disabled:bg-slate-300 text-white font-montserrat font-bold text-xs xs:text-sm uppercase tracking-wider py-3.5 sm:py-4 rounded-[12px] shadow-[0_4px_14px_rgba(0,93,166,0.25)] transition-all active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed" type="submit">
+            <span>SUBMIT INQUIRY</span>
+            <svg class="lucide lucide-arrow-right" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-3 gap-3 text-center">
+        <div class="flex flex-col items-center">
+          <svg class="lucide lucide-shield-check w-5 h-5 text-emerald-400 mb-1" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          <span class="text-[11px] font-bold text-white font-montserrat">1-Year Warranty</span>
+          <span class="text-[10px] text-slate-400 font-open-sans">Commercial grade</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg class="lucide lucide-truck w-5 h-5 text-sky-400 mb-1" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+            <path d="M15 18H9"></path>
+            <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
+            <circle cx="17" cy="18" r="2"></circle>
+            <circle cx="7" cy="18" r="2"></circle>
+          </svg>
+          <span class="text-[11px] font-bold text-white font-montserrat">Pan-India Delivery</span>
+          <span class="text-[10px] text-slate-400 font-open-sans">Doorstep dispatch</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg class="lucide lucide-phone-call w-5 h-5 text-purple-400 mb-1" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            <path d="M14.05 2a9 9 0 0 1 8 7.94"></path>
+            <path d="M14.05 6A5 5 0 0 1 18 10"></path>
+          </svg>
+          <span class="text-[11px] font-bold text-white font-montserrat">Priority Support</span>
+          <span class="text-[10px] text-slate-400 font-open-sans">Dedicated manager</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black/60 py-6 text-center text-xs text-slate-500 font-open-sans">
+    <div class="max-w-[1240px] mx-auto px-4">
+      <p>© 2026 PROMEC INDIA. All rights reserved. AMEC Mobility Private Limited.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Units Selector
+    const unitBtns = document.querySelectorAll('.unit-btn');
+    const unitsInput = document.getElementById('units-input');
+    unitBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        unitBtns.forEach(b => {
+          b.classList.remove('is-selected');
+          b.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+        });
+        btn.classList.add('is-selected');
+        btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+        unitsInput.value = btn.getAttribute('data-val');
+      });
+    });
+
+    // Timeframe Selector
+    const timeframeBtns = document.querySelectorAll('#timeframe-group .option-btn');
+    const timeframeInput = document.getElementById('timeframe-input');
+    timeframeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isCurrent = btn.classList.contains('is-selected');
+        timeframeBtns.forEach(b => {
+          b.classList.remove('is-selected');
+          b.querySelector('.check-icon').classList.add('hidden');
+        });
+        if (!isCurrent) {
+          btn.classList.add('is-selected');
+          btn.querySelector('.check-icon').classList.remove('hidden');
+          timeframeInput.value = btn.getAttribute('data-val');
+        } else {
+          timeframeInput.value = '';
+        }
+      });
+    });
+
+    // Role Selector
+    const roleBtns = document.querySelectorAll('#role-group .option-btn');
+    const roleInput = document.getElementById('role-input');
+    roleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isCurrent = btn.classList.contains('is-selected');
+        roleBtns.forEach(b => {
+          b.classList.remove('is-selected');
+          b.querySelector('.check-icon').classList.add('hidden');
+        });
+        if (!isCurrent) {
+          btn.classList.add('is-selected');
+          btn.querySelector('.check-icon').classList.remove('hidden');
+          roleInput.value = btn.getAttribute('data-val');
+        } else {
+          roleInput.value = '';
+        }
+      });
+    });
+
+    // Phone input restriction (numbers only, max 10 digits)
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+    });
+
+    // Form Submit Handler
+    const form = document.getElementById('inquiry-form');
+    const card = document.getElementById('form-card');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = phoneInput.value.trim();
+      if (!fullName) {
+        alert('Please enter your name.');
+        return;
+      }
+      if (phone.length < 10) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>SUBMITTING...</span>';
+
+      setTimeout(() => {
+        const units = unitsInput.value || '5 - 10';
+        const timeframe = timeframeInput.value || 'Flexible';
+        const role = roleInput.value || 'Business / Detailing';
+
+        card.innerHTML = `
+          <div class="py-6 sm:py-8 text-center flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-200">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#005DA6] font-montserrat mb-1">Inquiry Received</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-montserrat mb-2">Thank you, ${fullName}!</h3>
+            <p class="text-sm text-slate-600 font-open-sans max-w-md mx-auto leading-relaxed mb-6">
+              Your inquiry for <strong>${units} units</strong> has been prioritized. Our enterprise fleet manager will contact you via WhatsApp / Phone at <strong>+91 ${phone}</strong> within 2 hours with tiered commercial pricing.
+            </p>
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 w-full max-w-sm mb-6 text-left text-xs space-y-2">
+              <div class="flex justify-between text-slate-600"><span class="text-slate-400">Order Size:</span><span class="font-bold text-slate-900">${units} Units</span></div>
+              <div class="flex justify-between text-slate-600"><span class="text-slate-400">Timeframe:</span><span class="font-bold text-slate-900">${timeframe}</span></div>
+              <div class="flex justify-between text-slate-600"><span class="text-slate-400">Profile:</span><span class="font-bold text-slate-900 truncate max-w-[180px]">${role}</span></div>
+            </div>
+            <div class="flex gap-3">
+              <a href="/" class="inline-flex items-center gap-2 bg-[#005DA6] text-white font-montserrat font-bold text-xs uppercase px-6 py-3 rounded-[10px] hover:bg-[#004e8c] transition-all">
+                <span>Back to Home</span>
+              </a>
+              <button onclick="window.location.reload()" class="inline-flex items-center gap-2 bg-slate-100 text-slate-700 font-montserrat font-semibold text-xs px-5 py-3 rounded-[10px] hover:bg-slate-200 transition-all">
+                <span>New Inquiry</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }, 700);
+    });
+  </script>
+</body>
+</html>

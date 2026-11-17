@@ -22,6 +22,8 @@ const copyFile = (src, dest) => {
 
 copyDir('vendor', 'dist/vendor');
 copyDir('assets', 'dist/assets');
+copyDir('inquiryform', 'dist/inquiryform');
+copyFile('inquiryform.html', 'dist/inquiryform.html');
 copyFile('slater-custom.js', 'dist/slater-custom.js');
 copyFile('main.js', 'dist/main.js');
 copyFile('promec-logo.svg', 'dist/promec-logo.svg');
