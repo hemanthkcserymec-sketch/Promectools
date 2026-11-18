@@ -508,7 +508,7 @@ section.theme-dark {
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
-  border-bottom: 1px solid transparent !important;
+  border-bottom: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -529,7 +529,6 @@ section.theme-dark {
   box-shadow: none !important;
 }
 
-.navigation,
 .container.nav,
 .nav,
 div.nav.theme-dark,
@@ -581,13 +580,14 @@ div.nav.theme-light {
   justify-content: space-between !important;
   align-items: center !important;
   width: 100% !important;
-  max-width: 1360px !important;
-  margin: 14px auto 0 !important;
-  padding: 16px 40px !important;
-  border-radius: 12px !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 clamp(24px, 4vw, 64px) !important;
+  border-radius: 0 !important;
   background: transparent !important;
   background-color: transparent !important;
-  border: 1px solid transparent !important;
+  border: none !important;
+  border-bottom: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -732,13 +732,6 @@ div.nav.theme-light {
 }
 
 @media (max-width: 991px) {
-  .nav__bar {
-    padding: 12px 20px !important;
-  }
-  .navigation.is-scrolled .nav__bar,
-  .nav__bar.is-scrolled {
-    padding: 10px 20px !important;
-  }
   .nav__promec-logo,
   .promec-nav-logo-svg {
     height: 18px !important;
@@ -776,7 +769,7 @@ div.nav.theme-light {
   }
   .nav__content .nav-link__p {
     color: #ffffff !important;
-    font-family: "Neue Montreal", "PP Neue Montreal", Arial, sans-serif !important;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 20px !important;
     font-weight: 600 !important;
     line-height: 1.4 !important;
@@ -3086,7 +3079,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   flex: 0 0 480px !important;
   width: 480px !important;
   height: 320px !important;
-  border-radius: 0px !important;
+  border-radius: 4px !important;
   overflow: hidden;
   background: #f8fafc;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -3101,7 +3094,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 .aqua-engineering__card-img {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 0px !important;
+  border-radius: 4px !important;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -3141,7 +3134,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 .aqua-engineering__heading {
   font-family: var(--_fonts---fonts--heading, "Neue Montreal", "PP Neue Montreal", Arial, sans-serif);
-  font-size: clamp(30px, 3.8vw, 48px);
+  font-size: 48px !important;
   font-weight: 700;
   line-height: 1.14;
   color: #0b0d11 !important;
@@ -3194,7 +3187,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   .aqua-engineering__card {
     flex: 0 0 clamp(300px, 78vw, 480px) !important;
     height: clamp(200px, 52vw, 320px) !important;
-    border-radius: 0px !important;
+    border-radius: 4px !important;
   }
 }
 
@@ -3224,12 +3217,32 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   max-width: 600px !important;
 }
 
+.aqua-testimonials__left .promec-hero__heading {
+  font-family: var(--_fonts---fonts--heading, "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif) !important;
+  font-size: 44px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 20px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.aqua-testimonials__left .promec-hero__line-light {
+  font-weight: 400 !important;
+  color: #1a1a1e !important;
+}
+
+.aqua-testimonials__left .promec-hero__line-bold {
+  font-weight: 800 !important;
+  color: #0c0d10 !important;
+}
+
 .aqua-testimonials__heading {
   font-family: "Neue Montreal", "PP Neue Montreal", sans-serif;
-  font-size: 52px;
+  font-size: 44px;
   font-weight: 700;
   line-height: 1.08;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   color: #0f172a;
   margin-bottom: 24px;
 }
@@ -3375,8 +3388,11 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   .aqua-testimonials__left {
     max-width: 100%;
   }
+  .aqua-testimonials__left .promec-hero__heading {
+    font-size: 38px !important;
+  }
   .aqua-testimonials__heading {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
 
@@ -3384,8 +3400,11 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   .aqua-testimonials {
     padding: 32px 20px;
   }
+  .aqua-testimonials__left .promec-hero__heading {
+    font-size: 34px !important;
+  }
   .aqua-testimonials__heading {
-    font-size: 32px;
+    font-size: 34px;
   }
   .aqua-testimonials__desc {
     font-size: 16px;
@@ -3440,7 +3459,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 .aqua-cta-card__heading {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(34px, 3.8vw, 48px) !important;
+  font-size: 48px !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.03em !important;
@@ -3570,11 +3589,14 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 }
 
 .aqua-footer {
-  background-color: #050608;
-  color: #ffffff;
-  padding: 64px 32px 32px !important;
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  box-sizing: border-box;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  padding: 56px 48px 36px !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
 }
 
 @media (min-width: 992px) {
@@ -3597,255 +3619,257 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
     position: relative !important;
     z-index: 1 !important;
     overflow: hidden !important;
-    padding: 48px 20px 24px !important;
+    padding: 44px 24px 28px !important;
   }
 }
 
 .aqua-footer__container {
-  max-width: 1320px;
-  margin: 0 auto;
-  width: 100%;
+  max-width: 1360px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-/* Centered Brand Logo */
-.aqua-footer__brand-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
+/* 1. Top Header Row: Logo on Left, Nav Links on Right */
+.aqua-footer__top-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 24px !important;
 }
 
-.aqua-footer__logo-center {
-  height: 24px;
-  width: auto;
-  display: block;
-  transition: opacity 0.2s ease;
+.aqua-footer__brand-left {
+  display: flex !important;
+  align-items: center !important;
 }
 
-.aqua-footer__logo-center:hover {
-  opacity: 0.85;
+.aqua-footer__logo {
+  height: 22px !important;
+  width: auto !important;
+  display: block !important;
+  transition: opacity 0.2s ease !important;
 }
 
-/* Horizontal Centered Nav Row */
-.aqua-footer__nav-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 36px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
+.aqua-footer__logo:hover {
+  opacity: 0.85 !important;
+}
+
+.aqua-footer__nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 36px !important;
+  flex-wrap: wrap !important;
 }
 
 .aqua-footer__nav-link {
-  font-size: 14px;
-  color: #c4cdd5;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  font-weight: 400;
-  white-space: nowrap;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 400 !important;
+  color: #e4e4e7 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+  white-space: nowrap !important;
 }
 
 .aqua-footer__nav-link:hover {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
-.aqua-footer__nav-link--accent {
-  color: #29adf3 !important;
-  font-weight: 500;
+/* 2. Middle Giant Watermark Typography Word: PROMEC */
+.aqua-footer__watermark {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 28px 0 36px 0 !important;
+  padding: 0 !important;
+  user-select: none !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
-.aqua-footer__nav-link--accent:hover {
-  color: #60c5fa !important;
+.aqua-footer__watermark span {
+  display: block !important;
+  width: 100% !important;
+  font-family: "Microgramma Bold Extended", "Microgramma", "Microgramma W01 Bold Extended", sans-serif !important;
+  font-size: clamp(52px, 14.8vw, 218px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  line-height: 0.88 !important;
+  text-align: center !important;
+  background: linear-gradient(180deg, #383a40 0%, #16171a 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #27272a !important;
+  white-space: nowrap !important;
 }
 
-/* Contact Row: Left Email, Right Phone */
+/* 3. Contact Info Row: Left Email, Right Phone */
 .aqua-footer__contact-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 16px;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 22px !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .aqua-footer__contact-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
-  color: #8a96a6;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 14px !important;
+  color: #e4e4e7 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
 }
 
 .aqua-footer__contact-item svg {
-  color: #8a96a6;
-  transition: color 0.2s ease;
-  flex-shrink: 0;
+  color: #e4e4e7 !important;
+  stroke: #e4e4e7 !important;
+  transition: color 0.2s ease, stroke 0.2s ease !important;
+  flex-shrink: 0 !important;
 }
 
 .aqua-footer__contact-item:hover,
 .aqua-footer__contact-item:hover svg {
-  color: #ffffff;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
-/* Giant Watermark Brand Word (.aqua-footer__watermark) */
-.aqua-footer__watermark {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Microgramma Bold Extended", "Microgramma", "Microgramma W01 Bold Extended", sans-serif !important;
-  font-size: clamp(52px, 14vw, 195px);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 0.9;
-  color: rgba(255, 255, 255, 0.40);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.22) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  user-select: none;
-  pointer-events: none;
-  white-space: nowrap;
-  overflow: hidden;
-  margin-top: 32px;
-  margin-bottom: -12px;
-  position: relative;
-  z-index: 1;
-}
-
-.aqua-footer__watermark span {
-  display: inline-block;
-  will-change: transform;
-  font-family: "Microgramma Bold Extended", "Microgramma", "Microgramma W01 Bold Extended", sans-serif !important;
-  font-weight: 700;
-  letter-spacing: inherit;
-}
-
-@media (max-width: 768px) {
-  .aqua-footer__watermark {
-    font-size: clamp(38px, 14vw, 88px);
-    margin-top: 20px;
-    margin-bottom: 4px;
-    letter-spacing: 0.03em;
-  }
-}
-
-/* Horizontal Divider Line */
+/* 4. Horizontal Divider Line */
 .aqua-footer__divider-line {
-  width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 14px 0 16px;
+  width: 100% !important;
+  height: 1px !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  margin: 0 0 22px 0 !important;
 }
 
-/* Sub-Footer Bottom Bar */
+/* 5. Sub-Footer Bottom Bar */
 .aqua-footer__subbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 13px;
-  color: #64748b;
-  position: relative;
-  z-index: 2;
-  gap: 20px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
+  color: #a1a1aa !important;
+  position: relative !important;
+  z-index: 2 !important;
+  gap: 20px !important;
 }
 
 .aqua-footer__copyright {
-  font-size: 12.5px;
-  color: #718096;
-  white-space: nowrap;
+  font-size: 12.5px !important;
+  color: #a1a1aa !important;
+  white-space: nowrap !important;
 }
 
-/* Center Social Icons */
+/* Social Icons in Center */
 .aqua-footer__socials-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px !important;
 }
 
 .aqua-footer__social-icon {
-  color: #8a96a6;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  width: 28px;
-  height: 28px;
-  border-radius: 4px;
+  color: #e4e4e7 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
 }
 
 .aqua-footer__social-icon:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
 }
 
-/* Legal Links */
+/* Legal Links on Right */
 .aqua-footer__legal {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
 }
 
 .aqua-footer__legal a {
-  color: #718096;
-  text-decoration: none;
-  font-size: 12.5px;
-  transition: color 0.2s ease;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #a1a1aa !important;
+  text-decoration: none !important;
+  font-size: 12.5px !important;
+  transition: color 0.2s ease !important;
 }
 
 .aqua-footer__legal a:hover {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .aqua-footer__legal-sep {
-  color: rgba(255, 255, 255, 0.18);
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25) !important;
+  font-size: 11px !important;
+  user-select: none !important;
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
+  .aqua-footer {
+    padding: 44px 32px 30px !important;
+  }
   .aqua-footer__subbar {
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
   }
 }
 
 @media (max-width: 860px) {
+  .aqua-footer__top-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+  }
+  .aqua-footer__nav-links {
+    gap: 20px !important;
+  }
+  .aqua-footer__watermark {
+    margin: 20px 0 26px 0 !important;
+  }
+  .aqua-footer__watermark span {
+    font-size: clamp(40px, 16vw, 110px) !important;
+  }
   .aqua-footer__subbar {
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    text-align: center;
-    padding-top: 8px;
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   .aqua-footer__copyright {
-    white-space: normal;
+    white-space: normal !important;
   }
   .aqua-footer__legal {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 }
 
 @media (max-width: 640px) {
   .aqua-footer {
-    padding: 40px 16px 24px !important;
-  }
-  .aqua-footer__nav-row {
-    gap: 14px 20px;
-    margin-bottom: 24px;
+    padding: 36px 20px 24px !important;
   }
   .aqua-footer__contact-row {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    text-align: center;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
   }
 }
 
@@ -4242,33 +4266,76 @@ section, [id] {
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
+  max-width: 100vw !important;
   display: flex !important;
   justify-content: center !important;
+  align-items: center !important;
   z-index: 1000 !important;
   pointer-events: none !important;
-  background: transparent !important;
-  border-bottom: 1px solid transparent !important;
-  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  transition: top 0.3s ease-in-out, padding 0.3s ease-in-out, background 0.3s ease-in-out !important;
 }
 
-/* Scrolled State: Full-bleed frosted dark glass banner */
+.navigation:not(.is-scrolled) {
+  background: linear-gradient(180deg, rgba(6, 7, 9, 0.78) 0%, rgba(6, 7, 9, 0.38) 60%, rgba(6, 7, 9, 0) 100%) !important;
+}
+
+/* Scrolled State: Detached Floating Header (Matching amec-aquaforce-nextjs) */
 .navigation.is-scrolled {
-  background: rgba(10, 12, 16, 0.94) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  top: 14px !important;
+  padding: 0 24px !important;
+  background: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
 }
 
-.nav.container {
+.nav.container,
+.container.nav {
   width: 100% !important;
   max-width: 100% !important;
   padding: 0 !important;
   margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+div.nav {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Navbar Open Sans Typography */
+.navigation,
+.nav__bar,
+.promec-nav-menu,
+.promec-nav-link,
+.promec-nav-dropdown,
+.promec-nav-dropdown-toggle,
+.promec-nav-dropdown-menu,
+.promec-dropdown-item,
+.promec-dropdown-item__title,
+.promec-dropdown-item__desc,
+.promec-nav-actions,
+.promec-nav-cta-btn,
+.nav__content,
+.nav__content .nav-link__p,
+.hamburger-category-section,
+.hamburger-category-section span {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 .nav__bar {
@@ -4278,32 +4345,55 @@ section, [id] {
   justify-content: space-between !important;
   width: 100% !important;
   max-width: 100% !important;
+  height: 76px !important;
+  min-height: 76px !important;
   margin: 0 !important;
-  padding: 16px 48px !important;
+  padding: 0 clamp(24px, 4vw, 64px) !important;
   box-sizing: border-box !important;
   border-radius: 0 !important;
-  background: linear-gradient(180deg, rgba(6, 7, 9, 0.8) 0%, rgba(6, 7, 9, 0.4) 60%, rgba(6, 7, 9, 0) 100%) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
   box-shadow: none !important;
   position: relative !important;
-  transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
+/* Scrolled State: Minimized Floating Pill Navbar (Matching amec-aquaforce-nextjs) */
 .navigation.is-scrolled .nav__bar,
 .nav__bar.is-scrolled {
-  margin: 0 !important;
-  padding: 12px 48px !important;
+  max-width: 1240px !important;
   width: 100% !important;
-  max-width: 100% !important;
-  height: 60px !important;
-  min-height: 60px !important;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
-  box-shadow: none !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  margin: 0 auto !important;
+  padding: 0 28px !important;
+  border-radius: 16px !important;
+  background: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7) !important;
+  pointer-events: auto !important;
+}
+
+.navigation.is-scrolled .promec-nav-logo-img,
+.nav__bar.is-scrolled .promec-nav-logo-img {
+  height: 16px !important;
+}
+
+.navigation.is-scrolled .promec-nav-menu,
+.nav__bar.is-scrolled .promec-nav-menu {
+  gap: 28px !important;
+}
+
+.navigation.is-scrolled .promec-nav-dropdown-menu,
+.nav__bar.is-scrolled .promec-nav-dropdown-menu {
+  top: calc(100% + 10px) !important;
 }
 
 /* Brand Logo (Left) */
@@ -4341,7 +4431,7 @@ section, [id] {
 }
 
 .promec-nav-link {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 14.5px !important;
   font-weight: 500 !important;
   color: #ffffff !important;
@@ -4452,7 +4542,7 @@ section, [id] {
 }
 
 .promec-dropdown-item__title {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
   color: #ffffff !important;
@@ -4460,7 +4550,7 @@ section, [id] {
 }
 
 .promec-dropdown-item__desc {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 11.5px !important;
   font-weight: 400 !important;
   color: #94a3b8 !important;
@@ -4482,14 +4572,17 @@ section, [id] {
   gap: 8px !important;
   background: #ffffff !important;
   color: #0c0d10 !important;
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
   line-height: 1 !important;
-  padding: 9px 18px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  box-sizing: border-box !important;
+  padding: 0 18px !important;
   border-radius: 6px !important; /* EXACT match to CTA button corner radius */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease !important;
@@ -4536,17 +4629,24 @@ section, [id] {
   .nav__bar {
     padding: 12px 20px !important;
   }
+  .navigation.is-scrolled {
+    top: 10px !important;
+    padding: 0 12px !important;
+  }
   .navigation.is-scrolled .nav__bar,
   .nav__bar.is-scrolled {
-    padding: 10px 20px !important;
-    height: 54px !important;
-    min-height: 54px !important;
+    padding: 8px 16px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    border-radius: 12px !important;
   }
   .promec-nav-logo-img {
     height: 16px !important;
   }
   .promec-nav-cta-btn {
-    padding: 7px 14px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 14px !important;
     font-size: 11px !important;
   }
 }
@@ -4556,7 +4656,9 @@ section, [id] {
     font-size: 10.5px !important;
   }
   .promec-nav-cta-btn {
-    padding: 6px 12px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 12px !important;
   }
 }
 
@@ -4566,16 +4668,20 @@ section, [id] {
   width: 100% !important;
   height: 100vh !important;
   min-height: 100vh !important;
-  max-height: 100vh !important;
+  min-height: 100dvh !important;
+  max-height: none !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
+  align-items: stretch !important;
   background-color: #f0f3f6 !important;
   background-image: url('assets/Hero_desk.webp') !important;
   background-position: right bottom !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   padding-top: 72px !important;
+  padding-bottom: 24px !important;
+  box-sizing: border-box !important;
   overflow: hidden !important;
   z-index: 2 !important;
 }
@@ -4600,23 +4706,10 @@ section, [id] {
 }
 
 /* Left Content */
-/* Gradient Opt4 Radial Scrim (Desktop) */
+/* Hero Scrim removed per user request */
 .promec-hero-section::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: radial-gradient(
-    circle 850px at 24% 45%,
-    rgba(255, 255, 255, 0.88) 0%,
-    rgba(255, 255, 255, 0.75) 30%,
-    rgba(255, 255, 255, 0.40) 55%,
-    rgba(255, 255, 255, 0.12) 75%,
-    rgba(255, 255, 255, 0) 100%
-  ) !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
+  display: none !important;
+  content: none !important;
 }
 
 .promec-hero__container {
@@ -4787,61 +4880,105 @@ section, [id] {
 /* Bottom Feature Strip */
 .promec-features-bar {
   width: 100% !important;
+  height: 140px !important;
+  min-height: 140px !important;
+  max-height: 140px !important;
   background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border-top: 1px solid rgba(229, 231, 235, 0.8) !important;
   border-bottom: 1px solid rgba(229, 231, 235, 0.8) !important;
-  padding: 16px 0 !important;
+  padding: 0 !important;
   position: relative !important;
   z-index: 10 !important;
   flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 
 .promec-features-bar__grid {
-  max-width: 1360px !important;
+  width: 100% !important;
+  max-width: 1420px !important;
   margin: 0 auto !important;
-  padding: 0 48px !important;
+  padding: 0 40px !important;
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 20px !important;
+  gap: 36px !important;
   align-items: center !important;
+  box-sizing: border-box !important;
 }
 
 .promec-feature-item {
+  position: relative !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
-  gap: 10px !important;
+  gap: 16px !important;
+  cursor: default !important;
+}
+
+/* Subtle Vertical Bifurcation Line Between Feature Items */
+.promec-feature-item:not(:last-child)::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -18px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 1px !important;
+  height: 32px !important;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(17, 16, 14, 0.04) 15%,
+    rgba(17, 16, 14, 0.22) 50%,
+    rgba(17, 16, 14, 0.04) 85%,
+    transparent 100%
+  ) !important;
+  pointer-events: none !important;
+}
+
+.promec-feature-item:hover,
+.promec-feature-item:hover .promec-feature-icon,
+.promec-feature-icon:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  background: transparent !important;
 }
 
 .promec-feature-icon {
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50% !important;
-  border: 1.5px solid #d1d5db !important;
+  width: auto !important;
+  height: auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   color: #11100e !important;
-  background: #ffffff !important;
-  transition: all 0.2s ease !important;
+  transition: none !important;
 }
 
-.promec-feature-item:hover .promec-feature-icon {
-  border-color: #11100e !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+.promec-feature-icon svg {
+  width: 36px !important;
+  height: 36px !important;
+  stroke: #11100e !important;
+  stroke-width: 1.8 !important;
+  display: block !important;
 }
 
 .promec-feature-label {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-  line-height: 1.25 !important;
-  letter-spacing: -0.01em !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #52525b !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
 }
 
 /* Mobile & Tablet Responsiveness */
@@ -4852,12 +4989,15 @@ section, [id] {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     padding-top: 68px !important;
+    padding-bottom: 24px !important;
     height: 100vh !important;
     min-height: 100vh !important;
-    max-height: 100vh !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
   }
   .promec-hero__container {
     min-height: auto !important;
@@ -4877,23 +5017,10 @@ section, [id] {
     min-height: auto !important;
     width: 100% !important;
   }
-  /* Gradient Mobile Warm Scrim */
+  /* Hero Scrim removed per user request */
   .promec-hero-section::before {
-    content: "" !important;
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 254, 250, 0.88) 25%,
-      rgba(255, 252, 245, 0.65) 42%,
-      rgba(255, 250, 240, 0.30) 55%,
-      rgba(255, 248, 235, 0) 68%
-    ) !important;
-    pointer-events: none !important;
-    z-index: 1 !important;
+    display: none !important;
+    content: none !important;
   }
   .promec-hero__container {
     position: relative !important;
@@ -4939,10 +5066,41 @@ section, [id] {
   .promec-hero__visual-col {
     display: none !important;
   }
+  .promec-features-bar {
+    height: 128px !important;
+    min-height: 128px !important;
+  }
   .promec-features-bar__grid {
     grid-template-columns: repeat(4, 1fr) !important;
     padding: 0 16px !important;
-    gap: 10px !important;
+    gap: 16px !important;
+  }
+  .promec-feature-icon {
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .promec-feature-icon svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .promec-feature-item:not(:last-child)::after {
+    right: -8px !important;
+    height: 28px !important;
+  }
+  .promec-feature-item:nth-child(4)::after,
+  .promec-feature-item.hide-mobile-feature::after {
+    display: none !important;
+  }
+  .promec-feature-label {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #52525b !important;
+    line-height: 1.25 !important;
+    text-transform: uppercase !important;
   }
   .hide-mobile-feature {
     display: none !important;
@@ -4967,29 +5125,52 @@ section, [id] {
   .promec-hero__btn-secondary {
     width: 100% !important;
   }
+  .promec-features-bar {
+    height: 118px !important;
+    min-height: 118px !important;
+  }
   .promec-features-bar__grid {
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 8px !important;
+    gap: 10px !important;
     padding: 0 12px !important;
   }
   .promec-feature-icon {
-    width: 38px !important;
-    height: 38px !important;
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .promec-feature-icon svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .promec-feature-item:not(:last-child)::after {
+    right: -5px !important;
+    height: 24px !important;
+  }
+  .promec-feature-item:nth-child(4)::after,
+  .promec-feature-item.hide-mobile-feature::after {
+    display: none !important;
   }
   .promec-feature-label {
-    font-size: 11px !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    color: #52525b !important;
     line-height: 1.2 !important;
+    text-transform: uppercase !important;
   }
 }
 
-/* ==========================================================================
-   MULTIPLE POSSIBILITIES — 5 APPLICATION CATEGORIES (MATCHING MOCKUP)
-   ========================================================================== */
+/* =========================================================================
+   23. ONE SYSTEM MULTIPLE POSSIBILITIES — 4 APPLICATION CATEGORIES
+   ========================================================================= */
 .promec-possibilities-section {
   position: relative !important;
   width: 100% !important;
-  background-color: #ffffff !important;
-  padding: 68px 0 80px !important;
+  background-color: #FAF6F5 !important;
+  padding: 88px 0 100px !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
 }
@@ -5001,68 +5182,60 @@ section, [id] {
   box-sizing: border-box !important;
 }
 
-/* Header */
+/* Header: 2 Columns with Divider */
 .promec-possibilities__header {
   display: flex !important;
+  align-items: center !important;
   justify-content: space-between !important;
-  align-items: flex-end !important;
-  margin-bottom: 36px !important;
-  gap: 32px !important;
+  margin-bottom: 56px !important;
+  gap: 40px !important;
 }
 
 .promec-possibilities__heading-col {
+  flex: 0 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
-.promec-possibilities__kicker {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  margin-bottom: 8px !important;
-}
-
-.promec-possibilities__kicker-line {
-  display: inline-block !important;
-  width: 26px !important;
-  height: 3.5px !important;
-  background-color: #84cc16 !important;
-  border-radius: 2px !important;
-}
-
-.promec-possibilities__kicker-text {
-  font-family: "Neue Montreal", "PP Neue Montreal", sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.16em !important;
-  color: #52525b !important;
-  text-transform: uppercase !important;
-}
-
-.promec-possibilities__title {
+.promec-possibilities__heading-col .promec-hero__heading {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(34px, 4vw, 48px) !important;
-  font-weight: 900 !important;
-  line-height: 1.04 !important;
-  letter-spacing: -0.035em !important;
-  color: #09090b !important;
+  font-size: 44px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
   margin: 0 !important;
   display: flex !important;
   flex-direction: column !important;
-  text-transform: uppercase !important;
+}
+
+.promec-possibilities__heading-col .promec-hero__line-light {
+  font-weight: 400 !important;
+  color: #1a1a1e !important;
+}
+
+.promec-possibilities__heading-col .promec-hero__line-bold {
+  font-weight: 800 !important;
+  color: #0c0d10 !important;
+}
+
+/* Vertical Thin Divider */
+.promec-possibilities__divider {
+  width: 1px !important;
+  height: 90px !important;
+  background: rgba(0, 0, 0, 0.14) !important;
+  flex-shrink: 0 !important;
 }
 
 .promec-possibilities__info-col {
-  max-width: 440px !important;
+  max-width: 480px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 16px !important;
+  gap: 18px !important;
 }
 
 .promec-possibilities__desc {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 14.5px !important;
+  font-size: 15px !important;
   line-height: 1.55 !important;
   color: #4b5563 !important;
   margin: 0 !important;
@@ -5072,60 +5245,82 @@ section, [id] {
 .promec-possibilities__explore-btn {
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
   background: #000000 !important;
   color: #ffffff !important;
-  padding: 11px 22px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 0 18px !important;
   border-radius: 6px !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15) !important;
 }
+
 .promec-possibilities__explore-btn:hover {
   background: #27272a !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
-}
-.promec-possibilities__explore-btn .mobile-text {
-  display: none !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important;
+  color: #ffffff !important;
 }
 
-/* Grid of 4 Cards */
+.promec-possibilities__explore-btn .promec-btn-arrow {
+  display: inline-block !important;
+  transition: transform 0.25s ease !important;
+}
+
+.promec-possibilities__explore-btn:hover .promec-btn-arrow {
+  transform: translateX(4px) !important;
+}
+
+/* Grid of 4 Application Cards */
 .promec-possibilities__grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 20px !important;
-  align-items: stretch !important;
+  gap: 26px !important;
+  align-items: flex-start !important;
 }
 
 .promec-possibilities__card {
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
+  align-items: center !important;
   text-decoration: none !important;
   color: inherit !important;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04) !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  position: relative !important;
+  cursor: pointer !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .promec-possibilities__card:hover {
   transform: translateY(-6px) !important;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09) !important;
-  border-color: #cbd5e1 !important;
 }
 
-.promec-possibilities__card-media {
-  position: relative !important;
+/* White Elevated Card Frame with soft rounded border */
+.promec-possibilities__card-frame {
   width: 100% !important;
-  height: 170px !important;
+  aspect-ratio: 760 / 504 !important;
+  border-radius: 20px !important;
   overflow: hidden !important;
-  background: #f1f5f9 !important;
+  background: #ffffff !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  transition: box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.promec-possibilities__card:hover .promec-possibilities__card-frame {
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .promec-possibilities__card-img {
@@ -5133,93 +5328,36 @@ section, [id] {
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
+  border-radius: 17px !important;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .promec-possibilities__card:hover .promec-possibilities__card-img {
-  transform: scale(1.06) !important;
+  transform: scale(1.03) !important;
 }
 
-.promec-possibilities__card-body {
-  padding: 16px 18px 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  flex: 1 1 auto !important;
-  position: relative !important;
-  background: #ffffff !important;
-  min-height: 98px !important;
-}
-
-.promec-possibilities__card-title-row {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-.promec-possibilities__card-title {
+/* Card Label Below Image */
+.promec-possibilities__card-label {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 15px !important;
-  font-weight: 700 !important;
-  color: #09090b !important;
-  margin: 0 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  color: #0c0d10 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+  margin-top: 18px !important;
+  transition: color 0.25s ease !important;
+  line-height: 1.3 !important;
 }
 
-.promec-card-arrow-line {
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  color: #71717a !important;
-  letter-spacing: normal !important;
-  transition: transform 0.25s ease, color 0.25s ease !important;
-  display: inline-block !important;
+.promec-possibilities__card:hover .promec-possibilities__card-label {
+  color: #000000 !important;
 }
 
-.promec-possibilities__card:hover .promec-card-arrow-line {
-  transform: translateX(4px) !important;
-  color: #09090b !important;
-}
-
-.promec-possibilities__card-desc {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 12px !important;
-  line-height: 1.45 !important;
-  color: #64748b !important;
-  margin: 8px 0 0 0 !important;
-  padding-right: 32px !important;
-  font-weight: 400 !important;
-}
-
-.promec-possibilities__card-circle-btn {
-  position: absolute !important;
-  right: 14px !important;
-  bottom: 16px !important;
-  width: 28px !important;
-  height: 28px !important;
-  border-radius: 50% !important;
-  border: 1.5px solid #d4d4d8 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #18181b !important;
-  background: #ffffff !important;
-  transition: all 0.25s ease !important;
-}
-
-.promec-possibilities__card:hover .promec-possibilities__card-circle-btn {
-  background: #09090b !important;
-  color: #ffffff !important;
-  border-color: #09090b !important;
-  transform: scale(1.08) !important;
-}
-
-/* Tablet & Mobile Responsiveness for Possibilities */
+/* Tablet & Mobile Responsiveness */
 @media (max-width: 1024px) {
   .promec-possibilities-section {
-    padding: 50px 0 60px !important;
+    padding: 64px 0 76px !important;
   }
   .promec-possibilities__container {
     padding: 0 32px !important;
@@ -5227,59 +5365,41 @@ section, [id] {
   .promec-possibilities__header {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 20px !important;
+    gap: 24px !important;
+    margin-bottom: 40px !important;
+  }
+  .promec-possibilities__divider {
+    display: none !important;
+  }
+  .promec-possibilities__info-col {
+    max-width: 100% !important;
   }
   .promec-possibilities__grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
+    gap: 20px !important;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 640px) {
   .promec-possibilities-section {
-    padding: 40px 0 50px !important;
+    padding: 48px 0 60px !important;
   }
   .promec-possibilities__container {
     padding: 0 20px !important;
   }
-  .promec-possibilities__header {
-    flex-direction: column !important;
-    gap: 16px !important;
-    margin-bottom: 24px !important;
+  .promec-possibilities__heading-col .promec-hero__heading {
+    font-size: 34px !important;
   }
-  .promec-possibilities__title {
-    font-size: 32px !important;
+  .promec-possibilities__desc {
+    font-size: 14px !important;
   }
-  .promec-possibilities__info-col {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .promec-possibilities__explore-btn {
-    align-self: flex-start !important;
-  }
-  .promec-possibilities__explore-btn .desktop-text {
-    display: none !important;
-  }
-  .promec-possibilities__explore-btn .mobile-text {
-    display: inline !important;
-  }
-  /* Mobile symmetrical 2x2 grid for all 4 cards */
   .promec-possibilities__grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
   }
-  .promec-possibilities__card-media {
-    height: 130px !important;
-  }
-  .promec-possibilities__card-desc {
-    font-size: 11.5px !important;
-    padding-right: 28px !important;
-  }
-  .promec-possibilities__card-circle-btn {
-    width: 24px !important;
-    height: 24px !important;
-    right: 12px !important;
-    bottom: 14px !important;
+  .promec-possibilities__card-label {
+    font-size: 14.5px !important;
+    margin-top: 14px !important;
   }
 }
 
@@ -5290,7 +5410,8 @@ section, [id] {
   position: relative !important;
   width: 100% !important;
   min-height: 125vh !important;
-  background-color: #ffffff !important;
+  background-color: #F5F3EF !important;
+  background: #F5F3EF !important;
   color: #000000 !important;
   overflow: hidden !important;
   display: flex !important;
@@ -5329,7 +5450,7 @@ section, [id] {
   z-index: 2 !important;
 }
 
-/* Base Tile Styling - Sharp Rectangular Corners (radius: 0) & No Hover Effect */
+/* Base Tile Styling - 4px Radius & No Hover Effect */
 .promec-scatter__tile {
   position: absolute !important;
   pointer-events: none !important;
@@ -5340,7 +5461,7 @@ section, [id] {
 .promec-scatter__tile-inner {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 0 !important;
+  border-radius: 4px !important;
   overflow: hidden !important;
   background-color: #f1f5f9 !important;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
@@ -5351,7 +5472,7 @@ section, [id] {
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  border-radius: 0 !important;
+  border-radius: 4px !important;
 }
 
 /* Desktop Tile Coordinates & Sizes (Arranged around Centered Headline) */
@@ -5391,9 +5512,9 @@ section, [id] {
   align-items: center !important;
   text-align: center !important;
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(48px, 7.5vw, 108px) !important;
+  font-size: clamp(52px, 5.2vw, 68px) !important;
   font-weight: 500 !important;
-  line-height: 1.02 !important;
+  line-height: 1.05 !important;
   letter-spacing: -0.03em !important;
   color: #000000 !important;
   user-select: none !important;
@@ -5593,7 +5714,7 @@ section, [id] {
 
 .promec-rotation-headline {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 54px !important;
+  font-size: 48px !important;
   line-height: 1.05 !important;
   letter-spacing: -0.035em !important;
   margin: 0 0 24px 0 !important;
@@ -5619,31 +5740,36 @@ section, [id] {
 .promec-rotation-tabs {
   display: grid !important;
   grid-template-columns: repeat(6, 1fr) !important;
-  gap: 6px !important;
-  padding-bottom: 16px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  gap: 8px !important;
+  padding-bottom: 18px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
 }
 
 .promec-rotation-tab {
   background: transparent !important;
-  border: none !important;
-  padding: 10px 4px !important;
+  border: 1px solid transparent !important;
+  padding: 10px 8px !important;
+  height: 46px !important;
+  min-height: 46px !important;
   display: flex !important;
-  flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 6px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: rgba(255, 255, 255, 0.70) !important;
   cursor: pointer !important;
-  border-radius: 6px !important;
-  transition: all 0.2s ease !important;
+  border-radius: 8px !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   text-align: center !important;
   outline: none !important;
+  box-sizing: border-box !important;
 }
 
 .promec-rotation-tab svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
   stroke: rgba(255, 255, 255, 0.75) !important;
-  transition: stroke 0.2s ease !important;
+  stroke-width: 2 !important;
+  transition: stroke 0.2s ease, transform 0.2s ease !important;
 }
 
 .promec-rotation-tab span {
@@ -5658,17 +5784,23 @@ section, [id] {
 
 .promec-rotation-tab.is-active {
   background: #ffffff !important;
+  border-color: #ffffff !important;
   color: #0c0d10 !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+  transform: translateY(-1px) !important;
 }
 
 .promec-rotation-tab.is-active svg {
   stroke: #0c0d10 !important;
+  stroke-width: 2 !important;
+  transform: scale(1.05) !important;
 }
 
 .promec-rotation-tab:hover:not(.is-active) {
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
   color: #ffffff !important;
+  transform: translateY(-1px) !important;
 }
 
 .promec-rotation-tab:hover:not(.is-active) svg {
@@ -5793,43 +5925,81 @@ section, [id] {
 @media (max-width: 991px) {
   .promec-rotation-viewport {
     height: auto !important;
-    min-height: 100vh !important;
-    padding: 40px 20px 60px !important;
+    min-height: auto !important;
+    padding: 44px 20px 60px !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
+    align-items: center !important;
+    background: #060709 !important;
+    overflow: visible !important;
   }
   .promec-rotation-viewport__inner {
+    position: relative !important;
     flex-direction: column !important;
     height: auto !important;
+    width: 100% !important;
+    max-width: 580px !important;
+    margin: 0 auto !important;
     overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
   }
   .promec-rotation-viewport__video {
     position: relative !important;
-    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    -webkit-transform: none !important;
     width: 100% !important;
-    height: 320px !important;
-    max-height: 320px !important;
-    object-fit: contain !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 380px !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
     object-position: center center !important;
-    margin-bottom: 12px !important;
+    border-radius: 16px !important;
+    background-color: #060709 !important;
+    margin: 0 auto 24px auto !important;
+    display: block !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
   .promec-rotation-viewport__badge {
     position: relative !important;
+    top: auto !important;
     bottom: auto !important;
     left: auto !important;
+    right: auto !important;
     margin-bottom: 20px !important;
     align-self: center !important;
   }
   .promec-rotation-overlay {
     position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     inset: auto !important;
-    padding-right: 0 !important;
+    padding: 0 !important;
     width: 100% !important;
-    justify-content: center !important;
+    max-width: 100% !important;
+    background: none !important;
+    background-image: none !important;
+    justify-content: flex-start !important;
+    pointer-events: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   .promec-rotation-content {
     max-width: 100% !important;
     width: 100% !important;
+    pointer-events: auto !important;
+    align-items: stretch !important;
   }
   .promec-rotation-headline {
     font-size: 28px !important;
@@ -5842,7 +6012,7 @@ section, [id] {
   }
   .promec-rotation-tabs {
     display: flex !important;
-    gap: 6px !important;
+    gap: 8px !important;
     overflow-x: auto !important;
     scrollbar-width: none !important;
     padding-bottom: 12px !important;
@@ -5852,8 +6022,14 @@ section, [id] {
   }
   .promec-rotation-tab {
     flex: 0 0 auto !important;
-    min-width: 68px !important;
-    padding: 8px 6px !important;
+    min-width: 54px !important;
+    height: 44px !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+  }
+  .promec-rotation-tab svg {
+    width: 20px !important;
+    height: 20px !important;
   }
   .promec-rotation-tab span {
     font-size: 8px !important;
@@ -5918,7 +6094,7 @@ section, [id] {
 
 .why-aquaforce-title {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(30px, 3.2vw, 42px) !important;
+  font-size: 48px !important;
   line-height: 1.15 !important;
   letter-spacing: -0.025em !important;
   margin: 0 0 10px 0 !important;
@@ -6023,6 +6199,128 @@ section, [id] {
   object-fit: cover !important;
 }
 
+/* Bento Card Text & Badge Overlays */
+.why-aquaforce-bento__overlay {
+  position: absolute !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.why-aquaforce-bento__overlay--top-left {
+  top: 24px !important;
+  left: 28px !important;
+  max-width: 82% !important;
+}
+
+.why-aquaforce-bento__overlay--center-left {
+  top: 24px !important;
+  left: 24px !important;
+  max-width: 60% !important;
+}
+
+.why-aquaforce-bento__clock-icon {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: rgba(12, 13, 16, 0.85) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 8px !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+
+.why-aquaforce-bento__clock-icon svg {
+  stroke: #ffffff !important;
+}
+
+.why-aquaforce-bento__title-large {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(22px, 2.2vw, 32px) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  color: #0c0d10 !important;
+  margin: 0 0 6px 0 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.85) !important;
+}
+
+.why-aquaforce-bento__sub-large {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(13px, 1.1vw, 16px) !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85) !important;
+}
+
+.why-aquaforce-bento__title-medium {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(18px, 1.5vw, 22px) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  color: #0c0d10 !important;
+  margin: 0 0 4px 0 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.85) !important;
+}
+
+.why-aquaforce-bento__sub-medium {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(12px, 1vw, 13.5px) !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Feature Badge Capsule (Pill) */
+.why-aquaforce-bento__badge {
+  position: absolute !important;
+  bottom: 16px !important;
+  left: 16px !important;
+  z-index: 2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 14px 6px 8px !important;
+  background: rgba(12, 13, 16, 0.82) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 9999px !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28) !important;
+}
+
+.why-aquaforce-bento__badge-icon {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.why-aquaforce-bento__badge-icon svg {
+  width: 13px !important;
+  height: 13px !important;
+  stroke: #ffffff !important;
+}
+
+.why-aquaforce-bento__badge-text {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 860px) {
   .why-aquaforce-bento__row-top,
@@ -6111,7 +6409,7 @@ section, [id] {
 .promec-reels-section {
   position: relative;
   background: #09090b !important;
-  padding: 44px 0 24px !important;
+  padding: 84px 0 54px !important;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
   border-bottom: none !important;
@@ -6129,26 +6427,27 @@ section, [id] {
 .promec-reels__header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 20px !important;
+  margin: 0 auto 32px !important;
   padding: 0 24px;
 }
 
 .promec-reels__title {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(30px, 3.8vw, 46px) !important;
+  font-family: var(--_fonts---fonts--heading, "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif) !important;
+  font-size: 48px !important;
   font-weight: 700 !important;
-  letter-spacing: -0.025em !important;
-  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.12 !important;
   color: #ffffff !important;
   margin: 0 0 10px !important;
   text-rendering: optimizeLegibility !important;
 }
 
 .promec-reels__subtitle {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: var(--_fonts---fonts--paragraph, "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif) !important;
   font-size: clamp(14px, 1.1vw, 16px) !important;
   font-weight: 400 !important;
   line-height: 1.55 !important;
+  letter-spacing: -0.01em !important;
   color: rgba(255, 255, 255, 0.65) !important;
   margin: 0 auto !important;
   max-width: 580px !important;
@@ -6532,13 +6831,13 @@ section, [id] {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .promec-reels-section {
-    padding: 30px 0 16px !important;
+    padding: 56px 0 36px !important;
   }
   .promec-customer-videos-section {
-    padding: 16px 0 30px !important;
+    padding: 36px 0 60px !important;
   }
   .promec-reels__header {
-    margin-bottom: 16px !important;
+    margin-bottom: 20px !important;
   }
   .promec-reel-card {
     flex: 0 0 190px;
@@ -6563,12 +6862,33 @@ section, [id] {
   }
 }
 
+/* Thin Gradient Bifurcation Divider between Our Works & Customer Reviews */
+.promec-reels-bifurcation-wrap {
+  width: 100% !important;
+  background-color: #09090b !important;
+  padding: 0 32px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.promec-reels-bifurcation-line {
+  width: 100% !important;
+  max-width: 1200px !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 12%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.03) 88%, transparent 100%) !important;
+  border: none !important;
+}
+
 /* Customer Video Card Custom Badges & Captions */
 .promec-customer-videos-section {
   background: #09090b !important;
   border-top: none !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-  padding: 20px 0 44px !important;
+  padding: 54px 0 88px !important;
 }
 
 .promec-reel-card__badge {

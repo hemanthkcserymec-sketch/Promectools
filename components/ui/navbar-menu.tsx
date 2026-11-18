@@ -44,7 +44,7 @@ export const MenuItem = ({
           margin: 0,
           padding: '6px 0',
           cursor: 'pointer',
-          fontFamily: 'var(--_fonts---fonts--heading, "Geist", Arial, sans-serif)',
+          fontFamily: '\'Open Sans\', sans-serif',
           fontSize: '14px',
           fontWeight: 500,
           color: isSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.8)',
@@ -182,11 +182,11 @@ export const ProductItem = ({
       />
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <h4 className="mb-1 text-xl font-bold text-black dark:text-white" style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#ffffff', fontFamily: 'Geist, sans-serif' }}>
+        <h4 className="mb-1 text-xl font-bold text-black dark:text-white" style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#ffffff', fontFamily: "'Open Sans', sans-serif" }}>
           {title}
         </h4>
 
-        <p className="max-w-[10rem] text-sm text-neutral-700 dark:text-neutral-300" style={{ margin: 0, fontSize: '12px', lineHeight: 1.4, color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'Geist, sans-serif', maxWidth: '150px' }}>
+        <p className="max-w-[10rem] text-sm text-neutral-700 dark:text-neutral-300" style={{ margin: 0, fontSize: '12px', lineHeight: 1.4, color: 'rgba(255, 255, 255, 0.7)', fontFamily: "'Open Sans', sans-serif", maxWidth: '150px' }}>
           {description}
         </p>
       </div>
@@ -211,7 +211,7 @@ export const HoveredLink = ({
       style={{
         color: 'rgba(255, 255, 255, 0.8)',
         textDecoration: 'none',
-        fontFamily: 'Geist, sans-serif',
+        fontFamily: "'Open Sans', sans-serif",
         fontWeight: 500,
         fontSize: '13px',
         transition: 'color 0.2s ease'

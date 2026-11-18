@@ -477,7 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateNavScrollState() {
     if (!navBar) return;
     const currentY = window.scrollY || window.pageYOffset || (typeof lenis !== "undefined" && lenis ? lenis.scroll : 0) || document.documentElement.scrollTop || 0;
-    const isScrolled = currentY > 40;
+    const isScrolled = currentY > 30;
     navBar.classList.toggle("is-scrolled", isScrolled);
     if (navNavigation) navNavigation.classList.toggle("is-scrolled", isScrolled);
 
@@ -508,7 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const newHeroDesc = heroSection ? heroSection.querySelector(".promec-hero__description") : null;
   const newHeroActions = heroSection ? heroSection.querySelector(".promec-hero__actions") : null;
   const newHeroVisual = heroSection ? heroSection.querySelector(".promec-hero__visual-col") : null;
-  const newFeatureItems = heroSection ? heroSection.querySelectorAll(".promec-feature-item") : [];
+  const newFeatureItems = document.querySelectorAll(".promec-feature-item");
 
   if (newHeroHeading && typeof gsap !== "undefined") {
     const heroTl = gsap.timeline({
@@ -527,12 +527,31 @@ document.addEventListener("DOMContentLoaded", () => {
       .fromTo(newHeroVisual, { opacity: 0, scale: 0.94, y: 15 }, { opacity: 1, scale: 1, y: 0, duration: 0.85, ease: "power2.out" }, "-=0.6");
 
     if (newFeatureItems.length > 0) {
-      heroTl.fromTo(
-        newFeatureItems,
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 0.45, stagger: 0.06, ease: "power2.out" },
-        "-=0.4"
-      );
+      if (typeof ScrollTrigger !== "undefined") {
+        gsap.fromTo(
+          newFeatureItems,
+          { opacity: 0, y: 16 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            stagger: 0.06,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".promec-features-bar",
+              start: "top 90%",
+              once: true
+            }
+          }
+        );
+      } else {
+        heroTl.fromTo(
+          newFeatureItems,
+          { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: 0.45, stagger: 0.06, ease: "power2.out" },
+          "-=0.4"
+        );
+      }
     }
   }
 
