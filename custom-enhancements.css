@@ -5690,9 +5690,9 @@ div.nav {
 .promec-rotation-viewport {
   position: relative !important;
   width: 100% !important;
-  height: 100vh !important;
-  min-height: 100vh !important;
-  height: 100dvh !important;
+  height: clamp(520px, 66vh, 630px) !important;
+  min-height: 520px !important;
+  max-height: 630px !important;
   background-color: #060709 !important;
   background: #060709 !important;
   display: flex !important;
@@ -5715,17 +5715,18 @@ div.nav {
 
 .promec-rotation-viewport__video {
   position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 102% !important;
-  height: 100.5% !important;
-  min-width: 102% !important;
-  min-height: 100.5% !important;
-  max-width: none !important;
-  object-fit: cover !important;
-  transform: translate(-75%, -50%) !important;
+  top: 52% !important;
+  left: 26% !important;
+  height: 86% !important;
+  max-height: 530px !important;
+  width: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: contain !important;
+  transform: translate(-50%, -50%) !important;
   display: block !important;
   background-color: #060709 !important;
+  -webkit-mask-image: linear-gradient(to right, black 72%, transparent 96%) !important;
+  mask-image: linear-gradient(to right, black 72%, transparent 96%) !important;
 }
 
 /* 360° View Pill Badge */
@@ -6002,6 +6003,25 @@ div.nav {
   user-select: none !important;
 }
 
+/* Intermediate Desktop & Laptops (992px - 1240px) */
+@media (min-width: 992px) and (max-width: 1240px) {
+  .promec-rotation-viewport {
+    height: clamp(500px, 62vh, 580px) !important;
+    min-height: 500px !important;
+  }
+  .promec-rotation-viewport__video {
+    left: 22% !important;
+    height: 84% !important;
+    max-height: 480px !important;
+  }
+  .promec-rotation-content {
+    max-width: 520px !important;
+  }
+  .promec-rotation-headline {
+    font-size: 40px !important;
+  }
+}
+
 /* Responsive: Tablet and Mobile */
 @media (max-width: 991px) {
   .promec-rotation-viewport {
@@ -6041,7 +6061,7 @@ div.nav {
     min-height: 0 !important;
     max-height: 380px !important;
     aspect-ratio: 16 / 9 !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center center !important;
     border-radius: 16px !important;
     background-color: #060709 !important;
@@ -6049,6 +6069,8 @@ div.nav {
     display: block !important;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
   .promec-rotation-viewport__badge {
     position: relative !important;
