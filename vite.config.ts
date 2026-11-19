@@ -30,6 +30,12 @@ function copyStaticAssets(): Plugin {
       copyDir('assets', 'dist/assets');
       copyDir('inquiryform', 'dist/inquiryform');
       copyFile('inquiryform.html', 'dist/inquiryform.html');
+      copyFile('privacy-policy.html', 'dist/privacy-policy.html');
+      copyFile('terms-of-service.html', 'dist/terms-of-service.html');
+      copyFile('terms-of-use.html', 'dist/terms-of-use.html');
+      copyFile('cancellation-policy.html', 'dist/cancellation-policy.html');
+      copyFile('cancelation-policy.html', 'dist/cancelation-policy.html');
+      copyFile('refund-policy.html', 'dist/refund-policy.html');
       copyFile('slater-custom.js', 'dist/slater-custom.js');
       copyFile('main.js', 'dist/main.js');
       copyFile('promec-logo.svg', 'dist/promec-logo.svg');

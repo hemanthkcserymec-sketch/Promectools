@@ -79,6 +79,50 @@
     {
       "source": "/order/:path*",
       "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account?orderId=:path*"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/privacy-policy"
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/privacy-policy"
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/terms-of-service"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/terms-of-service"
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/terms-and-conditions"
+    },
+    {
+      "source": "/terms",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/terms-of-service"
+    },
+    {
+      "source": "/cancellation-policy",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/cancellation-policy"
+    },
+    {
+      "source": "/cancelation-policy",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/cancellation-policy"
+    },
+    {
+      "source": "/refund-policy",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/refund-policy"
+    },
+    {
+      "source": "/refund",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/refund-policy"
+    },
+    {
+      "source": "/return-policy",
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/refund-policy"
     }
   ]
 }
