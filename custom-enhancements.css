@@ -5216,11 +5216,13 @@ div.nav {
 /* =========================================================================
    23. ONE SYSTEM MULTIPLE POSSIBILITIES — 4 APPLICATION CATEGORIES
    ========================================================================= */
+section#applications,
 .promec-possibilities-section {
   position: relative !important;
   width: 100% !important;
-  background-color: #FAF6F5 !important;
-  padding: 88px 0 100px !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  padding: 80px 0 100px !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
 }
@@ -5228,7 +5230,7 @@ div.nav {
 .promec-possibilities__container {
   max-width: 1360px !important;
   margin: 0 auto !important;
-  padding: 0 48px !important;
+  padding: 0 40px !important;
   box-sizing: border-box !important;
 }
 
@@ -5237,8 +5239,8 @@ div.nav {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  margin-bottom: 56px !important;
-  gap: 40px !important;
+  margin-bottom: 48px !important;
+  gap: 36px !important;
 }
 
 .promec-possibilities__heading-col {
@@ -5249,38 +5251,38 @@ div.nav {
 
 .promec-possibilities__heading-col .promec-hero__heading {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 44px !important;
+  font-size: 42px !important;
   line-height: 1.08 !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.025em !important;
   margin: 0 !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
 .promec-possibilities__heading-col .promec-hero__line-light {
-  font-weight: 400 !important;
-  color: #1a1a1e !important;
+  font-weight: 300 !important;
+  color: #11100e !important;
 }
 
 .promec-possibilities__heading-col .promec-hero__line-bold {
   font-weight: 800 !important;
-  color: #0c0d10 !important;
+  color: #000000 !important;
 }
 
 /* Vertical Thin Divider */
 .promec-possibilities__divider {
   width: 1px !important;
-  height: 90px !important;
-  background: rgba(0, 0, 0, 0.14) !important;
+  height: 80px !important;
+  background: rgba(0, 0, 0, 0.12) !important;
   flex-shrink: 0 !important;
 }
 
 .promec-possibilities__info-col {
-  max-width: 480px !important;
+  max-width: 520px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 18px !important;
+  gap: 16px !important;
 }
 
 .promec-possibilities__desc {
@@ -5299,22 +5301,22 @@ div.nav {
   gap: 8px !important;
   background: #000000 !important;
   color: #ffffff !important;
-  height: 36px !important;
-  min-height: 36px !important;
-  padding: 0 18px !important;
-  border-radius: 6px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 20px !important;
+  border-radius: 8px !important;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
 
 .promec-possibilities__explore-btn:hover {
   background: #27272a !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18) !important;
   color: #ffffff !important;
 }
 
@@ -5324,53 +5326,47 @@ div.nav {
 }
 
 .promec-possibilities__explore-btn:hover .promec-btn-arrow {
-  transform: translateX(4px) !important;
+  transform: translateX(3px) !important;
 }
 
 /* Grid of 4 Application Cards */
 .promec-possibilities__grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 26px !important;
-  align-items: flex-start !important;
+  gap: 22px !important;
+  align-items: stretch !important;
 }
 
 .promec-possibilities__card {
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
+  background: #ffffff !important;
+  border: 1px solid #eaecf0 !important;
+  border-radius: 16px !important;
+  padding: 10px 10px 14px 10px !important;
+  box-sizing: border-box !important;
   text-decoration: none !important;
   color: inherit !important;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04) !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
   cursor: pointer !important;
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
 }
 
 .promec-possibilities__card:hover {
-  transform: translateY(-6px) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 24px -4px rgba(16, 24, 40, 0.08), 0 4px 10px rgba(16, 24, 40, 0.03) !important;
+  border-color: #d0d5dd !important;
 }
 
-/* White Elevated Card Frame with soft rounded border */
-.promec-possibilities__card-frame {
+.promec-possibilities__card-img-wrap {
   width: 100% !important;
-  aspect-ratio: 760 / 504 !important;
-  border-radius: 20px !important;
+  aspect-ratio: 16 / 11 !important;
+  border-radius: 12px !important;
   overflow: hidden !important;
-  background: #ffffff !important;
-  border: 3px solid #ffffff !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.03) !important;
-  transition: box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  position: relative !important;
+  background: #f8fafc !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-}
-
-.promec-possibilities__card:hover .promec-possibilities__card-frame {
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .promec-possibilities__card-img {
@@ -5378,30 +5374,52 @@ div.nav {
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  border-radius: 17px !important;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-radius: 12px !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .promec-possibilities__card:hover .promec-possibilities__card-img {
-  transform: scale(1.03) !important;
+  transform: scale(1.025) !important;
 }
 
-/* Card Label Below Image */
+/* Card Footer: Label + Arrow Circle */
+.promec-possibilities__card-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 6px 2px 6px !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
 .promec-possibilities__card-label {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   font-weight: 800 !important;
   color: #0c0d10 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.02em !important;
-  text-align: center !important;
-  margin-top: 18px !important;
-  transition: color 0.25s ease !important;
-  line-height: 1.3 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
 }
 
-.promec-possibilities__card:hover .promec-possibilities__card-label {
-  color: #000000 !important;
+.promec-possibilities__card-arrow {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background: #f2f4f7 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1d2939 !important;
+  flex-shrink: 0 !important;
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease !important;
+}
+
+.promec-possibilities__card:hover .promec-possibilities__card-arrow {
+  background: #000000 !important;
+  color: #ffffff !important;
+  transform: translateX(2px) !important;
 }
 
 /* Tablet & Mobile Responsiveness */
@@ -5445,11 +5463,13 @@ div.nav {
   }
   .promec-possibilities__grid {
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    gap: 20px !important;
+  }
+  .promec-possibilities__card {
+    padding: 10px 10px 14px 10px !important;
   }
   .promec-possibilities__card-label {
-    font-size: 14.5px !important;
-    margin-top: 14px !important;
+    font-size: 14px !important;
   }
 }
 
