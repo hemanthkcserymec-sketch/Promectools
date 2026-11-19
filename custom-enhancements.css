@@ -5865,8 +5865,9 @@ section#applications,
   width: 26px !important;
   height: 26px !important;
   display: block !important;
-  stroke: currentColor !important;
-  transition: stroke 0.2s ease, transform 0.2s ease !important;
+  fill: currentColor !important;
+  stroke: none !important;
+  transition: fill 0.2s ease, transform 0.2s ease !important;
 }
 
 .promec-rotation-tab.is-active {
@@ -5877,8 +5878,9 @@ section#applications,
 }
 
 .promec-rotation-tab.is-active svg {
-  stroke: #0c0d10 !important;
+  fill: #0c0d10 !important;
   color: #0c0d10 !important;
+  stroke: none !important;
   transform: scale(1.02) !important;
 }
 
@@ -5889,7 +5891,8 @@ section#applications,
 }
 
 .promec-rotation-tab:hover:not(.is-active) svg {
-  stroke: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: none !important;
 }
 
 @media (max-width: 480px) {
