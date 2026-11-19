@@ -6492,7 +6492,7 @@ section#applications,
 .promec-reels-section {
   position: relative;
   background: #09090b !important;
-  padding: 84px 0 54px !important;
+  padding: 84px 0 84px !important;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
   border-bottom: none !important;
@@ -6914,10 +6914,10 @@ section#applications,
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .promec-reels-section {
-    padding: 56px 0 36px !important;
+    padding: 56px 0 56px !important;
   }
   .promec-customer-videos-section {
-    padding: 36px 0 60px !important;
+    padding: 56px 0 60px !important;
   }
   .promec-reels__header {
     margin-bottom: 20px !important;
@@ -6971,7 +6971,7 @@ section#applications,
   background: #09090b !important;
   border-top: none !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-  padding: 54px 0 88px !important;
+  padding: 84px 0 88px !important;
 }
 
 .promec-reel-card__badge {
