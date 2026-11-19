@@ -1664,21 +1664,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const heading = engSection.querySelector(".aqua-engineering__heading");
       const textCols = engSection.querySelectorAll(".aqua-engineering__text-col");
 
-      if (marqueeWrap) {
+      if (heading || textCols.length > 0) {
+        const narrativeEls = [heading, ...textCols].filter(Boolean);
         gsap.fromTo(
-          marqueeWrap,
-          { opacity: 0, y: 25 },
+          narrativeEls,
+          { opacity: 0, y: 35 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.85,
+            stagger: 0.14,
             ease: "power2.out",
             scrollTrigger: {
               trigger: engSection,
               start: "top 80%",
               once: true,
             },
-            onComplete: () => clearPropsOnDone(marqueeWrap)
+            onComplete: () => clearPropsOnDone(narrativeEls)
           }
         );
       }
@@ -1692,31 +1694,29 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 0.9,
             ease: "power2.out",
             scrollTrigger: {
-              trigger: engSection,
-              start: "top 75%",
+              trigger: divider,
+              start: "top 85%",
               once: true,
             }
           }
         );
       }
 
-      if (heading || textCols.length > 0) {
-        const narrativeEls = [heading, ...textCols].filter(Boolean);
+      if (marqueeWrap) {
         gsap.fromTo(
-          narrativeEls,
-          { opacity: 0, y: 35 },
+          marqueeWrap,
+          { opacity: 0, y: 25 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.85,
-            stagger: 0.14,
+            duration: 0.8,
             ease: "power2.out",
             scrollTrigger: {
-              trigger: ".aqua-engineering__grid",
-              start: "top 82%",
+              trigger: marqueeWrap,
+              start: "top 85%",
               once: true,
             },
-            onComplete: () => clearPropsOnDone(narrativeEls)
+            onComplete: () => clearPropsOnDone(marqueeWrap)
           }
         );
       }
