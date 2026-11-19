@@ -4482,7 +4482,7 @@ div.nav {
 .promec-nav-dropdown-menu {
   position: absolute !important;
   top: calc(100% + 38px) !important;
-  left: 50% !important;
+  left: 0 !important;
   width: 290px !important;
   max-width: 295px !important;
   min-width: 285px !important;
@@ -4496,7 +4496,7 @@ div.nav {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  transform: translateX(-50%) translateY(8px) !important;
+  transform: translateY(8px) !important;
   transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s !important;
   display: flex !important;
   flex-direction: column !important;
@@ -4520,7 +4520,7 @@ div.nav {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) !important;
+  transform: translateY(0) !important;
 }
 
 .promec-dropdown-item {
