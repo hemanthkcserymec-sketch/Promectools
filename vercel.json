@@ -6,79 +6,79 @@
   "rewrites": [
     {
       "source": "/aquaforceforautocare",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare"
     },
     {
       "source": "/aquaforceforautocare/:path*",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/:path*"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/:path*"
     },
     {
       "source": "/api/:path*",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/api/:path*"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/api/:path*"
     },
     {
       "source": "/aquaforceforservicepartner",
-      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+      "destination": "https://aquaforceforgigworkers.vercel.app/aquaforceforgigworkers"
     },
     {
       "source": "/aquaforceforservicepartner/:path*",
-      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:path*"
+      "destination": "https://aquaforceforgigworkers.vercel.app/aquaforceforgigworkers/:path*"
     },
     {
       "source": "/servicepartner",
-      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+      "destination": "https://aquaforceforgigworkers.vercel.app/aquaforceforgigworkers"
     },
     {
       "source": "/servicepartner/:path*",
-      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:path*"
+      "destination": "https://aquaforceforgigworkers.vercel.app/aquaforceforgigworkers/:path*"
     },
     {
       "source": "/aquaforceforgigworkers",
-      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers"
+      "destination": "https://aquaforceforgigworkers.vercel.app/aquaforceforgigworkers"
     },
     {
       "source": "/aquaforceforgigworkers/:path*",
-      "destination": "https://aquaforceforgigworkers.netlify.app/aquaforceforgigworkers/:path*"
+      "destination": "https://aquaforceforgigworkers.vercel.app/aquaforceforgigworkers/:path*"
     },
     {
       "source": "/inquiryform",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/inquiryform"
     },
     {
       "source": "/inquiryform/:path*",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform/:path*"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/inquiryform/:path*"
     },
     {
       "source": "/homecare",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Home+Care"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/inquiryform?category=Home+Care"
     },
     {
       "source": "/corporatecare",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/inquiryform?category=Corporate+%26+Facility+Care"
     },
     {
       "source": "/account",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account"
     },
     {
       "source": "/account/:path*",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account/:path*"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account/:path*"
     },
     {
       "source": "/profile",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=profile"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account?tab=profile"
     },
     {
       "source": "/orders",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account?tab=orders"
     },
     {
       "source": "/track",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?tab=orders"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account?tab=orders"
     },
     {
       "source": "/order/:path*",
-      "destination": "https://aquaforceforautocare.netlify.app/aquaforceforautocare/account?orderId=:path*"
+      "destination": "https://aquaforceautocare.vercel.app/aquaforceforautocare/account?orderId=:path*"
     }
   ]
 }
