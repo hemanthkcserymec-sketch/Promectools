@@ -5548,19 +5548,19 @@ section#applications,
 }
 
 /* Desktop Tile Coordinates & Sizes (Arranged around Centered Headline) */
-.promec-scatter__tile--1  { left: 7%;  top: 10%; width: 145px; height: 175px; z-index: 3; }
-.promec-scatter__tile--2  { left: 26%; top: 13%; width: 120px; height: 120px; z-index: 3; }
-.promec-scatter__tile--3  { left: 47%; top: 7%;  width: 155px; height: 125px; z-index: 2; }
-.promec-scatter__tile--4  { left: 69%; top: 11%; width: 130px; height: 155px; z-index: 3; }
-.promec-scatter__tile--5  { left: 86%; top: 13%; width: 140px; height: 170px; z-index: 3; }
+.promec-scatter__tile--1  { left: 7%;  top: 10%; width: 116px; height: 140px; z-index: 3; }
+.promec-scatter__tile--2  { left: 26%; top: 13%; width: 96px;  height: 96px;  z-index: 3; }
+.promec-scatter__tile--3  { left: 47%; top: 7%;  width: 124px; height: 100px; z-index: 2; }
+.promec-scatter__tile--4  { left: 69%; top: 11%; width: 104px; height: 124px; z-index: 3; }
+.promec-scatter__tile--5  { left: 86%; top: 13%; width: 112px; height: 136px; z-index: 3; }
 
-.promec-scatter__tile--6  { left: 5%;  top: 45%; width: 130px; height: 155px; z-index: 3; }
-.promec-scatter__tile--7  { left: 14%; top: 73%; width: 135px; height: 135px; z-index: 4; }
-.promec-scatter__tile--8  { left: 86%; top: 44%; width: 130px; height: 155px; z-index: 3; }
-.promec-scatter__tile--9  { left: 84%; top: 71%; width: 140px; height: 175px; z-index: 3; }
+.promec-scatter__tile--6  { left: 5%;  top: 45%; width: 104px; height: 124px; z-index: 3; }
+.promec-scatter__tile--7  { left: 14%; top: 73%; width: 108px; height: 108px; z-index: 4; }
+.promec-scatter__tile--8  { left: 86%; top: 44%; width: 104px; height: 124px; z-index: 3; }
+.promec-scatter__tile--9  { left: 84%; top: 71%; width: 112px; height: 140px; z-index: 3; }
 
-.promec-scatter__tile--10 { left: 33%; top: 79%; width: 135px; height: 135px; z-index: 3; }
-.promec-scatter__tile--11 { left: 63%; top: 77%; width: 150px; height: 125px; z-index: 4; }
+.promec-scatter__tile--10 { left: 33%; top: 79%; width: 108px; height: 108px; z-index: 3; }
+.promec-scatter__tile--11 { left: 63%; top: 77%; width: 120px; height: 100px; z-index: 4; }
 
 /* Headline Wrapper - Perfectly Centered in the Section */
 .promec-scatter__headline-wrap {
@@ -5622,17 +5622,17 @@ section#applications,
   .promec-scatter__headline {
     font-size: clamp(40px, 7vw, 76px) !important;
   }
-  .promec-scatter__tile--1  { width: 110px !important; height: 135px !important; left: 4% !important; }
-  .promec-scatter__tile--2  { width: 100px !important; height: 100px !important; left: 24% !important; }
-  .promec-scatter__tile--3  { width: 120px !important; height: 95px !important; left: 46% !important; }
-  .promec-scatter__tile--4  { width: 105px !important; height: 125px !important; left: 68% !important; }
-  .promec-scatter__tile--5  { width: 110px !important; height: 135px !important; left: 84% !important; }
-  .promec-scatter__tile--6  { width: 100px !important; height: 125px !important; left: 3% !important; }
-  .promec-scatter__tile--7  { width: 105px !important; height: 105px !important; left: 12% !important; }
-  .promec-scatter__tile--8  { width: 100px !important; height: 125px !important; left: 85% !important; }
-  .promec-scatter__tile--9  { width: 110px !important; height: 135px !important; left: 83% !important; }
-  .promec-scatter__tile--10 { width: 110px !important; height: 110px !important; left: 30% !important; }
-  .promec-scatter__tile--11 { width: 120px !important; height: 95px !important; left: 62% !important; }
+  .promec-scatter__tile--1  { width: 90px !important;  height: 110px !important; left: 4% !important; }
+  .promec-scatter__tile--2  { width: 80px !important;  height: 80px !important;  left: 24% !important; }
+  .promec-scatter__tile--3  { width: 100px !important; height: 80px !important;  left: 46% !important; }
+  .promec-scatter__tile--4  { width: 85px !important;  height: 100px !important; left: 68% !important; }
+  .promec-scatter__tile--5  { width: 90px !important;  height: 110px !important; left: 84% !important; }
+  .promec-scatter__tile--6  { width: 80px !important;  height: 100px !important; left: 3% !important; }
+  .promec-scatter__tile--7  { width: 85px !important;  height: 85px !important;  left: 12% !important; }
+  .promec-scatter__tile--8  { width: 80px !important;  height: 100px !important; left: 85% !important; }
+  .promec-scatter__tile--9  { width: 90px !important;  height: 110px !important; left: 83% !important; }
+  .promec-scatter__tile--10 { width: 90px !important;  height: 90px !important;  left: 30% !important; }
+  .promec-scatter__tile--11 { width: 95px !important;  height: 75px !important;  left: 62% !important; }
 }
 
 /* Mobile Responsiveness */
@@ -5664,12 +5664,12 @@ section#applications,
   .promec-scatter__tile--11 {
     display: none !important;
   }
-  .promec-scatter__tile--1  { left: 4% !important;  top: 8% !important; width: 70px !important; height: 85px !important; }
-  .promec-scatter__tile--3  { left: auto !important; right: 5% !important; top: 10% !important; width: 80px !important; height: 65px !important; }
-  .promec-scatter__tile--5  { left: auto !important; right: 4% !important; top: 25% !important; width: 68px !important; height: 82px !important; }
-  .promec-scatter__tile--6  { left: 3% !important;  top: 28% !important; width: 65px !important; height: 78px !important; }
-  .promec-scatter__tile--8  { left: 4% !important;  top: 82% !important; width: 72px !important; height: 86px !important; }
-  .promec-scatter__tile--10 { left: auto !important; right: 5% !important; top: 82% !important; width: 76px !important; height: 76px !important; }
+  .promec-scatter__tile--1  { left: 4% !important;  top: 8% !important; width: 58px !important; height: 70px !important; }
+  .promec-scatter__tile--3  { left: auto !important; right: 5% !important; top: 10% !important; width: 66px !important; height: 54px !important; }
+  .promec-scatter__tile--5  { left: auto !important; right: 4% !important; top: 25% !important; width: 56px !important; height: 68px !important; }
+  .promec-scatter__tile--6  { left: 3% !important;  top: 28% !important; width: 54px !important; height: 65px !important; }
+  .promec-scatter__tile--8  { left: 4% !important;  top: 82% !important; width: 60px !important; height: 72px !important; }
+  .promec-scatter__tile--10 { left: auto !important; right: 5% !important; top: 82% !important; width: 62px !important; height: 62px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
