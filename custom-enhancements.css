@@ -3631,34 +3631,27 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   flex-direction: column !important;
 }
 
-/* 1. Top Header Row: Logo on Left, Nav Links on Right */
+/* 1. Top Header Row: Centered Nav Links */
 .aqua-footer__top-row {
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
   margin-bottom: 24px !important;
 }
 
 .aqua-footer__brand-left {
-  display: flex !important;
-  align-items: center !important;
+  display: none !important;
 }
 
 .aqua-footer__logo {
-  height: 22px !important;
-  width: auto !important;
-  display: block !important;
-  transition: opacity 0.2s ease !important;
-}
-
-.aqua-footer__logo:hover {
-  opacity: 0.85 !important;
+  display: none !important;
 }
 
 .aqua-footer__nav-links {
   display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 36px !important;
   flex-wrap: wrap !important;
 }
@@ -3834,11 +3827,14 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 @media (max-width: 860px) {
   .aqua-footer__top-row {
-    flex-direction: column !important;
-    align-items: flex-start !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
     gap: 18px !important;
   }
   .aqua-footer__nav-links {
+    justify-content: center !important;
+    text-align: center !important;
     gap: 20px !important;
   }
   .aqua-footer__watermark {
