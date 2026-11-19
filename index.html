@@ -613,58 +613,76 @@ backface-visibility: hidden;
             
             <!-- Tab 0: Battery Operation -->
             <button class="promec-rotation-tab is-active" role="tab" aria-selected="true" data-tab-index="0" aria-label="Battery Powered">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="6" width="16" height="12" rx="3"></rect>
-                <line x1="22" y1="10" x2="22" y2="14" stroke-width="2.5"></line>
-                <polyline points="11 8 8 12 12 12 9 16"></polyline>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="16" height="12" rx="3" />
+                <path d="M21 10.5v3" stroke-width="2.5" />
+                <polygon points="10.8 8.2 7.8 12.2 11.2 12.2 9.8 15.8 14.2 11.8 11.2 11.8 12 8.2" fill="currentColor" stroke="none" />
               </svg>
             </button>
+
+            <div class="promec-rotation-tab-divider" aria-hidden="true"></div>
 
             <!-- Tab 1: 3 Hours Continuous Use -->
             <button class="promec-rotation-tab" role="tab" aria-selected="false" data-tab-index="1" aria-label="3 Hours Runtime">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16.5 12"></polyline>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21A9 9 0 1 1 20.3 8.8" />
+                <polyline points="16.5 8.5 20.5 8.8 21.5 5" />
+                <path d="M20.8 13.5a9 9 0 0 1-1.1 2.8" stroke-dasharray="0.1 0" />
+                <path d="M17.8 18.5a9 9 0 0 1-2.5 1.7" stroke-dasharray="0.1 0" />
+                <polyline points="12 7.5 12 12.5 16 12.5" stroke-width="2.2" />
               </svg>
             </button>
+
+            <div class="promec-rotation-tab-divider" aria-hidden="true"></div>
 
             <!-- Tab 2: Built-in Pressure Pump -->
             <button class="promec-rotation-tab" role="tab" aria-selected="false" data-tab-index="2" aria-label="1400 PSI Pump">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m12 14 4-4"></path>
-                <path d="M3.34 19a10 10 0 1 1 17.32 0"></path>
-                <circle cx="12" cy="14" r="2"></circle>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 18a9 9 0 1 1 15 0" />
+                <line x1="5.5" y1="12" x2="7.5" y2="12" />
+                <line x1="7.2" y1="7.2" x2="8.8" y2="8.8" />
+                <line x1="12" y1="5" x2="12" y2="7.5" />
+                <line x1="16.8" y1="7.2" x2="15.2" y2="8.8" />
+                <line x1="18.5" y1="12" x2="16.5" y2="12" />
+                <circle cx="12" cy="15" r="2" />
+                <line x1="13.5" y1="13.5" x2="17" y2="10" stroke-width="2.2" />
               </svg>
             </button>
+
+            <div class="promec-rotation-tab-divider" aria-hidden="true"></div>
 
             <!-- Tab 3: No Power Socket Required -->
             <button class="promec-rotation-tab" role="tab" aria-selected="false" data-tab-index="3" aria-label="No Socket Needed">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="2" y1="2" x2="22" y2="22"></line>
-                <path d="M12 22v-5"></path>
-                <path d="M9 7V2"></path>
-                <path d="M15 7V2"></path>
-                <path d="M18 7v4a6 6 0 0 1-.6 2.6"></path>
-                <path d="M6 11a6 6 0 0 0 10 4.5"></path>
-                <line x1="6" y1="7" x2="18" y2="7"></line>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="9" y1="2.5" x2="9" y2="7" />
+                <line x1="15" y1="2.5" x2="15" y2="7" />
+                <path d="M5.5 7h13a0.5 0.5 0 0 1 .5.5v1.5a5.5 5.5 0 0 1-5.5 5.5h-3A5.5 5.5 0 0 1 5 9V7.5a0.5 0.5 0 0 1 .5-.5Z" />
+                <line x1="12" y1="14.5" x2="12" y2="21" />
+                <line x1="3" y1="3" x2="21" y2="21" stroke-width="2.2" />
               </svg>
             </button>
+
+            <div class="promec-rotation-tab-divider" aria-hidden="true"></div>
 
             <!-- Tab 4: Vehicle Optimised -->
             <button class="promec-rotation-tab" role="tab" aria-selected="false" data-tab-index="4" aria-label="Vehicle Optimised">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
-                <circle cx="7" cy="17" r="2.5"></circle>
-                <path d="M9.5 17h5"></path>
-                <circle cx="17" cy="17" r="2.5"></circle>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" />
+                <rect width="18" height="8" x="3" y="10" rx="2" />
+                <line x1="6.5" y1="14" x2="8.5" y2="14" stroke-width="2" />
+                <line x1="15.5" y1="14" x2="17.5" y2="14" stroke-width="2" />
+                <line x1="5.5" y1="18" x2="5.5" y2="20.5" stroke-width="2.5" />
+                <line x1="18.5" y1="18" x2="18.5" y2="20.5" stroke-width="2.5" />
               </svg>
             </button>
 
+            <div class="promec-rotation-tab-divider" aria-hidden="true"></div>
+
             <!-- Tab 5: Cordless & Portable -->
             <button class="promec-rotation-tab" role="tab" aria-selected="false" data-tab-index="5" aria-label="Cordless and Portable">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="14" x="2" y="7" rx="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="6" rx="3" />
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
               </svg>
             </button>
 
