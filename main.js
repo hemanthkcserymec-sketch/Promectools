@@ -2115,7 +2115,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const rawSpeed = parseFloat(tile.getAttribute("data-scatter-speed")) || 1.0;
       // Scroll DOWN = images move continuously DOWN (+Y)
       // Scroll UP = images move continuously UP (-Y)
-      const travel = (isMobile ? 260 : 620) * rawSpeed;
+      // Calibrated travel distance for compact section height
+      const travel = (isMobile ? 120 : 220) * rawSpeed;
       const startY = -travel * 0.45;
       const endY = travel * 0.55;
 

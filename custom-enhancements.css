@@ -5479,7 +5479,8 @@ section#applications,
 .promec-scatter-section {
   position: relative !important;
   width: 100% !important;
-  min-height: 125vh !important;
+  min-height: 70vh !important;
+  max-height: 750px !important;
   background-color: #F5F3EF !important;
   background: #F5F3EF !important;
   color: #000000 !important;
@@ -5488,7 +5489,7 @@ section#applications,
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 60px 0 !important;
+  padding: 30px 0 !important;
   box-sizing: border-box !important;
   z-index: 1 !important;
 }
@@ -5497,7 +5498,8 @@ section#applications,
   position: relative !important;
   width: 100% !important;
   max-width: 1440px !important;
-  min-height: 110vh !important;
+  min-height: 65vh !important;
+  max-height: 720px !important;
   margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
@@ -5608,12 +5610,14 @@ section#applications,
 /* Tablet Responsiveness */
 @media (max-width: 1024px) {
   .promec-scatter-section {
-    min-height: 110vh !important;
-    padding: 50px 0 !important;
+    min-height: 60vh !important;
+    max-height: 650px !important;
+    padding: 30px 0 !important;
   }
   .promec-scatter__inner {
     padding: 0 24px !important;
-    min-height: 95vh !important;
+    min-height: 55vh !important;
+    max-height: 600px !important;
   }
   .promec-scatter__headline {
     font-size: clamp(40px, 7vw, 76px) !important;
@@ -5634,12 +5638,14 @@ section#applications,
 /* Mobile Responsiveness */
 @media (max-width: 767px) {
   .promec-scatter-section {
-    min-height: 85vh !important;
-    padding: 30px 0 !important;
+    min-height: 520px !important;
+    max-height: 560px !important;
+    padding: 20px 0 !important;
   }
   .promec-scatter__inner {
     padding: 0 16px !important;
-    min-height: 75vh !important;
+    min-height: 480px !important;
+    max-height: 520px !important;
   }
   .promec-scatter__headline-wrap {
     padding: 10px 0 !important;
