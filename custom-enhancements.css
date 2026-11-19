@@ -5710,16 +5710,16 @@ section#applications,
 
 .promec-rotation-viewport__video {
   position: absolute !important;
-  top: 52% !important;
+  top: 50% !important;
   left: 26% !important;
-  height: 86% !important;
-  max-height: 530px !important;
+  height: 100% !important;
+  max-height: none !important;
   width: auto !important;
   aspect-ratio: 16 / 9 !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
   transform: translate(-50%, -50%) !important;
   display: block !important;
-  background-color: #060709 !important;
+  background-color: transparent !important;
   -webkit-mask-image: linear-gradient(to right, black 72%, transparent 96%) !important;
   mask-image: linear-gradient(to right, black 72%, transparent 96%) !important;
 }
@@ -6018,8 +6018,11 @@ section#applications,
   }
   .promec-rotation-viewport__video {
     left: 22% !important;
-    height: 84% !important;
-    max-height: 480px !important;
+    top: 50% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    background-color: transparent !important;
   }
   .promec-rotation-content {
     max-width: 520px !important;
@@ -6068,10 +6071,10 @@ section#applications,
     min-height: 0 !important;
     max-height: 380px !important;
     aspect-ratio: 16 / 9 !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
     object-position: center center !important;
     border-radius: 16px !important;
-    background-color: #060709 !important;
+    background-color: transparent !important;
     margin: 0 auto 24px auto !important;
     display: block !important;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
