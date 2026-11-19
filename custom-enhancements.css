@@ -4666,6 +4666,9 @@ div.nav {
   .promec-nav-menu {
     display: none !important;
   }
+  .promec-nav-actions .promec-nav-cta-btn {
+    display: none !important;
+  }
   .nav__toggle {
     display: flex !important;
   }
@@ -4686,19 +4689,13 @@ div.nav {
   .promec-nav-logo-img {
     height: 16px !important;
   }
-  .promec-nav-cta-btn {
-    height: 36px !important;
-    min-height: 36px !important;
-    padding: 0 14px !important;
-    font-size: 11px !important;
-  }
 }
 
 @media (max-width: 480px) {
-  .promec-nav-cta-btn span {
+  .nav__cta-wrap .promec-nav-cta-btn span {
     font-size: 10.5px !important;
   }
-  .promec-nav-cta-btn {
+  .nav__cta-wrap .promec-nav-cta-btn {
     height: 36px !important;
     min-height: 36px !important;
     padding: 0 12px !important;
