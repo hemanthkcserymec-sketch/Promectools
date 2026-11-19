@@ -4705,11 +4705,25 @@ div.nav {
   min-height: auto !important;
 }
 
-/* Left Content */
-/* Hero Scrim removed per user request */
+/* White Gradient Overlay (Left to Right) */
 .promec-hero-section::before {
-  display: none !important;
-  content: none !important;
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.96) 20%,
+    rgba(255, 255, 255, 0.88) 35%,
+    rgba(255, 255, 255, 0.55) 52%,
+    rgba(255, 255, 255, 0.15) 68%,
+    rgba(255, 255, 255, 0) 80%
+  ) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  display: block !important;
 }
 
 .promec-hero__container {
@@ -5017,10 +5031,30 @@ div.nav {
     min-height: auto !important;
     width: 100% !important;
   }
-  /* Hero Scrim removed per user request */
+  /* White Gradient Overlay (Mobile) */
   .promec-hero-section::before {
-    display: none !important;
-    content: none !important;
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.95) 28%,
+      rgba(255, 255, 255, 0.70) 48%,
+      rgba(255, 255, 255, 0.15) 65%,
+      rgba(255, 255, 255, 0) 80%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.90) 0%,
+      rgba(255, 255, 255, 0.40) 50%,
+      rgba(255, 255, 255, 0) 85%
+    ) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    display: block !important;
   }
   .promec-hero__container {
     position: relative !important;
