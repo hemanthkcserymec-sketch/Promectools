@@ -1621,44 +1621,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // -----------------------------------------------------------
-    // SECTION 4: WHY AQUAFORCE BENTO GRID (#why-aquaforce)
+    // SECTION 4: KEY FEATURES SHOWCASE (#why-aquaforce)
     // -----------------------------------------------------------
     const whySection = document.getElementById("why-aquaforce");
     if (whySection) {
-      const header = whySection.querySelector(".why-aquaforce-header");
-      const bentoCards = whySection.querySelectorAll(".why-aquaforce-card");
+      const kfLeft = whySection.querySelector(".promec-key-features__left");
+      const kfRight = whySection.querySelector(".promec-key-features__right");
 
-      const whyTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: whySection,
-          start: "top 78%",
-          once: true,
+      if (kfLeft || kfRight) {
+        const kfTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: whySection,
+            start: "top 78%",
+            once: true,
+          }
+        });
+        if (kfLeft) {
+          kfTl.fromTo(
+            kfLeft,
+            { opacity: 0, x: -30 },
+            { opacity: 1, x: 0, duration: 0.85, ease: "power2.out", onComplete: () => clearPropsOnDone(kfLeft) }
+          );
         }
-      });
-
-      if (header) {
-        whyTl.fromTo(
-          header,
-          { opacity: 0, y: 35 },
-          { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", onComplete: () => clearPropsOnDone(header) }
-        );
-      }
-
-      if (bentoCards.length > 0) {
-        whyTl.fromTo(
-          bentoCards,
-          { opacity: 0, y: 40, scale: 0.96 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            stagger: 0.12,
-            ease: "power2.out",
-            onComplete: () => clearPropsOnDone(bentoCards)
-          },
-          "-=0.45"
-        );
+        if (kfRight) {
+          kfTl.fromTo(
+            kfRight,
+            { opacity: 0, x: 30, scale: 0.98 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.85, ease: "power2.out", onComplete: () => clearPropsOnDone(kfRight) },
+            "-=0.6"
+          );
+        }
       }
     }
 
@@ -2340,6 +2332,111 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // -------------------------------------------------------------
+  // 24B. AQUAFORCE KEY FEATURES AUTO-CHANGING SHOWCASE
+  // -------------------------------------------------------------
+  function initKeyFeaturesAutoChange() {
+    const section = document.querySelector(".promec-key-features-section") || document.getElementById("why-aquaforce");
+    if (!section) return;
+
+    const items = section.querySelectorAll(".promec-kf-item");
+    const slides = section.querySelectorAll(".promec-kf-slide");
+    if (items.length === 0 || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+    let isUserPaused = false;
+    let isSectionVisible = true;
+    const CYCLE_DURATION = 3800; // ms per slide
+
+    function activateSlide(index) {
+      if (index < 0 || index >= items.length) return;
+      currentIndex = index;
+
+      items.forEach((item, i) => {
+        const isActive = i === currentIndex;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-selected", isActive ? "true" : "false");
+
+        const fill = item.querySelector(".promec-kf-item__progress-fill");
+        if (fill) {
+          fill.style.transition = "none";
+          fill.style.width = "0%";
+          if (isActive) {
+            void fill.offsetHeight; // force reflow
+            fill.style.transition = `width ${CYCLE_DURATION}ms linear`;
+            fill.style.width = "100%";
+          }
+        }
+      });
+
+      slides.forEach((slide, i) => {
+        const isActive = i === currentIndex;
+        slide.classList.toggle("is-active", isActive);
+      });
+    }
+
+    function nextSlide() {
+      if (isUserPaused || !isSectionVisible) return;
+      const next = (currentIndex + 1) % items.length;
+      activateSlide(next);
+    }
+
+    function startAuto() {
+      stopAuto();
+      activateSlide(currentIndex);
+      autoTimer = setInterval(nextSlide, CYCLE_DURATION);
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    // Manual click selection
+    items.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const idx = parseInt(item.getAttribute("data-kf-index"), 10);
+        if (!isNaN(idx) && idx !== currentIndex) {
+          activateSlide(idx);
+          startAuto();
+        }
+      });
+    });
+
+    // Pause on hover
+    section.addEventListener("mouseenter", () => {
+      isUserPaused = true;
+    });
+
+    section.addEventListener("mouseleave", () => {
+      isUserPaused = false;
+    });
+
+    // Pause when out of viewport
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isSectionVisible = entry.isIntersecting;
+            if (isSectionVisible) {
+              startAuto();
+            } else {
+              stopAuto();
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      observer.observe(section);
+    } else {
+      startAuto();
+    }
+  }
+
+  // -------------------------------------------------------------
   // PROMEC SHOWCASE: REELS & CUSTOMER VIDEOS (INSTANT LAZY LOADING & MODAL)
   // -------------------------------------------------------------
   function initPromecVideoShowcases() {
@@ -2731,6 +2828,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   initRotationFeatureTabs();
+  initKeyFeaturesAutoChange();
   initPromecVideoShowcases();
   initPromecPreloader();
 

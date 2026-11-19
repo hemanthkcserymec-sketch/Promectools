@@ -6167,289 +6167,259 @@ div.nav {
   }
 }
 
-/* ==========================================================================
-   03C. WHY AQUAFORCE? — VALUE PROPOSITION & CAPABILITIES GRID SECTION
-   ========================================================================== */
 /* =========================================================================
-   03C. WHY AQUAFORCE? — EXACT REFERENCE BENTO GRID REPLICA
+   03C. AQUAFORCE KEY FEATURES — INTERACTIVE AUTO-CHANGING SHOWCASE
    ========================================================================= */
-.why-aquaforce-section {
+.promec-key-features-section {
   position: relative !important;
   width: 100% !important;
   background-color: #ffffff !important;
   color: #111827 !important;
-  padding: 68px 0 68px !important;
+  padding: 96px 0 !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
-.why-aquaforce-container {
-  max-width: 1180px !important;
+.promec-key-features__container {
+  max-width: 1240px !important;
   margin: 0 auto !important;
-  padding: 0 24px !important;
+  padding: 0 32px !important;
   box-sizing: border-box !important;
 }
 
-.why-aquaforce-header {
-  text-align: center !important;
-  margin-bottom: 34px !important;
-}
-
-.why-aquaforce-title {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 48px !important;
-  line-height: 1.15 !important;
-  letter-spacing: -0.025em !important;
-  margin: 0 0 10px 0 !important;
-  text-transform: uppercase !important;
-}
-
-.why-aquaforce-title__light {
-  font-weight: 300 !important;
-  color: #1e293b !important;
-}
-
-.why-aquaforce-title__bold {
-  font-weight: 800 !important;
-  color: #0f172a !important;
-  letter-spacing: -0.03em !important;
-}
-
-.why-aquaforce-subtitle {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(14px, 1.1vw, 16px) !important;
-  font-weight: 400 !important;
-  color: #64748b !important;
-  line-height: 1.5 !important;
-  margin: 0 !important;
-}
-
-.why-aquaforce-bento {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 14px !important;
-  width: 100% !important;
-}
-
-/* Top Row: 180fr (Left Col) : 488fr (Center Hero) : 258fr (Right Col) */
-.why-aquaforce-bento__row-top {
+.promec-key-features__grid {
   display: grid !important;
-  grid-template-columns: 180fr 488fr 258fr !important;
-  gap: 14px !important;
-  width: 100% !important;
-  align-items: stretch !important;
-}
-
-.why-aquaforce-bento__col-left {
-  display: grid !important;
-  grid-template-rows: 324fr 122fr !important;
-  gap: 13px !important;
-  height: 100% !important;
-}
-
-.why-aquaforce-bento__col-right {
-  display: grid !important;
-  grid-template-rows: 218fr 228fr !important;
-  gap: 13px !important;
-  height: 100% !important;
-}
-
-/* Bottom Row: 372fr (3 Hours) : 326fr (Key Features) : 228fr (Portable) */
-.why-aquaforce-bento__row-bottom {
-  display: grid !important;
-  grid-template-columns: 372fr 326fr 228fr !important;
-  gap: 14px !important;
-  width: 100% !important;
-}
-
-/* Bento Card Style */
-.why-aquaforce-bento__card {
-  position: relative !important;
-  border-radius: 18px !important;
-  overflow: hidden !important;
-  background-color: #ffffff !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
-  border: 1px solid rgba(0, 0, 0, 0.07) !important;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
-  display: flex !important;
-}
-
-.why-aquaforce-bento__card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08) !important;
-}
-
-.why-aquaforce-bento__card--center {
-  aspect-ratio: 488 / 459 !important;
-}
-
-.why-aquaforce-bento__card--4 {
-  aspect-ratio: 372 / 209 !important;
-}
-
-.why-aquaforce-bento__card--5 {
-  aspect-ratio: 326 / 209 !important;
-}
-
-.why-aquaforce-bento__card--6 {
-  aspect-ratio: 228 / 209 !important;
-}
-
-.why-aquaforce-bento__img {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-  object-fit: cover !important;
-}
-
-/* Bento Card Text & Badge Overlays */
-.why-aquaforce-bento__overlay {
-  position: absolute !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-.why-aquaforce-bento__overlay--top-left {
-  top: 24px !important;
-  left: 28px !important;
-  max-width: 82% !important;
-}
-
-.why-aquaforce-bento__overlay--center-left {
-  top: 24px !important;
-  left: 24px !important;
-  max-width: 60% !important;
-}
-
-.why-aquaforce-bento__clock-icon {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 50% !important;
-  background: rgba(12, 13, 16, 0.85) !important;
-  display: flex !important;
+  grid-template-columns: 1fr 1.32fr !important;
+  gap: 56px !important;
   align-items: center !important;
+}
+
+/* Left Column */
+.promec-key-features__left {
+  display: flex !important;
+  flex-direction: column !important;
   justify-content: center !important;
-  margin-bottom: 8px !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
 }
 
-.why-aquaforce-bento__clock-icon svg {
-  stroke: #ffffff !important;
-}
-
-.why-aquaforce-bento__title-large {
+.promec-key-features__title {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(22px, 2.2vw, 32px) !important;
+  font-size: clamp(32px, 3.2vw, 44px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 0 32px 0 !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 10px !important;
+}
+
+.promec-key-features__title-light {
+  font-weight: 300 !important;
+  color: #111827 !important;
+}
+
+.promec-key-features__title-bold {
   font-weight: 800 !important;
-  line-height: 1.15 !important;
-  color: #0c0d10 !important;
-  margin: 0 0 6px 0 !important;
-  letter-spacing: -0.02em !important;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.85) !important;
+  color: #000000 !important;
 }
 
-.why-aquaforce-bento__sub-large {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(13px, 1.1vw, 16px) !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-  margin: 0 !important;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85) !important;
+.promec-key-features__list {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
 }
 
-.why-aquaforce-bento__title-medium {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(18px, 1.5vw, 22px) !important;
-  font-weight: 800 !important;
-  line-height: 1.15 !important;
-  color: #0c0d10 !important;
-  margin: 0 0 4px 0 !important;
-  letter-spacing: -0.02em !important;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.85) !important;
-}
-
-.why-aquaforce-bento__sub-medium {
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(12px, 1vw, 13.5px) !important;
-  font-weight: 600 !important;
-  color: #374151 !important;
-  margin: 0 !important;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85) !important;
-}
-
-/* Feature Badge Capsule (Pill) */
-.why-aquaforce-bento__badge {
-  position: absolute !important;
-  bottom: 16px !important;
-  left: 16px !important;
-  z-index: 2 !important;
-  display: inline-flex !important;
+.promec-kf-item {
+  display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 6px 14px 6px 8px !important;
-  background: rgba(12, 13, 16, 0.82) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.18) !important;
-  border-radius: 9999px !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28) !important;
+  gap: 20px !important;
+  padding: 22px 16px !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #edf0f3 !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  position: relative !important;
+  border-radius: 16px !important;
+  transition: background-color 0.25s ease, transform 0.25s ease !important;
+  outline: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.why-aquaforce-bento__badge-icon {
-  width: 24px !important;
-  height: 24px !important;
-  border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.18) !important;
+.promec-kf-item:last-child {
+  border-bottom: none !important;
+}
+
+.promec-kf-item:hover:not(.is-active) {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+.promec-kf-item.is-active {
+  background: #f8fafc !important;
+}
+
+.promec-kf-item__icon-wrap {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  background: #f1f3f5 !important;
+  color: #000000 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.why-aquaforce-bento__badge-icon svg {
-  width: 13px !important;
-  height: 13px !important;
-  stroke: #ffffff !important;
+.promec-kf-item.is-active .promec-kf-item__icon-wrap {
+  background: #000000 !important;
+  color: #ffffff !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16) !important;
 }
 
-.why-aquaforce-bento__badge-text {
+.promec-kf-item__text {
+  flex: 1 !important;
+}
+
+.promec-kf-item__title {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.01em !important;
-  white-space: nowrap !important;
+  font-size: 16.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  color: #09090b !important;
+  text-transform: uppercase !important;
+  margin: 0 0 4px 0 !important;
+  line-height: 1.25 !important;
+  transition: color 0.25s ease !important;
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 860px) {
-  .why-aquaforce-bento__row-top,
-  .why-aquaforce-bento__row-bottom {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-  .why-aquaforce-bento__col-left,
-  .why-aquaforce-bento__col-right {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: auto !important;
-    gap: 14px !important;
-  }
-  .why-aquaforce-bento__card--center,
-  .why-aquaforce-bento__card--4,
-  .why-aquaforce-bento__card--5,
-  .why-aquaforce-bento__card--6 {
-    aspect-ratio: auto !important;
-  }
+.promec-kf-item__desc {
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  color: #52525b !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
 }
 
-@media (max-width: 580px) {
-  .why-aquaforce-bento__col-left,
-  .why-aquaforce-bento__col-right {
+/* Subtle Progress Bar underneath active item */
+.promec-kf-item__progress-bar {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 16px !important;
+  right: 16px !important;
+  height: 2px !important;
+  background: transparent !important;
+  overflow: hidden !important;
+  border-radius: 999px !important;
+}
+
+.promec-kf-item.is-active .promec-kf-item__progress-bar {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+
+.promec-kf-item__progress-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: #000000 !important;
+  border-radius: 999px !important;
+}
+
+/* Right Column Card Display */
+.promec-key-features__right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.promec-key-features__card {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 10.5 !important;
+  min-height: 440px !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  background: #000000 !important;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.promec-kf-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  transform: scale(1.025) !important;
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.promec-kf-slide.is-active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  pointer-events: auto !important;
+  z-index: 2 !important;
+}
+
+.promec-kf-slide__img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+/* Responsive: Tablet and Mobile */
+@media (max-width: 991px) {
+  .promec-key-features-section {
+    padding: 60px 0 !important;
+  }
+  .promec-key-features__container {
+    padding: 0 20px !important;
+  }
+  .promec-key-features__grid {
     grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .promec-key-features__right {
+    order: 2 !important;
+  }
+  .promec-key-features__left {
+    order: 1 !important;
+  }
+  .promec-key-features__card {
+    aspect-ratio: 16 / 10 !important;
+    min-height: 280px !important;
+    border-radius: 20px !important;
+  }
+  .promec-key-features__title {
+    font-size: 32px !important;
+    margin-bottom: 24px !important;
+  }
+  .promec-kf-item {
+    padding: 16px 12px !important;
+    gap: 16px !important;
+  }
+  .promec-kf-item__icon-wrap {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+  }
+  .promec-kf-item__icon-wrap svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .promec-kf-item__title {
+    font-size: 15px !important;
+  }
+  .promec-kf-item__desc {
+    font-size: 12.5px !important;
   }
 }
 
