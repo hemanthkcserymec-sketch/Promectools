@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollVelocity = 0;
   const skewTargets = document.querySelectorAll(".velocity-skew-target, .draggable-marquee__list");
 
-  if (typeof Lenis !== "undefined") {
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth <= 991);
+
+  if (typeof Lenis !== "undefined" && !isTouchDevice) {
     if (window.lenis && typeof window.lenis.destroy === "function") {
       try { window.lenis.destroy(); } catch (_) {}
     }
