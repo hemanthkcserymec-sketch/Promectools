@@ -2636,6 +2636,17 @@ document.addEventListener("DOMContentLoaded", () => {
           vid.defaultMuted = true;
           vid.playsInline = true;
           vid.loop = true;
+
+          // Restrict preview playback on the card to the first 5 seconds only (5s teaser loop)
+          // Full video plays only when clicked (via the full video lightbox modal)
+          vid.addEventListener("timeupdate", () => {
+            if (vid.currentTime >= 5) {
+              vid.currentTime = 0;
+              if (vid.paused) {
+                vid.play().catch(() => {});
+              }
+            }
+          });
         }
         card.addEventListener("mouseenter", () => {
           if (vid && vid.hasAttribute("src") && vid.paused) ensureVideoPlays(vid);
