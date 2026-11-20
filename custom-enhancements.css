@@ -3472,6 +3472,11 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 @media (max-width: 640px) {
   .aqua-testimonials {
     padding: 32px 20px;
+    overflow: hidden !important;
+    border-bottom: none !important;
+  }
+  .aqua-testimonials__container {
+    overflow: hidden !important;
   }
   .aqua-testimonials__left .promec-hero__heading {
     font-size: 34px !important;
@@ -3484,9 +3489,11 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   }
   .aqua-testimonials__right {
     height: 460px;
+    overflow: hidden !important;
   }
   .aqua-testimonials__marquee-wrap {
     grid-template-columns: 1fr;
+    overflow: hidden !important;
   }
   .aqua-testimonials__track--down {
     display: none;
@@ -4451,12 +4458,19 @@ section, [id] {
     margin-bottom: 24px !important;
   }
 
+  .aqua-testimonials {
+    overflow: hidden !important;
+    border-bottom: none !important;
+  }
+
   .aqua-testimonials__right {
     height: 480px !important;
+    overflow: hidden !important;
   }
 
   .aqua-testimonials__marquee-wrap {
     grid-template-columns: 1fr !important;
+    overflow: hidden !important;
   }
 
   .aqua-testimonials__track--down {
@@ -4465,32 +4479,10 @@ section, [id] {
 
   /* ---------------- SECTION 6: CTA BANNER MOBILE FIXES ---------------- */
   .aqua-cta-banner {
-    padding: 40px 16px !important;
-  }
-
-  .aqua-cta-banner__container {
-    padding: 36px 20px !important;
-    border-radius: 20px !important;
-  }
-
-  .aqua-cta-banner__title {
-    font-size: 2.2rem !important;
-    line-height: 1.15 !important;
-  }
-
-  .aqua-cta-banner__desc {
-    font-size: 0.95rem !important;
-  }
-
-  .aqua-cta-banner__btn-wrap {
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 12px !important;
-  }
-
-  .aqua-cta-banner__btn {
-    width: 100% !important;
-    justify-content: center !important;
+    padding: 70px 18px 0 !important;
+    border-top: none !important;
+    border: none !important;
+    outline: none !important;
   }
 }
 
@@ -5587,6 +5579,14 @@ section#applications,
   margin: 0 !important;
   display: flex !important;
   flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.promec-possibilities__heading-col .promec-hero__line-light,
+.promec-possibilities__heading-col .promec-hero__line-bold {
+  text-align: left !important;
+  align-self: flex-start !important;
 }
 
 .promec-possibilities__heading-col .promec-hero__line-light {
@@ -5785,9 +5785,31 @@ section#applications,
   .promec-possibilities__container {
     padding: 0 20px !important;
   }
+  .promec-possibilities__header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .promec-possibilities__heading-col {
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
   .promec-possibilities__heading-col .promec-hero__heading {
     font-size: 34px !important;
     line-height: 1.08 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+  .promec-possibilities__heading-col .promec-hero__line-light,
+  .promec-possibilities__heading-col .promec-hero__line-bold {
+    text-align: left !important;
+    align-self: flex-start !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
   .promec-possibilities__heading-col .promec-hero__line-light {
     font-weight: 500 !important;
@@ -5795,14 +5817,23 @@ section#applications,
   .promec-possibilities__heading-col .promec-hero__line-bold {
     font-weight: 900 !important;
   }
+  .promec-possibilities__info-col {
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
   .promec-possibilities__desc {
     font-size: 14px !important;
     line-height: 1.5 !important;
     color: #4b5563 !important;
     margin-top: 14px !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+    width: 100% !important;
   }
   .promec-possibilities__explore-btn {
     margin-top: 18px !important;
+    align-self: flex-start !important;
   }
   .promec-possibilities__grid {
     display: flex !important;
