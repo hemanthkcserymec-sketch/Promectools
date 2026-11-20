@@ -7632,6 +7632,10 @@ body.promec-preloader-active {
   transition: width 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.promec-reel-card--customer .promec-reel-card__bottom-info {
+  display: none !important;
+}
+
 .promec-reel-card__bottom-info {
   position: absolute;
   bottom: 0;
@@ -7691,7 +7695,11 @@ body.promec-preloader-active {
 }
 
 @media (max-width: 768px) {
-  .promec-reel-card__bottom-info {
+  .promec-reel-card--customer .promec-reel-card__bottom-info {
+  display: none !important;
+}
+
+.promec-reel-card__bottom-info {
     padding: 24px 10px 10px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
