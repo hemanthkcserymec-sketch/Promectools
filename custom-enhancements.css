@@ -3269,21 +3269,29 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
    20. SECTION 5: TESTIMONIALS SHOWCASE (.aqua-testimonials)
    ========================================================================= */
 .aqua-testimonials {
-  position: relative;
-  background-color: #ffffff;
-  color: #0f172a;
-  padding: 48px 48px 48px;
-  overflow: hidden;
-  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  position: relative !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  padding: 48px 48px 48px !important;
+  overflow: hidden !important;
+  contain: paint !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  z-index: 1 !important;
+  font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 .aqua-testimonials__container {
-  max-width: 1320px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 1.2fr;
-  gap: 48px;
-  align-items: center;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.1fr 1.2fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  contain: paint !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
 }
 
 .aqua-testimonials__left {
@@ -3329,9 +3337,15 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 }
 
 .aqua-testimonials__right {
-  position: relative;
-  height: 540px;
-  overflow: hidden;
+  position: relative !important;
+  height: 540px !important;
+  overflow: hidden !important;
+  contain: paint !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+  transform-style: flat !important;
+  isolation: isolate !important;
 }
 
 /* Gradient Fade Masks top & bottom */
@@ -3356,11 +3370,25 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   background: linear-gradient(to top, #ffffff 10%, rgba(255, 255, 255, 0) 100%);
 }
 
+.aqua-testimonials__marquee-mask {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  contain: paint !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  isolation: isolate !important;
+}
+
 .aqua-testimonials__marquee-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  height: 100%;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  contain: paint !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
 }
 
 .aqua-testimonials__track {
@@ -3471,32 +3499,57 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 @media (max-width: 640px) {
   .aqua-testimonials {
-    padding: 32px 20px;
+    padding: 32px 20px !important;
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
     border-bottom: none !important;
+    z-index: 1 !important;
   }
   .aqua-testimonials__container {
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
   }
   .aqua-testimonials__left .promec-hero__heading {
     font-size: 34px !important;
   }
   .aqua-testimonials__heading {
-    font-size: 34px;
+    font-size: 34px !important;
   }
   .aqua-testimonials__desc {
-    font-size: 16px;
+    font-size: 16px !important;
   }
   .aqua-testimonials__right {
-    height: 460px;
+    height: 460px !important;
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+    transform-style: flat !important;
+    isolation: isolate !important;
+  }
+  .aqua-testimonials__marquee-mask {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
+    isolation: isolate !important;
   }
   .aqua-testimonials__marquee-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
   }
   .aqua-testimonials__track--down {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -3749,7 +3802,7 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 .aqua-cta-banner {
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 10 !important;
 }
 
 .aqua-footer {
@@ -4460,17 +4513,40 @@ section, [id] {
 
   .aqua-testimonials {
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
     border-bottom: none !important;
+    z-index: 1 !important;
   }
 
   .aqua-testimonials__right {
     height: 480px !important;
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+    transform-style: flat !important;
+    isolation: isolate !important;
+  }
+
+  .aqua-testimonials__marquee-mask {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
+    isolation: isolate !important;
   }
 
   .aqua-testimonials__marquee-wrap {
     grid-template-columns: 1fr !important;
     overflow: hidden !important;
+    contain: paint !important;
+    clip-path: inset(0) !important;
+    -webkit-clip-path: inset(0) !important;
   }
 
   .aqua-testimonials__track--down {
@@ -4483,6 +4559,8 @@ section, [id] {
     border-top: none !important;
     border: none !important;
     outline: none !important;
+    position: relative !important;
+    z-index: 10 !important;
   }
 }
 
@@ -6936,8 +7014,6 @@ section#applications,
 .aqua-engineering__left,
 .aqua-engineering__right,
 .promec-scatter__line,
-.aqua-testimonials__left,
-.aqua-testimonials__right,
 .aqua-cta-card,
 .aqua-cta-card__visual,
 .aqua-cta-card__img,
@@ -6961,8 +7037,6 @@ section#applications,
   .aqua-engineering__left,
   .aqua-engineering__right,
   .promec-scatter__line,
-  .aqua-testimonials__left,
-  .aqua-testimonials__right,
   .aqua-cta-card,
   .aqua-cta-card__visual,
   .aqua-cta-card__img,
