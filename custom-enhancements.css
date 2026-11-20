@@ -6583,14 +6583,14 @@ section#applications,
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
-  gap: 18px !important;
+  gap: 12px !important;
 }
 
 .promec-kf-item {
   display: flex !important;
   align-items: center !important;
-  gap: 16px !important;
-  padding: 12px 0 !important;
+  padding: 14px 18px !important;
+  border-radius: 14px !important;
   background: transparent !important;
   border: none !important;
   cursor: pointer !important;
@@ -6599,15 +6599,21 @@ section#applications,
   outline: none !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  transition: opacity 0.25s ease !important;
+  transition: background-color 0.25s ease, padding 0.25s ease !important;
 }
 
 .promec-kf-item:hover:not(.is-active) {
-  opacity: 0.8 !important;
+  opacity: 0.85 !important;
 }
 
 .promec-kf-item.is-active {
+  background: #f6f7f9 !important;
+  gap: 16px !important;
+}
+
+.promec-kf-item:not(.is-active) {
   background: transparent !important;
+  gap: 0 !important;
 }
 
 .promec-kf-item__icon-wrap {
@@ -6653,8 +6659,8 @@ section#applications,
 }
 
 .promec-kf-item:not(.is-active) .promec-kf-item__title {
-  color: #71717a !important;
-  font-weight: 600 !important;
+  color: #4b5563 !important;
+  font-weight: 700 !important;
 }
 
 .promec-kf-item__desc {
@@ -6667,7 +6673,7 @@ section#applications,
 }
 
 .promec-kf-item:not(.is-active) .promec-kf-item__desc {
-  color: #a1a1aa !important;
+  color: #71717a !important;
 }
 
 .promec-kf-item__progress-bar {
@@ -6689,9 +6695,10 @@ section#applications,
   min-height: 440px !important;
   border-radius: 28px !important;
   overflow: hidden !important;
-  background: #000000 !important;
-  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(0, 0, 0, 0.06) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background: #f4f5f7 !important;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12) !important;
+  border: none !important;
+  outline: none !important;
 }
 
 .promec-kf-slide {
@@ -6724,42 +6731,60 @@ section#applications,
 /* Responsive: Tablet and Mobile */
 @media (max-width: 991px) {
   .promec-key-features-section {
-    padding: 60px 0 !important;
+    padding: 44px 0 54px 0 !important;
   }
   .promec-key-features__container {
     padding: 0 20px !important;
   }
+  .promec-key-features__title {
+    font-size: 30px !important;
+    margin: 0 auto 20px auto !important;
+    gap: 8px !important;
+  }
   .promec-key-features__grid {
     grid-template-columns: 1fr !important;
-    gap: 36px !important;
+    gap: 24px !important;
   }
   .promec-key-features__right {
-    order: 2 !important;
+    order: 1 !important;
+    width: 100% !important;
   }
   .promec-key-features__left {
-    order: 1 !important;
+    order: 2 !important;
+    width: 100% !important;
   }
   .promec-key-features__card {
-    aspect-ratio: 16 / 10 !important;
-    min-height: 280px !important;
+    aspect-ratio: 16 / 10.5 !important;
+    min-height: unset !important;
     border-radius: 20px !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08) !important;
+    border: none !important;
+    outline: none !important;
+    background: #f4f5f7 !important;
   }
-  .promec-key-features__title {
-    font-size: 32px !important;
-    margin-bottom: 24px !important;
+  .promec-key-features__list {
+    gap: 8px !important;
   }
   .promec-kf-item {
-    padding: 16px 12px !important;
-    gap: 16px !important;
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+  }
+  .promec-kf-item.is-active {
+    background: #f6f7f9 !important;
+    gap: 14px !important;
+  }
+  .promec-kf-item:not(.is-active) {
+    background: transparent !important;
+    gap: 0 !important;
   }
   .promec-kf-item__icon-wrap {
     width: 44px !important;
     height: 44px !important;
-    border-radius: 12px !important;
+    border-radius: 10px !important;
   }
   .promec-kf-item__icon-wrap svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
   .promec-kf-item__title {
     font-size: 15px !important;

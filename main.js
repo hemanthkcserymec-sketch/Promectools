@@ -2385,7 +2385,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let autoTimer = null;
     let isUserPaused = false;
     let isSectionVisible = true;
-    const CYCLE_DURATION = 1000; // ms per slide (1 second per category)
+    const CYCLE_DURATION = 3500; // ms per slide (smooth rotation)
 
     function activateSlide(index) {
       if (index < 0 || index >= items.length) return;
