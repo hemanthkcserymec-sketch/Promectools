@@ -5785,9 +5785,22 @@ section#applications,
   }
   .promec-possibilities__heading-col .promec-hero__heading {
     font-size: 34px !important;
+    line-height: 1.08 !important;
+  }
+  .promec-possibilities__heading-col .promec-hero__line-light {
+    font-weight: 500 !important;
+  }
+  .promec-possibilities__heading-col .promec-hero__line-bold {
+    font-weight: 900 !important;
   }
   .promec-possibilities__desc {
     font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #4b5563 !important;
+    margin-top: 14px !important;
+  }
+  .promec-possibilities__explore-btn {
+    margin-top: 18px !important;
   }
   .promec-possibilities__grid {
     display: flex !important;
@@ -5802,14 +5815,16 @@ section#applications,
     display: none !important;
   }
   .promec-possibilities__card {
-    min-width: 72vw !important;
-    max-width: 72vw !important;
+    min-width: 57vw !important;
+    max-width: 57vw !important;
     flex-shrink: 0 !important;
     scroll-snap-align: start !important;
     padding: 10px 10px 14px 10px !important;
+    border-radius: 16px !important;
   }
   .promec-possibilities__card-label {
-    font-size: 14px !important;
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
   }
 }
 
@@ -5978,25 +5993,34 @@ section#applications,
 /* Mobile Responsiveness */
 @media (max-width: 767px) {
   .promec-scatter-section {
-    min-height: 520px !important;
-    max-height: 560px !important;
-    padding: 20px 0 !important;
+    min-height: 480px !important;
+    max-height: 520px !important;
+    padding: 16px 0 !important;
   }
   .promec-scatter__inner {
     padding: 0 16px !important;
-    min-height: 480px !important;
-    max-height: 520px !important;
+    min-height: 460px !important;
+    max-height: 500px !important;
   }
   .promec-scatter__headline-wrap {
     padding: 10px 0 !important;
     max-width: 320px !important;
   }
   .promec-scatter__headline {
-    font-size: clamp(28px, 8.2vw, 38px) !important;
-    line-height: 1.1 !important;
+    font-size: clamp(28px, 8.2vw, 36px) !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
     letter-spacing: -0.02em !important;
+    color: #000000 !important;
   }
-  /* Show 6 strategic tiles on mobile positioned around centered headline */
+  .promec-scatter__tile-inner {
+    border-radius: 6px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+  .promec-scatter__img {
+    border-radius: 6px !important;
+  }
+  /* Hide non-strategic tiles on mobile */
   .promec-scatter__tile--2,
   .promec-scatter__tile--4,
   .promec-scatter__tile--7,
@@ -6004,12 +6028,61 @@ section#applications,
   .promec-scatter__tile--11 {
     display: none !important;
   }
-  .promec-scatter__tile--1  { left: 4% !important;  top: 8% !important; width: 58px !important; height: 70px !important; }
-  .promec-scatter__tile--3  { left: auto !important; right: 5% !important; top: 10% !important; width: 66px !important; height: 54px !important; }
-  .promec-scatter__tile--5  { left: auto !important; right: 4% !important; top: 25% !important; width: 56px !important; height: 68px !important; }
-  .promec-scatter__tile--6  { left: 3% !important;  top: 28% !important; width: 54px !important; height: 65px !important; }
-  .promec-scatter__tile--8  { left: 4% !important;  top: 82% !important; width: 60px !important; height: 72px !important; }
-  .promec-scatter__tile--10 { left: auto !important; right: 5% !important; top: 82% !important; width: 62px !important; height: 62px !important; }
+  /* Show 6 strategic tiles in exact hexagonal ring matching reference */
+  /* 1. Top-Left: Tile 1 (Home outdoor washing) */
+  .promec-scatter__tile--1 {
+    display: block !important;
+    left: 4.5% !important;
+    right: auto !important;
+    top: 9% !important;
+    width: 55px !important;
+    height: 72px !important;
+  }
+  /* 2. Top-Center: Tile 6 (Bike washing) */
+  .promec-scatter__tile--6 {
+    display: block !important;
+    left: calc(50% - 26px) !important;
+    right: auto !important;
+    top: 21% !important;
+    width: 52px !important;
+    height: 69px !important;
+  }
+  /* 3. Top-Right: Tile 3 (Office cleaning) */
+  .promec-scatter__tile--3 {
+    display: block !important;
+    left: auto !important;
+    right: 5% !important;
+    top: 9% !important;
+    width: 61px !important;
+    height: 58px !important;
+  }
+  /* 4. Bottom-Left: Tile 8 (Corporate glass building) */
+  .promec-scatter__tile--8 {
+    display: block !important;
+    left: 4.5% !important;
+    right: auto !important;
+    top: 66% !important;
+    width: 56px !important;
+    height: 75px !important;
+  }
+  /* 5. Bottom-Center: Tile 10 (Home outdoor patio furniture) */
+  .promec-scatter__tile--10 {
+    display: block !important;
+    left: calc(50% - 29px) !important;
+    right: auto !important;
+    top: 80% !important;
+    width: 58px !important;
+    height: 65px !important;
+  }
+  /* 6. Bottom-Right: Tile 5 (Car Wash garage detailing) */
+  .promec-scatter__tile--5 {
+    display: block !important;
+    left: auto !important;
+    right: 5% !important;
+    top: 66% !important;
+    width: 53px !important;
+    height: 71px !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
