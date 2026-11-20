@@ -6275,6 +6275,7 @@ section#applications,
   background-color: #ffffff !important;
   color: #111827 !important;
   padding: 96px 0 !important;
+  scroll-margin-top: 90px !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
@@ -6302,15 +6303,16 @@ section#applications,
 }
 
 .promec-key-features__title {
+  text-align: center !important;
+  margin: 0 auto 48px auto !important;
+  font-size: 42px !important;
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: clamp(32px, 3.2vw, 44px) !important;
-  line-height: 1.12 !important;
-  letter-spacing: -0.025em !important;
-  margin: 0 0 32px 0 !important;
+  letter-spacing: -0.01em !important;
   text-transform: uppercase !important;
   display: flex !important;
+  justify-content: center !important;
   align-items: baseline !important;
-  gap: 10px !important;
+  gap: 12px !important;
 }
 
 .promec-key-features__title-light {
@@ -6327,56 +6329,58 @@ section#applications,
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
+  gap: 18px !important;
 }
 
 .promec-kf-item {
   display: flex !important;
   align-items: center !important;
-  gap: 20px !important;
-  padding: 22px 16px !important;
+  gap: 16px !important;
+  padding: 12px 0 !important;
   background: transparent !important;
   border: none !important;
-  border-bottom: 1px solid #edf0f3 !important;
   cursor: pointer !important;
   text-align: left !important;
   position: relative !important;
-  border-radius: 16px !important;
-  transition: background-color 0.25s ease, transform 0.25s ease !important;
   outline: none !important;
   width: 100% !important;
   box-sizing: border-box !important;
-}
-
-.promec-kf-item:last-child {
-  border-bottom: none !important;
+  transition: opacity 0.25s ease !important;
 }
 
 .promec-kf-item:hover:not(.is-active) {
-  background: rgba(0, 0, 0, 0.02) !important;
+  opacity: 0.8 !important;
 }
 
 .promec-kf-item.is-active {
-  background: #f8fafc !important;
+  background: transparent !important;
 }
 
 .promec-kf-item__icon-wrap {
-  width: 52px !important;
-  height: 52px !important;
-  border-radius: 14px !important;
-  background: #f1f3f5 !important;
-  color: #000000 !important;
-  display: flex !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  border-radius: 10px !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  display: none !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16) !important;
+}
+
+.promec-kf-item__icon-wrap svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+  fill: #ffffff !important;
+  stroke: none !important;
 }
 
 .promec-kf-item.is-active .promec-kf-item__icon-wrap {
-  background: #000000 !important;
-  color: #ffffff !important;
-  transform: scale(1.05) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16) !important;
+  display: flex !important;
 }
 
 .promec-kf-item__text {
@@ -6385,14 +6389,18 @@ section#applications,
 
 .promec-kf-item__title {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 16.5px !important;
+  font-size: 17px !important;
   font-weight: 800 !important;
   letter-spacing: 0.02em !important;
-  color: #09090b !important;
+  color: #000000 !important;
   text-transform: uppercase !important;
   margin: 0 0 4px 0 !important;
   line-height: 1.25 !important;
-  transition: color 0.25s ease !important;
+}
+
+.promec-kf-item:not(.is-active) .promec-kf-item__title {
+  color: #71717a !important;
+  font-weight: 600 !important;
 }
 
 .promec-kf-item__desc {
@@ -6404,27 +6412,12 @@ section#applications,
   margin: 0 !important;
 }
 
-/* Subtle Progress Bar underneath active item */
+.promec-kf-item:not(.is-active) .promec-kf-item__desc {
+  color: #a1a1aa !important;
+}
+
 .promec-kf-item__progress-bar {
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 16px !important;
-  right: 16px !important;
-  height: 2px !important;
-  background: transparent !important;
-  overflow: hidden !important;
-  border-radius: 999px !important;
-}
-
-.promec-kf-item.is-active .promec-kf-item__progress-bar {
-  background: rgba(0, 0, 0, 0.06) !important;
-}
-
-.promec-kf-item__progress-fill {
-  height: 100% !important;
-  width: 0% !important;
-  background: #000000 !important;
-  border-radius: 999px !important;
+  display: none !important;
 }
 
 /* Right Column Card Display */
