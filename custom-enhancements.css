@@ -7632,22 +7632,8 @@ body.promec-preloader-active {
   transition: width 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.promec-reel-card--customer .promec-reel-card__bottom-info {
-  display: none !important;
-}
-
 .promec-reel-card__bottom-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 36px 14px 14px;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 60%, rgba(0, 0, 0, 0.95) 100%);
-  z-index: 7;
-  pointer-events: none;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  transition: transform 0.3s ease;
+  display: none !important;
 }
 
 .promec-reel-card__card-title {
@@ -7695,20 +7681,8 @@ body.promec-preloader-active {
 }
 
 @media (max-width: 768px) {
-  .promec-reel-card--customer .promec-reel-card__bottom-info {
-  display: none !important;
-}
-
-.promec-reel-card__bottom-info {
-    padding: 24px 10px 10px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-  }
-  .promec-reel-card__card-title {
-    font-size: 12px;
-  }
-  .promec-reel-card__card-desc {
-    font-size: 10px;
+  .promec-reel-card__bottom-info {
+    display: none !important;
   }
 }
 
