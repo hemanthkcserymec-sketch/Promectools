@@ -3612,40 +3612,93 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 @media (max-width: 768px) {
   .aqua-cta-banner {
-    padding: 50px 20px 40px !important;
-    background: linear-gradient(180deg, #ffffff 0%, #ffffff 68%, #050608 68%, #050608 100%) !important;
+    padding: 70px 18px 0 !important;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 45%, #000000 45%, #000000 100%) !important;
+    overflow: visible !important;
   }
   .aqua-cta-card {
     flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 44px 28px 0 !important;
-    border-radius: 20px !important;
-    overflow: hidden !important;
-  }
-  .aqua-cta-card__content {
-    max-width: 100% !important;
-    margin-bottom: 28px !important;
-  }
-  .aqua-cta-card__heading {
-    font-size: 32px !important;
-    margin-bottom: 14px !important;
-  }
-  .aqua-cta-card__desc {
-    font-size: 15px !important;
-    margin-bottom: 24px !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 20px 36px 20px !important;
+    border-radius: 28px !important;
+    background-color: #f1f3f5 !important;
+    overflow: visible !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22) !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
   }
   .aqua-cta-card__visual {
+    order: 1 !important;
     position: relative !important;
     right: auto !important;
     bottom: auto !important;
-    height: 260px !important;
+    height: auto !important;
     width: 100% !important;
+    display: flex !important;
     justify-content: center !important;
-    margin-top: 10px !important;
+    align-items: flex-end !important;
+    margin-top: -64px !important;
+    margin-bottom: 8px !important;
   }
   .aqua-cta-card__img {
-    max-height: 260px !important;
+    max-height: 250px !important;
+    width: 84% !important;
+    max-width: 290px !important;
+    height: auto !important;
     object-position: bottom center !important;
+    display: block !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12)) !important;
+  }
+  .aqua-cta-card__content {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  .aqua-cta-card__heading {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
+    color: #000000 !important;
+    text-align: center !important;
+    margin: 0 auto 12px auto !important;
+    max-width: 280px !important;
+  }
+  .aqua-cta-card__desc {
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+    color: #64748b !important;
+    text-align: center !important;
+    max-width: 300px !important;
+    margin: 0 auto 22px auto !important;
+  }
+  .aqua-cta-card__actions {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .aqua-cta-card__btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #0c0d10 !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    height: 44px !important;
+    padding: 0 32px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
   }
 }
 
@@ -3933,12 +3986,96 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
 
 @media (max-width: 640px) {
   .aqua-footer {
-    padding: 36px 20px 24px !important;
+    padding: 36px 20px 28px !important;
+    background: #000000 !important;
+  }
+  .aqua-footer__nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .aqua-footer__nav-link {
+    color: #ffffff !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+  }
+  .aqua-footer__watermark {
+    margin: 22px 0 24px 0 !important;
+  }
+  .aqua-footer__watermark span {
+    font-size: clamp(48px, 14vw, 68px) !important;
+    color: #272c37 !important;
+    background: none !important;
+    -webkit-text-fill-color: #272c37 !important;
+    letter-spacing: 0.02em !important;
   }
   .aqua-footer__contact-row {
     flex-direction: column !important;
     gap: 12px !important;
-    align-items: flex-start !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+  }
+  .aqua-footer__contact-item {
+    color: #ffffff !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .aqua-footer__contact-item svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+  .aqua-footer__divider-line {
+    width: 100% !important;
+    height: 1px !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    margin: 0 0 20px 0 !important;
+  }
+  .aqua-footer__subbar {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .aqua-footer__copyright {
+    color: #9ca3af !important;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+  .aqua-footer__socials-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+  .aqua-footer__social-icon {
+    color: #ffffff !important;
+  }
+  .aqua-footer__legal {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px 8px !important;
+    font-size: 11.5px !important;
+  }
+  .aqua-footer__legal a {
+    color: #9ca3af !important;
+    font-size: 11.5px !important;
+  }
+  .aqua-footer__legal-sep {
+    color: rgba(255, 255, 255, 0.25) !important;
   }
 }
 
