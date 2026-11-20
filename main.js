@@ -443,30 +443,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (willOpen) {
         navContent.classList.add("is-active");
-        gsap.to(navContent, {
-          autoAlpha: 1,
-          x: "0%",
-          duration: 0.45,
-          ease: "power2.out"
-        });
-        gsap.fromTo(
-          menuItems,
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.08, duration: 0.45, ease: "power2.out", delay: 0.05 }
-        );
+        document.body.style.overflow = "hidden";
+        if (typeof gsap !== "undefined") {
+          gsap.to(navContent, {
+            autoAlpha: 1,
+            x: "0%",
+            duration: 0.35,
+            ease: "power2.out"
+          });
+          gsap.fromTo(
+            menuItems,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05, duration: 0.35, ease: "power2.out", delay: 0.05 }
+          );
+        } else {
+          navContent.style.opacity = "1";
+          navContent.style.visibility = "visible";
+          navContent.style.transform = "translateX(0%)";
+        }
       } else {
         navContent.classList.remove("is-active");
-        gsap.to(navContent, {
-          autoAlpha: 0,
-          x: "-100%",
-          duration: 0.35,
-          ease: "power2.in"
-        });
+        document.body.style.overflow = "";
+        if (typeof gsap !== "undefined") {
+          gsap.to(navContent, {
+            autoAlpha: 0,
+            x: "-100%",
+            duration: 0.28,
+            ease: "power2.in"
+          });
+        } else {
+          navContent.style.opacity = "0";
+          navContent.style.visibility = "hidden";
+          navContent.style.transform = "translateX(-100%)";
+        }
       }
     }
 
-    navToggle.addEventListener("click", () => toggleMenu());
-    if (navClose) navClose.addEventListener("click", () => toggleMenu(false));
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.querySelectorAll('[data-nav-close], .nav__close').forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu(false);
+      });
+    });
+
+    navContent.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        toggleMenu(false);
+      });
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navWrap?.getAttribute("data-menu-open") === "true") {
+        toggleMenu(false);
+      }
+    });
   }
 
   // Nav scroll background blur & floating pill transition
