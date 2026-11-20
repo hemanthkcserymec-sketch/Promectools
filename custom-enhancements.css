@@ -4745,19 +4745,37 @@ div.nav {
   .nav__toggle {
     display: flex !important;
   }
+  .navigation {
+    top: 10px !important;
+    padding: 0 16px !important;
+    background: transparent !important;
+    pointer-events: none !important;
+  }
   .nav__bar {
-    padding: 12px 20px !important;
+    padding: 8px 18px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    border-radius: 14px !important;
+    background: rgba(15, 16, 18, 0.95) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+    pointer-events: auto !important;
+  }
+  .navigation:not(.is-scrolled) {
+    background: transparent !important;
   }
   .navigation.is-scrolled {
     top: 10px !important;
-    padding: 0 12px !important;
+    padding: 0 16px !important;
   }
   .navigation.is-scrolled .nav__bar,
   .nav__bar.is-scrolled {
-    padding: 8px 16px !important;
+    padding: 8px 18px !important;
     height: 52px !important;
     min-height: 52px !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
   }
   .promec-nav-logo-img {
     height: 16px !important;
@@ -5107,7 +5125,7 @@ div.nav {
     background-position: center bottom !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    padding-top: 68px !important;
+    padding-top: 72px !important;
     padding-bottom: 24px !important;
     height: 100vh !important;
     min-height: 100vh !important;
@@ -5121,7 +5139,7 @@ div.nav {
   .promec-hero__container {
     min-height: auto !important;
     max-height: none !important;
-    padding: 16px 20px 8px !important;
+    padding: 12px 20px 8px !important;
     display: flex !important;
     align-items: flex-start !important;
     justify-content: center !important;
@@ -5132,11 +5150,11 @@ div.nav {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 14px !important;
+    gap: 0 !important;
     min-height: auto !important;
     width: 100% !important;
   }
-  /* White Gradient Overlay (Mobile) */
+  /* Soft White Gradient Overlay (Mobile) - crystal clear view of product */
   .promec-hero-section::before {
     content: "" !important;
     position: absolute !important;
@@ -5145,17 +5163,10 @@ div.nav {
     height: 100% !important;
     background: linear-gradient(
       to bottom,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0.95) 28%,
-      rgba(255, 255, 255, 0.70) 48%,
-      rgba(255, 255, 255, 0.15) 65%,
-      rgba(255, 255, 255, 0) 80%
-    ),
-    linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.90) 0%,
-      rgba(255, 255, 255, 0.40) 50%,
-      rgba(255, 255, 255, 0) 85%
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 22%,
+      rgba(255, 255, 255, 0.35) 36%,
+      rgba(255, 255, 255, 0) 48%
     ) !important;
     pointer-events: none !important;
     z-index: 1 !important;
@@ -5169,38 +5180,108 @@ div.nav {
     max-width: 100% !important;
     align-items: center !important;
     background: none !important;
-    padding: 8px 12px !important;
+    padding: 0 !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
     z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   .promec-hero__heading {
-    font-size: clamp(28px, 7.8vw, 38px) !important;
-    margin-bottom: 6px !important;
+    font-size: clamp(33px, 8.5vw, 40px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+  }
+  .promec-hero__line-light {
+    font-weight: 400 !important;
+    color: #111111 !important;
+  }
+  .promec-hero__line-bold {
+    font-weight: 800 !important;
+    color: #000000 !important;
   }
   .promec-hero__model-badge {
-    font-size: 11px !important;
-    margin-bottom: 8px !important;
+    font-size: 10.5px !important;
+    letter-spacing: 0.28em !important;
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
   }
   .promec-hero__description {
     text-align: center !important;
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     line-height: 1.45 !important;
-    margin-bottom: 16px !important;
-    max-width: 320px !important;
+    color: #374151 !important;
+    margin-bottom: 18px !important;
+    max-width: 330px !important;
   }
   .promec-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: center !important;
-    gap: 10px !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: auto !important;
+    max-width: 100% !important;
   }
   .promec-hero__btn-primary {
-    padding: 10px 20px !important;
-    font-size: 13px !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    height: 42px !important;
+    padding: 0 22px !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #000000 !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    white-space: nowrap !important;
   }
   .promec-hero__btn-secondary {
-    padding: 9px 18px !important;
-    font-size: 13px !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    height: 42px !important;
+    padding: 0 16px !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.6) !important;
+    color: #111111 !important;
+    border-radius: 8px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+  .promec-hero__play-icon {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin-left: 2px !important;
+  }
+  .promec-hero__play-icon svg {
+    width: 8px !important;
+    height: 8px !important;
+    fill: #ffffff !important;
+    transform: translateX(1px) !important;
   }
   .promec-hero__visual-col {
     display: none !important;
@@ -5237,15 +5318,20 @@ div.nav {
     padding: 10px 18px !important;
   }
   .promec-hero__heading {
-    font-size: clamp(34px, 9vw, 44px) !important;
+    font-size: clamp(33px, 8.8vw, 40px) !important;
   }
   .promec-hero__actions {
-    flex-direction: column !important;
-    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: auto !important;
   }
   .promec-hero__btn-primary,
   .promec-hero__btn-secondary {
-    width: 100% !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
   }
   .promec-features-bar {
     height: auto !important;
