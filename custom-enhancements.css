@@ -4039,9 +4039,11 @@ div.btn-icon-link.theme-yellow:hover .btn-icon-content {
   }
   .aqua-footer__watermark span {
     font-size: clamp(48px, 14vw, 68px) !important;
-    color: #272c37 !important;
-    background: none !important;
-    -webkit-text-fill-color: #272c37 !important;
+    background: linear-gradient(180deg, #383a40 0%, #16171a 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
     letter-spacing: 0.02em !important;
   }
   .aqua-footer__contact-row {
