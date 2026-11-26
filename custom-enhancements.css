@@ -6807,14 +6807,14 @@ section#applications,
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
-  gap: 12px !important;
+  gap: 14px !important;
 }
 
 .promec-kf-item {
   display: flex !important;
   align-items: center !important;
-  padding: 14px 18px !important;
-  border-radius: 14px !important;
+  padding: 10px 0 !important;
+  border-radius: 12px !important;
   background: transparent !important;
   border: none !important;
   cursor: pointer !important;
@@ -6823,7 +6823,7 @@ section#applications,
   outline: none !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  transition: background-color 0.25s ease, padding 0.25s ease !important;
+  transition: opacity 0.25s ease !important;
 }
 
 .promec-kf-item:hover:not(.is-active) {
@@ -6831,7 +6831,7 @@ section#applications,
 }
 
 .promec-kf-item.is-active {
-  background: #f6f7f9 !important;
+  background: transparent !important;
   gap: 16px !important;
 }
 
@@ -6856,8 +6856,8 @@ section#applications,
 }
 
 .promec-kf-item__icon-wrap svg {
-  width: 22px !important;
-  height: 22px !important;
+  width: 24px !important;
+  height: 24px !important;
   display: block !important;
   fill: #ffffff !important;
   stroke: none !important;
@@ -6873,7 +6873,7 @@ section#applications,
 
 .promec-kf-item__title {
   font-family: "Neue Montreal", "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 17px !important;
+  font-size: 16.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.02em !important;
   color: #000000 !important;
@@ -6884,7 +6884,7 @@ section#applications,
 
 .promec-kf-item:not(.is-active) .promec-kf-item__title {
   color: #4b5563 !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .promec-kf-item__desc {
@@ -6987,10 +6987,10 @@ section#applications,
     background: #f4f5f7 !important;
   }
   .promec-key-features__list {
-    gap: 8px !important;
+    gap: 6px !important;
   }
   .promec-kf-item {
-    padding: 14px 16px !important;
+    padding: 12px 14px !important;
     border-radius: 14px !important;
   }
   .promec-kf-item.is-active {
@@ -7007,8 +7007,8 @@ section#applications,
     border-radius: 10px !important;
   }
   .promec-kf-item__icon-wrap svg {
-    width: 20px !important;
-    height: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
   .promec-kf-item__title {
     font-size: 15px !important;
