@@ -5050,7 +5050,7 @@ div.nav {
   }
 }
 
-/* Hero Section with Hero_desk.webp */
+/* Hero Section with pressure-washer landing page banner.webp */
 .promec-hero-section {
   position: relative !important;
   width: 100% !important;
@@ -5063,7 +5063,7 @@ div.nav {
   justify-content: center !important;
   align-items: stretch !important;
   background-color: #f0f3f6 !important;
-  background-image: url('assets/Hero_desk.webp') !important;
+  background-image: url('assets/pressure-washer landing page banner.webp') !important;
   background-position: right bottom !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -5104,10 +5104,9 @@ div.nav {
     to right,
     #ffffff 0%,
     rgba(255, 255, 255, 0.96) 20%,
-    rgba(255, 255, 255, 0.88) 35%,
-    rgba(255, 255, 255, 0.55) 52%,
-    rgba(255, 255, 255, 0.15) 68%,
-    rgba(255, 255, 255, 0) 80%
+    rgba(255, 255, 255, 0.82) 32%,
+    rgba(255, 255, 255, 0.35) 44%,
+    rgba(255, 255, 255, 0) 56%
   ) !important;
   pointer-events: none !important;
   z-index: 1 !important;
@@ -5378,7 +5377,7 @@ div.nav {
 /* Mobile & Tablet Responsiveness */
 @media (max-width: 991px) {
   .promec-hero-section {
-    background-image: url('assets/Hero_mobile.webp') !important;
+    background-image: url('assets/pressure-washer landing page mobile banner.webp') !important;
     background-position: center bottom !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -5421,9 +5420,9 @@ div.nav {
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.88) 22%,
-      rgba(255, 255, 255, 0.35) 36%,
-      rgba(255, 255, 255, 0) 48%
+      rgba(255, 255, 255, 0.90) 26%,
+      rgba(255, 255, 255, 0.52) 40%,
+      rgba(255, 255, 255, 0) 53%
     ) !important;
     pointer-events: none !important;
     z-index: 1 !important;
